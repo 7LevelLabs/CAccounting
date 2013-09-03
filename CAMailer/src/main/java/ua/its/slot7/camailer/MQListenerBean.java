@@ -69,25 +69,21 @@ public class MQListenerBean implements MessageListener {
 
 			LOGGER.info("Successfully sent.");
 
-			//TODO Log sending
-
 		} catch (JMSException e) {
-			//TODO Log this Exception
 			e.printStackTrace();
 		} catch (MessagingException e) {
-			//TODO Log this Exception
 			e.printStackTrace();
 		}
 		catch (NullPointerException e) {
-			//TODO Log this Exception
 			e.printStackTrace();
 		} catch (UnsupportedEncodingException e) {
-			//TODO Log this Exception
 			e.printStackTrace();
 		}
 
 	}
 
-	public MQListenerBean() {}
+	public MQListenerBean() {
+
+	}
 
 }
