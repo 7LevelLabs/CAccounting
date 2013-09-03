@@ -1,0 +1,19 @@
+CAccounting (Cloud Accounting) - it's for small businesses and freelancers.
+
+The Idea is : keep your life easy.
+
+Typical workflow is:
+
+1. Create new invoice.
+2. Send it to the customer (and automatic resend with a schedule).
+3. Automatic reminds.
+4. API.
+5. Multilingual.
+
+CAccounting operates in two flavors:
+- SaaS (hosted solution) and
+- Open Source for you (ready to build and launch on your servers).
+
+For the knowledge of the technical side of the Force - please, read other parts of the Docs.
+
+Please, feel free to send your feedback to ca@7levellabs.com .

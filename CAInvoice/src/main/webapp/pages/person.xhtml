@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<f:metadata>
+    <f:viewParam name="personId" value="#{MBPerson.personId}" />
+    <f:event type="preRenderView" listener="#{MBPerson.loadAction}" />
+</f:metadata>
+
+<h:head>
+    <title>Person : #{label.caccounting}</title>
+</h:head>
+
+<h:body>
+
+    <ui:composition template="../WEB-INF/tpl/regular.xhtml">
+        <ui:define name="center">
+
+            <h:form id="formPersonDetails">
+                <p:panel header="#{MBPerson.nick} : Contacts">
+                    <h:panelGrid columns="3" id="gridPersonContacts">
+
+                        <h:outputText value="Nick"/>
+                        <p:inputText value="#{MBPerson.nick}" id="nick" label="nick">
+                            <f:validateLength minimum="3" maximum="150" />
+                            <f:validateRequired />
+                        </p:inputText>
+                        <p:watermark for="nick" value="For instance: Mark , a-la Filshtain" />
+
+                        <h:outputText value="Name"/>
+                        <p:inputText value="#{MBPerson.name}" id="name" label="name">
+                            <f:validateLength minimum="3" maximum="150" />
+                            <f:validateRequired />
+                        </p:inputText>
+                        <p:watermark for="name" value="For instance: Mark Filshtain" />
+
+                        <h:outputText value="Phone"/>
+                        <p:inputText value="#{MBPerson.phone}" id="phone" label="phone">
+                            <f:validateRegex
+                                    pattern="[(]?\d{3}[)]?\s?-?\s?\d{3}\s?-?\s?\d{4}">
+                            </f:validateRegex>
+                            <f:validateRequired />
+                        </p:inputText>
+                        <p:watermark for="phone" value="For instance: (777) 777-7777" />
+
+                        <h:outputText value="EMail"/>
+                        <p:inputText value="#{MBPerson.email}" id="email" label="email">
+                            <f:validator binding="#{validatorEMail}" />
+                            <f:validateRequired />
+                        </p:inputText>
+                        <p:watermark for="email" value="Must be regular email" />
+
+                        <p:commandButton value="Update"
+                                         title="Update Person data"
+                                         action="#{MBPerson.updatePerson}"
+                                         ajax="false"/>
+
+                    </h:panelGrid>
+                </p:panel>
+
+                <p:panel header="#{MBPerson.person.nick} : Invoices">
+
+                    <p:dataTable id="personsInvoicesTable"
+                                 value="#{MBPerson.personInvoices}"
+                                 var="invoice"
+                                 rows="21"
+                                 style="width:100%">
+
+                        <p:column>
+                            <f:facet name="header">#</f:facet>
+                            <h:link value="#{invoice.number}" outcome="invoice">
+                                <f:param name="invoiceId" value="#{invoice.id}" />
+                            </h:link>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">Create</f:facet>
+                            <h:outputText value="#{invoice.dateCreation}" pattern="yyyy-MM-dd HH:mm:ss"/>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">Update</f:facet>
+                            <h:outputText value="#{invoice.dateUpdate}" pattern="yyyy-MM-dd HH:mm:ss"/>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">Total</f:facet>
+                            <h:outputText value="#{invoice.sum}" />
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">Is Paid</f:facet>
+                            <h:outputText value="#{invoice.paymentState.paid}" />
+                        </p:column>
+
+                    </p:dataTable>
+
+                    <h:link value="New Invoice" outcome="invoice-new">
+                        <f:param name="personIdForNewInvoice" value="#{MBPerson.personId}" />
+                    </h:link>
+
+                </p:panel>
+
+            </h:form>
+
+        </ui:define>
+    </ui:composition>
+
+
+</h:body>
+
+</html>

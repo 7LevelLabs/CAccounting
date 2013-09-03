@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+
+    <h:form id="formPersonAdd">
+
+        <p:panel header="Registering New Person">
+
+            <h:panelGrid columns="4" id="personRegisterGroupPanel">
+
+                <h:outputText value="Nick"/>
+                <p:inputText value="#{MBPersons.nick}" id="nick" label="nick">
+                    <f:validateLength minimum="5" maximum="150" />
+                    <f:validateRequired />
+                </p:inputText>
+                <p:watermark for="nick" value="For instance: Mark , a-la Filshtain" />
+                <p:message for="nick" />
+
+                <h:outputText value="Name"/>
+                <p:inputText value="#{MBPersons.name}" id="name" label="name">
+                    <f:validateLength minimum="5" maximum="150" />
+                    <f:validateRequired />
+                </p:inputText>
+                <p:watermark for="name" value="For instance: Mark Filshtain" />
+                <p:message for="name" />
+
+                <h:outputText value="Phone"/>
+                <p:inputText value="#{MBPersons.phone}" id="phone" label="phone">
+                    <f:validateRegex
+                            pattern="[(]?\d{3}[)]?\s?-?\s?\d{3}\s?-?\s?\d{4}">
+                    </f:validateRegex>
+                    <f:validateRequired />
+                </p:inputText>
+                <p:watermark for="phone" value="For instance: (777) 777-7777" />
+                <p:message for="phone" />
+
+                <h:outputText value="EMail"/>
+                <p:inputText value="#{MBPersons.email}" id="email" label="email">
+                    <f:validator binding="#{personValidatorEMail}" />
+                    <f:validateRequired />
+                </p:inputText>
+                <p:watermark for="email" value="Must be regular email" />
+                <p:message for="email" />
+
+            </h:panelGrid>
+            <p:commandButton value="Register new Person"
+                             title="Create new Person"
+                             action="#{MBPersons.createPerson}"
+                             ajax="false"/>
+
+        </p:panel>
+
+    </h:form>
+
+</h:body>
+
+</html>

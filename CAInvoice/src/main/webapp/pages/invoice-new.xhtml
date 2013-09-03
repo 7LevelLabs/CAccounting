@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<f:metadata>
+    <f:viewParam name="personIdForNewInvoice" value="#{MBInvoiceNew.personIdForNewInvoice}" />
+    <f:event type="preRenderView" listener="#{MBInvoiceNew.loadAction}" />
+</f:metadata>
+
+<h:head>
+    <title>New Invoice for #{MBInvoiceNew.personLocal.name} : #{label.caccounting}</title>
+</h:head>
+
+<h:body>
+
+    <ui:composition template="../WEB-INF/tpl/regular.xhtml">
+        <ui:define name="center">
+
+            <h:form id="formInvoiceLines">
+
+                <p:panel id="invoiceLinesAjaxPanel" header="New Invoice for #{MBInvoiceNew.personLocal.name} : #{MBInvoiceNew.personLocal.phone}">
+
+                    <h:panelGrid columns="6" id="invoicePanelGrid1">
+
+                        <h:outputText value="#"/>
+                        <h:outputText value="#{MBInvoiceNew.invoiceLocal.number}"/>
+
+                        <h:outputText value="Create"/>
+                        <h:outputText value="#{MBInvoiceNew.invoiceLocal.dateCreation}"/>
+
+                        <h:outputText value="Update"/>
+                        <h:outputText value="#{MBInvoiceNew.invoiceLocal.dateUpdate}"/>
+
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="2" id="invoicePanelGrid2">
+
+                        <h:outputText value="Total"/>
+                        <h:outputText value="#{MBInvoiceNew.invoiceLocal.sum}" id="ilSum"/>
+
+                    </h:panelGrid>
+
+                    <p:panel id="invoiceOutputPanel2">
+                        <p:dataTable id="invoiceLinesTable"
+                                     value="#{MBInvoiceNew.invoiceLocal.invoicesLines}"
+                                     var="il"
+                                     rows="5"
+                                     rowClasses="odd-row, even-row"
+                                >
+
+                            <p:column>
+                                <h:outputText value="#{il.lineText}"/>
+                            </p:column>
+
+                            <p:column>
+                                <f:facet name="header">Price</f:facet>
+                                <h:outputText value="#{il.linePrice}"/>
+                            </p:column>
+
+                            <p:column>
+                                <f:facet name="header">Qt</f:facet>
+                                <h:outputText value="#{il.lineQt}"/>
+                            </p:column>
+
+                            <p:column>
+                                <f:facet name="header">Sum</f:facet>
+                                <h:outputText value="#{il.lineSum}"/>
+                            </p:column>
+
+                            <p:column>
+                                <p:commandLink value="Delete"
+                                        action="#{MBInvoiceNew.ilDelete(il.tid)}"
+                                        update=":formInvoiceLines:invoiceOutputPanel2,:formInvoiceLines:invoicePanelGrid2,:growl"/>
+                            </p:column>
+
+                        </p:dataTable>
+                    </p:panel>
+
+                    <p:panel layout="block" id="invoiceOutputPanel3">
+
+                        <h:panelGrid columns="2" id="invoicePanelGrid3">
+
+                            <h:outputText value="Line text"/>
+                            <p:inputText value="#{MBInvoiceNew.lilLineText}" id="liltext">
+                                <f:validateRequired />
+                            </p:inputText>
+
+                            <h:outputText value="Price"/>
+                            <p:inputText value="#{MBInvoiceNew.lilLinePrice}" id="lilprice">
+                                <f:validateRequired />
+                            </p:inputText>
+
+                            <h:outputText value="Qt"/>
+                            <p:inputText value="#{MBInvoiceNew.lilLineQt}" id="lilqt">
+                                <f:validateRequired />
+                            </p:inputText>
+
+                        </h:panelGrid>
+
+                    </p:panel>
+
+                    <p:commandButton id="cbIlCreate"
+                                     value="Save New Line"
+                                     action="#{MBInvoiceNew.ilCreate()}"
+                                     update=":formInvoiceLines:invoiceOutputPanel2,:formInvoiceLines:invoicePanelGrid2,:growl">
+                    </p:commandButton>
+
+                </p:panel>
+
+            </h:form>
+
+            <h:form id="formInvoiceCreate">
+                <h:panelGrid columns="3" id="invoicePanelGrid5">
+                    <p:commandButton value="Save" title="Save this invoice" action="#{MBInvoiceNew.createInvoice()}"/>
+                </h:panelGrid>
+            </h:form>
+
+        </ui:define>
+    </ui:composition>
+
+</h:body>
+
+</html>

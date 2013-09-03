@@ -1,0 +1,35 @@
+*** 0.2 (to add)
+
+Invoice
+- remote view (by the Person by link)
+- global templates management
+
+Remind
+- remind by schedule
+
+EMails
+- global templates management
+
+API
+- Invoice - get list
+- Invoice - get the Invoice details
+- Invoice - post the Invoice make paid
+
+User interface
+- some enhancements
+
+*** Current ( 0.1 )
+
+Invoice
+- create
+- duplicate
+- generate PDF
+- send to the Customer (Person in our slang)
+
+Remind
+- remind by hands
+
+API
+- Person - get list
+- Person - get the Person details
+- Person - get the Person state (ok / not-ok)

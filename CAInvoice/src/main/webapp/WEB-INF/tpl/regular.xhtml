@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</h:head>
+
+<h:body>
+
+    <h:outputStylesheet name="css/ca.css" />
+
+    <f:view locale="#{facesContext.externalContext.requestLocale}">
+        <p:layout fullPage="true">
+
+            <p:growl id="growl" showDetail="true"/>
+
+
+            <p:layoutUnit position="south" size="100" header="Log" resizable="true" closable="false" collapsible="true">
+                <ui:include src="../../pages/includes/log.xhtml" />
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center">
+
+                <h:form>
+
+                    <p:toolbar>
+                        <p:toolbarGroup align="left">
+                            <p:commandButton value="Dashboard"
+                                             action="#{MBNavigation.navigateTo()}"
+                                             ajax="false">
+                                <f:param name="direction" value="index" />
+                            </p:commandButton>
+
+                            <p:separator />
+                            <p:commandButton value="Invoices"
+                                             action="#{MBNavigation.navigateTo()}"
+                                             ajax="false">
+                                <f:param name="direction" value="invoices" />
+                            </p:commandButton>
+                            <p:separator />
+                            <p:commandButton value="Persons"
+                                             action="#{MBNavigation.navigateTo()}"
+                                             ajax="false">
+                                <f:param name="direction" value="persons" />
+                            </p:commandButton>
+                            <p:commandButton value="New Person"
+                                             action="#{MBNavigation.navigateTo()}"
+                                             ajax="false">
+                                <f:param name="direction" value="person-new" />
+                            </p:commandButton>
+                        </p:toolbarGroup>
+
+                        <p:toolbarGroup align="right">
+                            <p:commandButton value="About"
+                                             action="#{MBNavigation.navigateTo()}"
+                                             ajax="false">
+                                <f:param name="direction" value="about" />
+                            </p:commandButton>
+                            <p:commandButton value="Help"
+                                             action="#{MBNavigation.navigateTo()}"
+                                             ajax="false">
+                                <f:param name="direction" value="help" />
+                            </p:commandButton>
+                            <p:separator />
+                            <p:commandButton value="My profile"
+                                             action="#{MBNavigation.navigateTo()}"
+                                             ajax="false">
+                                <f:param name="direction" value="user" />
+                            </p:commandButton>
+                            <p:commandButton value="Logout"
+                                             action="#{MBNavigation.navigateTo()}"
+                                             ajax="false">
+                                <f:param name="direction" value="logout" />
+                            </p:commandButton>
+                        </p:toolbarGroup>
+
+                    </p:toolbar>
+
+                </h:form>
+
+                <ui:insert name="center" />
+            </p:layoutUnit>
+
+        </p:layout>
+    </f:view>
+</h:body>
+
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jms="http://www.springframework.org/schema/jms"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/jms
+                           http://www.springframework.org/schema/jms/spring-jms.xsd
+                           http://www.springframework.org/schema/jee
+                           http://www.springframework.org/schema/jee/spring-jee.xsd">
+
+    <jee:jndi-lookup id="jmsConnectionFactory"
+                     jndi-name="jms/__defaultConnectionFactory"/>
+
+    <!-- JNDI resolver -->
+    <bean id="jmsDestResolver"
+          class="org.springframework.jms.support.destination.JndiDestinationResolver"/>
+
+    <bean id="jmsProducerTemplate"
+          class="org.springframework.jms.core.JmsTemplate"
+          p:connectionFactory-ref="jmsConnectionFactory"
+          p:destinationResolver-ref="jmsDestResolver" />
+
+    <bean id="jmsProducer"
+          class="ua.its.slot7.caccounting.communications.MailerWorker"
+          init-method="sendQMessage">
+        <property name="template" ref="jmsProducerTemplate"/>
+        <property name="destinationString" value="jms/CAMailerQ"/>
+    </bean>
+
+
+</beans>

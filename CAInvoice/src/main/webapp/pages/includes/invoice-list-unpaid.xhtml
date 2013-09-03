@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+
+    <h:form id="formInvoicesUnpaid">
+        <p:panel id="panelInvoicesUnpaid" header="Invoices Unpaid">
+
+            <p:dataTable id="invoicesTable"
+                         value="#{MBInvoices.invoicesUnpaidList}"
+                         var="invoice"
+                         paginator="true" rows="10"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="5,10"
+                    >
+
+                <p:column>
+                    <f:facet name="header"><h:outputText value="#" /></f:facet>
+                    <h:link value="#{invoice.number}" outcome="invoice">
+                        <f:param name="invoiceId" value="#{invoice.id}" />
+                    </h:link>
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header"><h:outputText value="Created" /></f:facet>
+                    <h:outputText value="#{invoice.dateCreation}" />
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header"><h:outputText value="Total" /></f:facet>
+                    <h:outputText value="#{invoice.sum}" />
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">Is paid</f:facet>
+                    <h:outputText value="#{invoice.paymentState.paid}" />
+                </p:column>
+
+                <p:column>
+                    <h:commandLink value="Generate PDF"
+                                   action="#{MBInvoices.invoiceGeneratePDF(invoice.id)}" />
+                </p:column>
+
+                <p:column>
+                    <p:commandLink value="Send by Email to Person"
+                                   action="#{MBInvoices.invoiceSendByEmailPerson(invoice.id)}"
+                                   ajax="false"/>
+                </p:column>
+
+                <p:column>
+                    <p:commandLink value="Make paid"
+                                   action="#{MBInvoices.invoiceMakePaid(invoice.id)}"
+                                   ajax="false"/>
+                </p:column>
+
+                <f:facet name="footer">
+                    <p:commandButton width="300"
+                                     value="Update list"
+                                     title="Update Unpaid Invoices list"
+                                     action="#{MBInvoices.refreshInvoicesUnpaidList()}"
+                                     ajax="false"/>
+                </f:facet>
+
+            </p:dataTable>
+
+
+        </p:panel>
+    </h:form>
+
+</h:body>
+
+</html>

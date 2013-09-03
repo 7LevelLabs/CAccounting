@@ -1,0 +1,21 @@
+/*Reset font-size*/
+body {
+    font-size: 13px;
+}
+
+.container {
+    width: 75%;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timber {
+    height: 21px;
+}
+
+.pl0 {
+    padding-left: 0; !important
+}

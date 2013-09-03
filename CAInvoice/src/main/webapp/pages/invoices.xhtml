@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:outputStylesheet>
+    .even-row {
+        background-color: #FCFFFE;
+    }
+
+    .odd-row {
+        background-color: #ECF3FE;
+    }
+
+    .active-row {
+        background-color: #FFEBDA !important;
+        cursor: pointer;
+    }
+</h:outputStylesheet>
+
+<f:metadata>
+    <f:event type="preRenderView" listener="#{MBInvoices.refreshInvoicesList}" />
+</f:metadata>
+
+<h:head>
+    <title>Invoices : #{label.caccounting}</title>
+</h:head>
+
+<h:body>
+
+    <ui:composition template="../WEB-INF/tpl/regular.xhtml">
+        <ui:define name="center">
+
+            <ui:include src="includes/invoice-search.xhtml" />
+
+            <h:form id="formInvoicesList">
+
+                <p:panel header="Invoices">
+
+                    <p:dataTable id="invoicesTable"
+                                 value="#{MBInvoices.invoiceDataModel}"
+                                 var="invoice"
+                                 rows="15"
+                                 rowClasses="odd-row, even-row"
+                                 styleClass="stable"
+                                 paginator="true"
+                                 paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                 rowsPerPageTemplate="15,45"
+                            >
+
+                        <p:column headerText="#">
+                            <h:link value="#{invoice.number}" outcome="invoice">
+                                <f:param name="invoiceId" value="#{invoice.id}" />
+                            </h:link>
+                        </p:column>
+
+                        <p:column headerText="Created">
+                            <h:outputText value="#{invoice.dateCreation}" pattern="yyyy-MM-dd HH:mm:ss"/>
+                        </p:column>
+
+                        <p:column headerText="Total">
+                            <h:outputText value="#{invoice.sum}" />
+                        </p:column>
+
+                        <p:column headerText="Is paid">
+                            <h:outputText value="#{invoice.paymentState.paid}" />
+                        </p:column>
+
+                        <p:column>
+                            <h:commandLink value="Generate PDF"
+                                           action="#{MBInvoices.invoiceGeneratePDF(invoice.id)}" />
+                        </p:column>
+
+                        <p:column>
+                            <p:commandLink value="Send by Email to Person"
+                                           action="#{MBInvoices.invoiceSendByEmailPerson(invoice.id)}"
+                                           ajax="false"/>
+                        </p:column>
+
+                        <p:column>
+                            <p:commandLink value="Duplicate"
+                                           action="#{MBInvoices.invoiceDuplicate(invoice.id)}"
+                                           ajax="false"/>
+                        </p:column>
+
+
+                        <f:facet name="footer">
+                            <p:commandButton
+                                    width="300"
+                                    value="Update list"
+                                    title="Update Invoices list"
+                                    action="#{MBInvoices.refreshInvoicesList()}"
+                                    ajax="false"/>
+                        </f:facet>
+                    </p:dataTable>
+
+                </p:panel>
+
+            </h:form>
+
+        </ui:define>
+    </ui:composition>
+
+</h:body>
+
+</html>

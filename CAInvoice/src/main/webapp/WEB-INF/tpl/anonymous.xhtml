@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</h:head>
+
+<h:body>
+
+    <h:outputStylesheet name="css/bootstrap.css" />
+    <h:outputStylesheet name="css/ca.css" />
+
+    <p:growl id="growl" showDetail="true"/>
+
+    <f:view locale="#{facesContext.externalContext.requestLocale}">
+
+        <div class="container">
+
+            <div class="center">
+                <div class="page-header">
+                    <h1>Cloud Accounting<small> We keep your life easy</small></h1>
+                    <p>Web-based invoicing service: create invoice, recurring billing, track payment, track customer payment status.</p>
+                    <p>Our mature REST API makes possible to develop third-party applications.</p>
+                </div>
+
+                <ui:insert name="center" />
+
+                <div class="timber">
+                    <p>&nbsp;</p>
+                </div>
+
+                <div class="well well-sm">
+                    <p>v 0.1 άλφα</p>
+                    <p>Yes, now we are in άλφα stage. <a href="http://7levellabs.com" target="_blank">We</a> checked everything, but be careful.</p>
+                    <p>Our email (<a href="mailto:ca@7levellabs.com">ca@7levellabs.com</a>)
+                        and our <a href="" target="_blank">issue tracker</a> are at your service.</p>
+                </div>
+
+                <ul class="nav nav-pills">
+                    <li><a href="http://7levellabs.com" target="_blank">7LevelLabs</a></li>
+                    <li><a href="#">Source Code</a></li>
+                    <li><a href="https://7level.myjetbrains.com" target="_blank">Issues</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </f:view>
+
+</h:body>
+
+</html>

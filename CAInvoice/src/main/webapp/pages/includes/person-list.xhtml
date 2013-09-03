@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:body>
+
+    <h:form prependId="false" id="formPersons">
+        <p:panel id="panelPersons" header="Persons">
+
+            <p:dataTable id="personsTable"
+                         var="person"
+                         value="#{MBPersons.personsList}"
+                         paginator="true" rows="20"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="20,50"
+                    >
+
+                <p:column id="nickColumn" headerText="Nick">
+                    <h:link value="#{person.nick}" outcome="person" title="Details and Actions">
+                        <f:param name="personId" value="#{person.id}" />
+                    </h:link>
+                </p:column>
+
+                <p:column id="nameColumn" headerText="Name">
+                    <h:outputText value="#{person.name}" />
+                </p:column>
+
+                <p:column id="emailColumn" headerText="EMail">
+                    <h:outputText value="#{person.email}" />
+                </p:column>
+
+                <p:column id="phoneColumn"
+                          headerText="Phone">
+                    <h:outputText value="#{person.phone}" />
+                </p:column>
+
+                <p:column id="niColumn"
+                          headerText="New Invoice">
+                    <h:link value="New Invoice" outcome="invoice-new">
+                        <f:param name="personIdForNewInvoice" value="#{person.id}" />
+                    </h:link>
+                </p:column>
+
+                <f:facet name="footer">
+                    <p:commandButton
+                            value="Update list"
+                            title="Update Perons list"
+                            action="#{MBPersons.refreshPersonsList}"
+                            ajax="false"/>
+                </f:facet>
+
+            </p:dataTable>
+
+
+        </p:panel>
+    </h:form>
+
+</h:body>
+
+</html>

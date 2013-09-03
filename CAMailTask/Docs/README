@@ -1,0 +1,10 @@
+MailTask - encapsulate mail sending task for CAMailer.
+
+Support fields:
+- From email,
+- From name,
+- To email,
+- To name,
+- Subject,
+- Message body,
+- a sign of HTML using.

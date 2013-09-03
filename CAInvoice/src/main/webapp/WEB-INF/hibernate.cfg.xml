@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--<property name="connection.datasource">jdbc/its_caccounting</property>-->
+
+        <!-- Database connection settings -->
+        <!--<property name="connection.driver_class">com.mysql.jdbc.Driver</property>-->
+        <!--<property name="connection.url">jdbc:mysql://it-studio.kiev.ua/its_caccounting</property>-->
+        <!--<property name="connection.username">useritsca</property>-->
+        <!--<property name="connection.password">7wyBCKbD6v8aksk3</property>-->
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">25</property>
+
+
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="show_sql">true</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">false</property>
+        <property name="hibernate.generate_statistics">true</property>
+        <property name="hibernate.cache.use_structured_entries">true</property>
+        <!-- DB schema will be updated if needed -->
+        <property name="hbm2ddl.auto">update</property>
+        <!--<mapping class="ua.its.slot7.caccounting.model.person.Person"></mapping>-->
+        <!--<mapping class="ua.its.slot7.caccounting.model.invoice.Invoice"></mapping>-->
+        <!--<mapping class="ua.its.slot7.caccounting.model.invoiceline.InvoiceLine"></mapping>-->
+        <!--<mapping class="ua.its.slot7.caccounting.model.invoicepaymentstate.InvoicePaymentState"></mapping>-->
+        <!--<mapping class="ua.its.slot7.caccounting.model.user.User"></mapping>-->
+
+    </session-factory>
+</hibernate-configuration>

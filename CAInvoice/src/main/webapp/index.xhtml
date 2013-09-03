@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>#{label.caccounting}</title>
+</h:head>
+
+<h:body>
+
+    <ui:composition template="WEB-INF/tpl/anonymous.xhtml">
+
+        <ui:define name="center">
+
+            <form class="form-horizontal" role="form" action="j_spring_security_check" method="post">
+                <p:panel id="panelLogin" header="Login">
+
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 control-label">User:</label>
+                        <div class="col-lg-10">
+                            <input type="email" class="form-control" placeholder="Email address" id="inputEmail1" name='j_username'/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPassword1" class="col-lg-2 control-label">Password:</label>
+                        <div class="col-lg-10">
+                            <input type="password" class="form-control" id="inputPassword1" placeholder="Password" name="j_password"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" id="j_remember" name="_spring_security_remember_me"/> Remember me
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                        </div>
+                    </div>
+
+                </p:panel>
+            </form>
+
+            <div class="timber">
+                <p>&nbsp;</p>
+            </div>
+
+            <div class="pl0">
+                <h:link styleClass="btn btn-default btn-lg" value="Register new User" outcome="user-register" />
+                &nbsp;
+                <h:link styleClass="btn btn-default btn-lg" value="Recovery access" title="Recovery user access - username or password" outcome="user-access-recover" />
+            </div>
+
+        </ui:define>
+
+    </ui:composition>
+
+</h:body>
+
+</html>
