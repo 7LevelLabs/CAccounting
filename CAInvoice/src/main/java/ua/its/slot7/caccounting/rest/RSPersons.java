@@ -32,7 +32,7 @@ import java.util.List;
 @Path("/persons")
 public class RSPersons {
 
-	private final Logger LOGGER = Logger.getLogger("RSPersons");
+	private final Logger LOGGER = Logger.getLogger(this.getClass());
 
 	@Autowired
 	private PersonServiceAvatar personService;
@@ -48,10 +48,7 @@ public class RSPersons {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Person getPersonByIdForUser(@PathParam("key") String key,
 						@PathParam("id") Long id) {
-		LOGGER.info("RSPersons.getPersonByIdForUser");
-
 		Person person = blService.getPersonForUserKey(key,id);
-
 		if (person==null) {
 			LOGGER.info("Person : NULL");
 		} else {
@@ -64,19 +61,11 @@ public class RSPersons {
 	@Path("/get/{key}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Long> getPersonForUserByKey(@PathParam("key") String key) {
-		LOGGER.info("RSPersons.getPersonForUserByKey");
 		User user = userService.getUserByPass(key);
 		if (user==null) {
-			LOGGER.info("User for the key : NULL");
 			return null;
 		}
-		List<Long> personIdList = personService.getPersonsIdsByTheUser(user);
-		if (personIdList==null) {
-			LOGGER.info("Persons id list : NULL");
-		} else {
-			LOGGER.info("Persons id list : "+personIdList.toString());
-		}
-		return personIdList;
+		return personService.getPersonsIdsByTheUser(user);
 	}
 
 	@GET
@@ -84,22 +73,16 @@ public class RSPersons {
 	@Produces(MediaType.APPLICATION_JSON)
 	public boolean getPersonIsOk(@PathParam("key") String key,
 					 @PathParam("id") Long id) {
-		LOGGER.info("RSPersons.getPersonIsOk");
 		boolean res = false;
 		User user = userService.getUserByPass(key);
 		if (user==null) {
-			LOGGER.info("User for the key : NULL");
 			return res;
 		}
 		Person person = blService.getPersonForUserKey(key,id);
-		if (person==null) {
-			LOGGER.info("Person : NULL");
-		}
-		res = blService.personGetOkStatus(person);
-		return res;
+		return blService.personGetOkStatus(person);
 	}
 
 	public RSPersons () {
-		LOGGER.info("RSPersons.constructor");
+
 	}
 }
