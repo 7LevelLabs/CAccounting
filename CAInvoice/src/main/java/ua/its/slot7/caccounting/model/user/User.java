@@ -20,6 +20,7 @@ import ua.its.slot7.caccounting.model.userrole.UserRole;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.UUID;
 
 /**
  * User of the system. With login / password.</br>
@@ -73,6 +74,16 @@ public class User implements Serializable, Comparable<User>  {
 
 	/**
 	 *
+	 * User API-code
+	 * @return User's API code
+	 * */
+	@Column(nullable = false)
+	public String getApiCode() {
+		return apiCode;
+	}
+
+	/**
+	 *
 	 * User userrole
 	 * @return User's userrole
 	 * */
@@ -108,15 +119,20 @@ public class User implements Serializable, Comparable<User>  {
 		this.setNick("");
 		this.setEmail("");
 		this.setPass("");
+		UUID uuid = UUID.randomUUID();
+		this.setApiCode(uuid.toString());
 		this.setActive(false);
 		this.setUserRole(new UserRole());
 	}
 
 	public User (String nick, String email, String pass) {
-		super();
 		this.setNick(nick);
 		this.setEmail(email);
 		this.setPass(pass);
+		UUID uuid = UUID.randomUUID();
+		this.setApiCode(uuid.toString());
+		this.setActive(false);
+		this.setUserRole(new UserRole());
 	}
 
 	/**
@@ -125,50 +141,34 @@ public class User implements Serializable, Comparable<User>  {
 	 * */
 	@Override
 	public boolean equals (Object aUser) {
-		//check for self-comparison
 		if ( this == aUser ) return true;
-
 		if ( !(aUser instanceof User) ) return false;
-
-		//cast
 		User that = (User) aUser;
-
-		//key field - number
 		return this.getEmail().equalsIgnoreCase(that.getEmail());
 	}
 
 	/**
 	 *
-	 * Based on {@link #getEmail()#hashCode()}
+	 * Based on {@link #email#hashCode()}
 	 * */
 	@Override
 	public int hashCode() {
 		return this.getEmail().hashCode();
 	}
 
-	/**
-	 *
-	 * Fields sequence: {@link #hashCode()} , {@link #getId()} , {@link #getNick()} , {@link #getEmail()} , {@link #getPass()} , {@link #getLastUpdate()}
-	 * */
 	@Override
 	public String toString() {
-		String res = null;
-		StringBuilder sb = new StringBuilder();
-		sb.append("User : { ")
-			.append(this.hashCode())
-			.append(" | ")
-			.append(this.getId())
-			.append(" | ")
-			.append(this.getNick())
-			.append(" | ")
-			.append(this.getEmail())
-			.append(" | ")
-			.append(this.getPass())
-			.append(" | ")
-			.append(this.getLastUpdate())
-			.append(" }");
-		res=sb.toString();
-		return res;
+		final StringBuilder sb = new StringBuilder("User{");
+		sb.append("id=").append(id);
+		sb.append(", nick='").append(nick).append('\'');
+		sb.append(", email='").append(email).append('\'');
+		sb.append(", pass='").append(pass).append('\'');
+		sb.append(", apiCode='").append(apiCode).append('\'');
+		sb.append(", userRole=").append(userRole);
+		sb.append(", isActive=").append(isActive);
+		sb.append(", lastUpdate=").append(lastUpdate);
+		sb.append('}');
+		return sb.toString();
 	}
 
 	@Override
@@ -206,10 +206,15 @@ public class User implements Serializable, Comparable<User>  {
 		this.lastUpdate = lastUpdate;
 	}
 
+	public void setApiCode(String apiCode) {
+		this.apiCode = apiCode;
+	}
+
 	private long id;
 	private String nick;
 	private String email;
 	private String pass;
+	private String apiCode;
 	private UserRole userRole;
 	private boolean isActive;
 	private Date lastUpdate;
