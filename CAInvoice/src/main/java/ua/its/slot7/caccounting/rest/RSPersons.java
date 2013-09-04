@@ -61,7 +61,7 @@ public class RSPersons {
 	@Path("/get/{key}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Long> getPersonForUserByKey(@PathParam("key") String key) {
-		User user = userService.getUserByPass(key);
+		User user = userService.getUserByAPICode(key);
 		if (user==null) {
 			return null;
 		}
@@ -74,7 +74,7 @@ public class RSPersons {
 	public boolean getPersonIsOk(@PathParam("key") String key,
 					 @PathParam("id") Long id) {
 		boolean res = false;
-		User user = userService.getUserByPass(key);
+		User user = userService.getUserByAPICode(key);
 		if (user==null) {
 			return res;
 		}
