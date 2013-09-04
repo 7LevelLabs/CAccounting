@@ -170,7 +170,6 @@ public class BLService implements BLServiceAvatar {
 		return null;
 	}
 
-
 	@Override
 	public void invoiceUpdatePaidStatus(Invoice invoice, boolean gp) {
 		invoice.getPaymentState().setPaid(gp);
@@ -181,7 +180,7 @@ public class BLService implements BLServiceAvatar {
 	public Person getPersonForUserKey(String key, Long id) {
 		Person person = null;
 
-		User user = userService.getUserByPass(key);
+		User user = userService.getUserByAPICode(key);
 
 		if (user == null) {
 			return person;
