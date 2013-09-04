@@ -19,7 +19,7 @@ public class UserTest extends Assert {
 
 	private User user;
 
-	@Before
+	@BeforeClass
 	public void setUp() throws Exception {
 		String uEmail = "test@test.com";
 		String uNick = "AlexIT";
@@ -31,7 +31,7 @@ public class UserTest extends Assert {
 		this.user.setApiCode(uAPICode);
 	}
 
-	@After
+	@AfterClass
 	public void tearDown() throws Exception {
 		this.user=null;
 	}

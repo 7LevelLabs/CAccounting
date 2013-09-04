@@ -18,7 +18,7 @@ public class MailTaskTest extends Assert {
 
 	private MailTask mailTask;
 
-	@Before
+	@BeforeClass
 	public void setUp() throws Exception {
 		this.mailTask = new MailTask("alex@test.com",
 			"",
@@ -29,7 +29,7 @@ public class MailTaskTest extends Assert {
 			false);
 	}
 
-	@After
+	@AfterClass
 	public void tearDown() throws Exception {
 		this.mailTask=null;
 	}
