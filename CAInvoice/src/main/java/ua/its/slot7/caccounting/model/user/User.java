@@ -122,17 +122,23 @@ public class User implements Serializable, Comparable<User>  {
 		UUID uuid = UUID.randomUUID();
 		this.setApiCode(uuid.toString());
 		this.setActive(false);
-		this.setUserRole(new UserRole());
+		this.setUserRole(new UserRole(UserRole.USER_ROLE_USER));
 	}
 
 	public User (String nick, String email, String pass) {
+		if ((nick==null) || (email==null) || (pass==null)) {
+			throw new NullPointerException("Arguments can't be null.");
+		}
+		if ((nick.length()==0) || (email.length()==0) || (pass.length()==0)) {
+			throw new IllegalArgumentException("Arguments can't be empty.");
+		}
 		this.setNick(nick);
 		this.setEmail(email);
 		this.setPass(pass);
 		UUID uuid = UUID.randomUUID();
 		this.setApiCode(uuid.toString());
 		this.setActive(false);
-		this.setUserRole(new UserRole());
+		this.setUserRole(new UserRole(UserRole.USER_ROLE_USER));
 	}
 
 	/**
@@ -164,7 +170,7 @@ public class User implements Serializable, Comparable<User>  {
 		sb.append(", email='").append(email).append('\'');
 		sb.append(", pass='").append(pass).append('\'');
 		sb.append(", apiCode='").append(apiCode).append('\'');
-		sb.append(", userRole=").append(userRole);
+		sb.append(", userRole=").append(userRole.getRole());
 		sb.append(", isActive=").append(isActive);
 		sb.append(", lastUpdate=").append(lastUpdate);
 		sb.append('}');
