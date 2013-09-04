@@ -65,6 +65,23 @@ public class UserDBManager implements UserDBManagerAvatar {
 	}
 
 	@Override
+	public User getUserByAPICode(String apiCode) {
+		User user = null;
+		Session session = sessionFactory.getCurrentSession();
+
+		String selectString =
+			"select user " +
+				"from User user " +
+				"where user.apiCode like :ac";
+
+		Query query = session.createQuery(selectString);
+		query.setParameter("ac",apiCode);
+
+		user = (User)query.uniqueResult();
+		return user;
+	}
+
+	@Override
 	public User getUserByPass(String pass) {
 		User user = null;
 		Session session = sessionFactory.getCurrentSession();

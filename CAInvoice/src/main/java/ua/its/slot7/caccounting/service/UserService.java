@@ -46,6 +46,11 @@ public class UserService implements UserServiceAvatar {
 	}
 
 	@Override
+	public User getUserByAPICode(String apiCode) {
+		return userDBManager.getUserByAPICode(apiCode);
+	}
+
+	@Override
 	public User getUserByPass(String pass) {
 		return userDBManager.getUserByPass(pass);
 	}

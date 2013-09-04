@@ -37,6 +37,12 @@ public interface UserDBManagerAvatar {
 
 	/**
 	 *
+	 * Get {@link User} by given {@param apiCode}
+	 * */
+	public User getUserByAPICode (String apiCode);
+
+	/**
+	 *
 	 * Get {@link User} by given {@param pass}word
 	 * */
 	public User getUserByPass (String pass);
