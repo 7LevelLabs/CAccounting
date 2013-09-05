@@ -1,7 +1,7 @@
 package ua.its.slot7.caccounting.model.invoice;
 
 import org.junit.Assert;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 import ua.its.slot7.caccounting.model.invoiceline.InvoiceLine;
 
@@ -22,7 +22,7 @@ public class InvoiceTest extends Assert {
 	private Invoice invoice;
 	private InvoiceLine invoiceLine1, invoiceLine2;
 
-	@BeforeClass
+	@Before
 	public void setUp() throws Exception {
 		invoice = new Invoice ();
 		invoiceLine1 = new InvoiceLine();
