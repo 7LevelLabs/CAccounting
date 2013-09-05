@@ -88,9 +88,13 @@
                         <h:panelGrid columns="2" id="invoicePanelGrid3">
 
                             <h:outputText value="Line text"/>
-                            <p:inputText value="#{MBInvoiceNew.lilLineText}" id="liltext">
+                            <p:inputTextarea
+                                    value="#{MBInvoiceNew.lilLineText}"
+                                    id="liltext"
+                                    rows="7" cols="51"
+                                    autoResize="true">
                                 <f:validateRequired />
-                            </p:inputText>
+                            </p:inputTextarea>
 
                             <h:outputText value="Price"/>
                             <p:inputText value="#{MBInvoiceNew.lilLinePrice}" id="lilprice">
