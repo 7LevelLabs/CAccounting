@@ -14,7 +14,6 @@ package ua.its.slot7.caccounting.model.invoiceline;
  */
 
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Index;
 import org.hibernate.annotations.Type;
 import ua.its.slot7.caccounting.model.invoice.Invoice;
 
