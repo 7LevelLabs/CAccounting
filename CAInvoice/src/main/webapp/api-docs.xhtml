@@ -18,11 +18,67 @@
     <ui:composition template="WEB-INF/tpl/anonymous.xhtml">
 
         <ui:define name="center">
-            <h1>Cloud Accounting</h1>
             <p>V 0.1</p>
             <h2>API Docs</h2>
 
-            <p>Coming soon.</p>
+            <p><a href="#1">API Overview</a><br />
+                <a href="#2">Help with the API</a><br />
+                <a href="#3">API key</a><br />
+                <a href="#4">persons/get</a><br />
+                <a href="#5">persons/get/id</a><br />
+                <a href="#6">persons/get/isok/id</a></p>
+
+            <h3><a id="1" name="1"></a>API Overview</h3>
+
+            <p>This API is being developed for integration Cloud Accounting with other information systems.</p>
+
+            <p>For example, you need to get a simple way to understand - when you need to stop providing some services to your client. Sign in Cloud Accounting, create the required artifacts, and use the <a href="#6">persons/get/isok/id</a> call. &nbsp;If response is no &quot;ok&quot;, you can calmly plug-they-off. :)</p>
+
+            <p>And you probably already noticed that calls to are simple, and integration with any information systems will be simple too.</p>
+
+            <h3><a id="2" name="2"></a>Help with the API</h3>
+
+            <p>Any questions on the use of the API we are pleased to accept on <strong><a href="mailto:ca@7levellabs.com">ca@7levellabs.com</a></strong> .</p>
+
+            <h3><a id="3" name="3"></a>API key</h3>
+
+            <p>All API methods require a valid API key. Sign in to view your API key.</p>
+
+            <h3><span class="label label-default"><a id="4" name="4"></a>persons/get</span></h3>
+
+            <dl class="dl-horizontal">
+                <dt>Summary</dt>
+                <dd>Get list of person&#39;s id</dd>
+
+                <dt>URL</dt>
+                <dd>http://7levellabs.com:8080/CAInvoiceURL/persons/get/{apikey}</dd>
+
+                <dt>Supported formats</dt>
+                <dd>json</dd>
+
+                <dt>Supported request methods</dt>
+                <dd>GET</dd>
+
+                <dt>Required Parameters</dt>
+                <dd>
+
+                    <p><strong>apikey</strong><br />
+                        Sign in to view your API key.</p>
+
+                </dd>
+
+                <dt>Example Request</dt>
+                <dd></dd>
+
+            </dl>
+
+            <h3><span class="label label-default"><a id="5" name="5"></a>persons/get/id</span></h3>
+
+            <p>&nbsp;</p>
+
+            <h3><span class="label label-default"><a id="6" name="6"></a>persons/get/isok/id</span></h3>
+
+            <p>&nbsp;</p>
 
         </ui:define>
 
