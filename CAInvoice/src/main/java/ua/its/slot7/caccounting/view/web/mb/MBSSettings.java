@@ -93,7 +93,7 @@ public class MBSSettings implements Serializable {
 		);
 
 		//SETTINGS_SYSTEM_EBT_INVOICE
-		this.setSettings_system_ar_code_done_text(
+		this.setSettings_system_ebt_invoice(
 			bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_EBT_INVOICE")
 		);
 
