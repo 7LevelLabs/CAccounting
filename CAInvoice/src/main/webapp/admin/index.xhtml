@@ -117,7 +117,7 @@
                             </h:panelGrid>
                         </p:panel>
 
-                        <p:panel header="Acess recovering successfull" toggleable="true">
+                        <p:panel header="Access recovering successfull" toggleable="true">
 
                             <h:panelGrid columns="3">
 
@@ -144,6 +144,22 @@
 
                         </p:panel>
 
+                    </p:tab>
+
+                    <p:tab id="SETTINGS_SYSTEM_EBT_TAB" title="Templates : when we send something">
+                        <p:panel header="Invoice template" toggleable="true">
+                            <h:panelGrid columns="3">
+
+                                <p:outputLabel for="EBT_INVOICE" value="Template for any invoice, HTML: " />
+                                <p:inputTextarea id="EBT_INVOICE"
+                                                 value="#{MBSSettings.settings_system_ebt_invoice}"
+                                                 required="true"
+                                                 requiredMessage="This template is required"
+                                                 rows="21" cols="71"/>
+                                <p:watermark for="EBT_INVOICE" value="HTML template for any invoice" />
+
+                            </h:panelGrid>
+                        </p:panel>
                     </p:tab>
 
                 </p:tabView>

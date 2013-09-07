@@ -42,14 +42,13 @@ public class MBSSettings implements Serializable {
 	private String settings_system_ur_welcome_subj;
 	private String settings_system_ur_welcome_text;
 
-
 	private String settings_system_ar_code_subj;
 	private String settings_system_ar_code_text;
-
 
 	private String settings_system_ar_code_done_subj;
 	private String settings_system_ar_code_done_text;
 
+	private String settings_system_ebt_invoice;
 
 	public void refreshSettingsListSystem() {
 		this.setS_system_email_from_email(
@@ -92,6 +91,12 @@ public class MBSSettings implements Serializable {
 		this.setSettings_system_ar_code_done_text(
 			bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_AR_CODE_DONE_TEXT")
 		);
+
+		//SETTINGS_SYSTEM_EBT_INVOICE
+		this.setSettings_system_ar_code_done_text(
+			bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_EBT_INVOICE")
+		);
+
 	}
 
 	public void saveSettingsListSystem () {
@@ -146,12 +151,26 @@ public class MBSSettings implements Serializable {
 			this.getSettings_system_ar_code_done_text()
 		);
 
+		//SETTINGS_SYSTEM_EBT_INVOICE
+		bSystemSettings.updateSystemSettingByKeyAndValue(
+			"SETTINGS_SYSTEM_EBT_INVOICE",
+			this.getSettings_system_ebt_invoice()
+		);
+
 		FacesContext.getCurrentInstance().addMessage(
 			null,
 			new FacesMessage(
 				FacesMessage.SEVERITY_INFO,
 				"Info",
 				"System settings successfully saved."));
+	}
+
+	public String getSettings_system_ebt_invoice() {
+		return settings_system_ebt_invoice;
+	}
+
+	public void setSettings_system_ebt_invoice(String settings_system_ebt_invoice) {
+		this.settings_system_ebt_invoice = settings_system_ebt_invoice;
 	}
 
 	public String getSettings_system_base_url() {

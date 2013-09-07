@@ -1,6 +1,10 @@
 package ua.its.slot7.caccounting.system;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.stringtemplate.v4.ST;
+import org.stringtemplate.v4.STGroup;
+import org.stringtemplate.v4.STGroupDir;
 import ua.its.slot7.caccounting.model.invoice.Invoice;
 
 /**
@@ -18,6 +22,9 @@ import ua.its.slot7.caccounting.model.invoice.Invoice;
 @Component("BEntityPresenterAvatar")
 public class BEntityPresenter implements BEntityPresenterAvatar {
 
+	@Autowired
+	private BSystemSettingsAvatar bSystemSettings;
+
 	@Override
 	public String presentToHTML(Invoice invoice) {
 
@@ -25,22 +32,15 @@ public class BEntityPresenter implements BEntityPresenterAvatar {
 			throw new NullPointerException("Arguments can't be null.");
 		}
 
-		//TODO Fix this to FreeMarker
+		String invoiceTemplate = bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_EBT_INVOICE");
 
-		StringBuilder sb = new StringBuilder();
+		//delimiter - $
+		STGroup tplGroup = new STGroupDir("$", "$");
+		ST mbST = new ST(tplGroup,invoiceTemplate);
 
-		sb
-			.append("<div style='width:100%'>")
-			.append("<span style='width:30%'>")
-			.append("Invoice Number")
-			.append("</span>")
-			.append("<span>")
-			.append(invoice.getNumber())
-			.append("</span>")
-			.append("</div>")
-		;
+		mbST.add("invoice_number",invoice.getNumber());
 
-		return sb.toString();
+		return mbST.render();
 	}
 
 

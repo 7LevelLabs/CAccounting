@@ -48,6 +48,10 @@ public class BSystemSettings implements BSystemSettingsAvatar {
 	public final String SETTINGS_SYSTEM_AR_CODE_DONE_SUBJ = "Access recover done : Cloud Accounting";
 	public final String SETTINGS_SYSTEM_AR_CODE_DONE_TEXT = " ";
 
+	//mail templates
+	//invoice
+	public final String SETTINGS_SYSTEM_EBT_INVOICE = " ";
+
 	private HashMap<String,String> systemSettings;
 
 	@PostConstruct
@@ -119,6 +123,12 @@ public class BSystemSettings implements BSystemSettingsAvatar {
 		this.setSystemSettingByKeyAndValue(
 			"SETTINGS_SYSTEM_AR_CODE_DONE_TEXT",
 			SETTINGS_SYSTEM_AR_CODE_DONE_TEXT);
+
+		//SETTINGS_SYSTEM_EBT_INVOICE
+		this.setSystemSettingByKeyAndValue(
+			"SETTINGS_SYSTEM_EBT_INVOICE",
+			SETTINGS_SYSTEM_EBT_INVOICE);
+
 	}
 
 	@Override
