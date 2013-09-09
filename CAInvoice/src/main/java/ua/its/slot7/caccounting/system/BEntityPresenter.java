@@ -40,7 +40,6 @@ public class BEntityPresenter implements BEntityPresenterAvatar {
 
 		mbST.add("invoice_number",invoice.getNumber());
 
-		//TODO Fix
 //		prepared by
 		mbST.add("invoice_prepared_by_name",invoice.getPerson().getUser().getNick());
 		mbST.add("invoice_prepared_by_email",invoice.getPerson().getUser().getEmail());
