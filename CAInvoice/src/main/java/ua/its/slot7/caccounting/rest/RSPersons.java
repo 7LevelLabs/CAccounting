@@ -9,11 +9,9 @@ import ua.its.slot7.caccounting.service.BLServiceAvatar;
 import ua.its.slot7.caccounting.service.PersonServiceAvatar;
 import ua.its.slot7.caccounting.service.UserServiceAvatar;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 /**
@@ -50,9 +48,7 @@ public class RSPersons {
 						@PathParam("id") Long id) {
 		Person person = blService.getPersonForUserKey(key,id);
 		if (person==null) {
-			LOGGER.info("Person : NULL");
-		} else {
-			LOGGER.info("Person : "+person.toString());
+			throw new WebApplicationException(Response.Status.NOT_FOUND);
 		}
 		return person;
 	}
