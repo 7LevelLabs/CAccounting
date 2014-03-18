@@ -1,7 +1,9 @@
 package ua.its.slot7.caccounting.model.userartoken;
 
+import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Index;
+import ua.its.slot7.caccounting.utils.Constants;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -24,20 +26,20 @@ import java.util.UUID;
 public class UserARToken implements Serializable {
 
 	@Id
-	@GeneratedValue(generator="increment")
-	@GenericGenerator(name="increment", strategy = "increment")
+	@GeneratedValue(generator = "increment")
+	@GenericGenerator(name = "increment", strategy = "increment")
 	public long getId() {
 		return id;
 	}
 
 	@Column(nullable = false)
-	@Index(name="email")
+	@Index(name = "email")
 	public String getEmail() {
 		return email;
 	}
 
 	@Column(nullable = false)
-	@Index(name="tokenCode")
+	@Index(name = "tokenCode")
 	public String getTokenCode() {
 		return tokenCode;
 	}
@@ -54,18 +56,21 @@ public class UserARToken implements Serializable {
 		return periodEnd;
 	}
 
-	public UserARToken () {}
+	public UserARToken() {
+	}
 
-	public UserARToken (String email) {
-		Date d = new Date();
-		UUID uuid = UUID.randomUUID();
-
+	public UserARToken(final String email) {
+		if (StringUtils.isBlank(email)) {
+			throw new IllegalArgumentException("Arguments must be not null or empty");
+		}
 		this.setEmail(email);
-		this.setPeriodBegin(d);
-		//10 minutes, yes
 
-		long pe = this.getPeriodBegin().getTime()+10L*60L*1000L;
+		Date d = new Date();
+		this.setPeriodBegin(d);
+		long pe = this.getPeriodBegin().getTime() + Constants.USERARTOKEN_DURATION;
 		this.setPeriodEnd(new Date(pe));
+
+		UUID uuid = UUID.randomUUID();
 		this.setTokenCode(uuid.toString());
 	}
 
