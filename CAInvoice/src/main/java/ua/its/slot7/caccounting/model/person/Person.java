@@ -1,5 +1,6 @@
 package ua.its.slot7.caccounting.model.person;
 
+import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Index;
 import ua.its.slot7.caccounting.model.invoice.Invoice;
@@ -26,66 +27,60 @@ import java.util.*;
 /**
  * Person</br>
  * Key-field - {@link #getEmail()}
- * */
+ */
 @Entity
-public class Person implements Serializable, Comparable<Person>  {
+public class Person implements Serializable, Comparable<Person> {
 
 	/**
-	 *
 	 * Person ID
-	 * */
+	 */
 	@Id
-	@GeneratedValue(generator="increment")
-	@GenericGenerator(name="increment", strategy = "increment")
+	@GeneratedValue(generator = "increment")
+	@GenericGenerator(name = "increment", strategy = "increment")
 	public long getId() {
 		return id;
 	}
 
 	/**
-	 *
 	 * Person Nick
-	 * */
+	 */
 	@Column(nullable = false)
-	@Index(name="nick")
+	@Index(name = "nick")
 	public String getNick() {
 		return nick;
 	}
 
 	/**
-	 *
 	 * Person Name
-	 * */
+	 */
 	@Column(nullable = false)
-	@Index(name="name")
+	@Index(name = "name")
 	public String getName() {
 		return name;
 	}
 
 	/**
-	 *
 	 * Person Phone
-	 * */
+	 */
 	@Column(nullable = false)
-	@Index(name="phone")
+	@Index(name = "phone")
 	public String getPhone() {
 		return phone;
 	}
 
 	/**
-	 *
 	 * Person EMail
-	 * */
+	 */
 	@Column(nullable = false)
-	@Index(name="email")
+	@Index(name = "email")
 	public String getEmail() {
 		return email;
 	}
 
 	/**
-	 *
 	 * Invoices</br>
-	 * The {@link java.util.Set} of {@link ua.its.slot7.caccounting.model.invoice.Invoice}
-	 * */
+	 * The {@link java.util.List} of {@link ua.its.slot7.caccounting.model.invoice.Invoice}
+	 */
 	@OneToMany(fetch = FetchType.LAZY,
 		mappedBy = "person",
 		cascade = {CascadeType.ALL})
@@ -94,28 +89,25 @@ public class Person implements Serializable, Comparable<Person>  {
 	}
 
 	/**
-	 *
 	 * {@link ua.its.slot7.caccounting.model.user.User}, wich register this Person
-	 * */
+	 */
 	@OneToOne
- 	public User getUser() {
+	public User getUser() {
 		return user;
 	}
 
 	/**
-	 *
 	 * Optimistic locking
-	 * */
+	 */
 	@Version
 	public Date getLastUpdate() {
 		return lastUpdate;
 	}
 
 	/**
-	 *
 	 * Constructor
-	 * */
-	public Person () {
+	 */
+	public Person() {
 		this.setName("");
 		this.setNick("");
 		this.setPhone("");
@@ -125,53 +117,59 @@ public class Person implements Serializable, Comparable<Person>  {
 	}
 
 	/**
-	 *
 	 * Constructor
-	 * */
-	public Person (String name, String nick, String email, String phone) {
+	 */
+	public Person(final String name,
+			final String nick,
+			final String email,
+			final String phone) {
+		this();
+		if ((StringUtils.isBlank(name)) ||
+			(StringUtils.isBlank(nick)) ||
+			(StringUtils.isBlank(email)) ||
+			(StringUtils.isBlank(phone))) {
+			throw new IllegalArgumentException("Arguments must be not null or empty");
+		}
 		this.setName(name);
 		this.setNick(nick);
 		this.setPhone(phone);
 		this.setEmail(email);
-		this.setInvoices(new ArrayList<Invoice>());
 	}
 
 	/**
-	 *
 	 * Constructor
-	 * */
-	public Person (String name, String nick, String email, String phone, User user) {
-		this.setName(name);
-		this.setNick(nick);
-		this.setPhone(phone);
-		this.setEmail(email);
-		this.setInvoices(new ArrayList<Invoice>());
+	 */
+	public Person(String name, String nick, String email, String phone, User user) {
+		this(name, nick, email, phone);
+		if (user == null) {
+			throw new IllegalArgumentException("Arguments must be not null");
+		}
 		this.setUser(user);
 	}
 
 	/**
-	 *
 	 * Return the next free invoice number
+	 *
 	 * @return The next free invoice number, based on {@link #theLastInvoice()}
-	 * */
-	public String generateNextInvoiceNumber () {
+	 */
+	public String generateNextInvoiceNumber() {
 		String res = null;
 		String in = null;
 		Invoice invoiceLatest = null;
 
-		if (this.getInvoices().size()>0) {
+		if (this.getInvoices().size() > 0) {
 
-			invoiceLatest=this.theLastInvoice();
+			invoiceLatest = this.theLastInvoice();
 
 			String str = invoiceLatest.getNumber();
-			StringTokenizer st = new StringTokenizer(str,"-");
+			StringTokenizer st = new StringTokenizer(str, "-");
 
 			//the first part of invoiceLatest.getNumber()
-			String temp = (String)st.nextElement();
+			String temp = (String) st.nextElement();
 			//the second part of invoiceLatest.getNumber()
-			String temp1 = (String)st.nextElement();
+			String temp1 = (String) st.nextElement();
 
-			Long l = new Long (temp1);
+			Long l = new Long(temp1);
 
 			l++;
 
@@ -181,41 +179,41 @@ public class Person implements Serializable, Comparable<Person>  {
 			in = in.concat(temp2);
 
 		} else {
-			in=new String(new Long(this.getId()).toString()+"-"+"001");
+			in = new String(new Long(this.getId()).toString() + "-" + "001");
 		}
 
-		res=in;
+		res = in;
 
 		return res;
 	}
 
 	/**
-	 *
 	 * Return the latest invoice from {@link #invoices}
+	 *
 	 * @return The latest invoice from {@link #invoices} or null, if {@link #invoices} is empty
-	 * */
-	public Invoice theLastInvoice () {
+	 */
+	public Invoice theLastInvoice() {
 		String res = null;
 		String in = null;
 
 		Iterator<Invoice> invoiceIterator = this.getInvoices().iterator();
-		Invoice invoice=null;
-		Invoice invoiceLatest=null;
+		Invoice invoice = null;
+		Invoice invoiceLatest = null;
 
 		Date d = null;
 		Date dmax = null;
 
-		if (this.getInvoices().size()>0) {
-			invoiceLatest=invoiceIterator.next();
+		if (this.getInvoices().size() > 0) {
+			invoiceLatest = invoiceIterator.next();
 			dmax = invoiceLatest.getDateCreation();
 
 			while (invoiceIterator.hasNext()) {
-				invoice=invoiceIterator.next();
+				invoice = invoiceIterator.next();
 
-				d=invoice.getDateCreation();
+				d = invoice.getDateCreation();
 				if (d.after(dmax)) {
-					dmax=d;
-					invoiceLatest=invoice;
+					dmax = d;
+					invoiceLatest = invoice;
 				}
 			}
 		}
@@ -223,9 +221,8 @@ public class Person implements Serializable, Comparable<Person>  {
 	}
 
 	/**
-	 *
 	 * Fields sequence: {@link #hashCode()} , {@link #getId()} , {@link #getNick()} , {@link #getName()} , {@link #getPhone()} , {@link #getEmail()} , {@link #getLastUpdate()}
-	 * */
+	 */
 	@Override
 	public String toString() {
 		String res = null;
@@ -245,15 +242,15 @@ public class Person implements Serializable, Comparable<Person>  {
 			.append(" | ")
 			.append(this.getLastUpdate())
 			.append(" }");
-		res=sb.toString();
+		res = sb.toString();
 		return res;
 	}
 
 	@Override
-	public boolean equals (Object aPerson) {
-		if ( this == aPerson ) return true;
+	public boolean equals(Object aPerson) {
+		if (this == aPerson) return true;
 
-		if ( !(aPerson instanceof Person) ) return false;
+		if (!(aPerson instanceof Person)) return false;
 
 		Person that = (Person) aPerson;
 
@@ -268,7 +265,7 @@ public class Person implements Serializable, Comparable<Person>  {
 	@Override
 	public int compareTo(Person o) {
 		int res = 0;
-		res=o.getName().compareTo(this.getName());
+		res = o.getName().compareTo(this.getName());
 		return res;
 	}
 
@@ -295,7 +292,6 @@ public class Person implements Serializable, Comparable<Person>  {
 	public void setInvoices(List<Invoice> invoices) {
 		this.invoices = invoices;
 	}
-
 
 
 	public void setUser(User user) {
