@@ -13,6 +13,7 @@ package ua.its.slot7.caccounting.model.invoiceline;
  * <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
  */
 
+import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 import ua.its.slot7.caccounting.model.invoice.Invoice;
@@ -23,34 +24,31 @@ import java.io.Serializable;
 /**
  * Invoice line
  * Key field - {@link #getLineText()}
- * */
+ */
 @Entity
 public class InvoiceLine implements Serializable, Comparable<InvoiceLine> {
 	/**
-	 *
 	 * InvoiceLine ID
-	 * */
+	 */
 	@Id
-	@GeneratedValue(generator="increment")
-	@GenericGenerator(name="increment", strategy = "increment")
+	@GeneratedValue(generator = "increment")
+	@GenericGenerator(name = "increment", strategy = "increment")
 	public long getId() {
 		return id;
 	}
 
 	/**
-	 *
 	 * InvoiceLine tech-ID</br>
 	 * For local identifications only
-	 * */
+	 */
 	@Transient
 	public long getTid() {
 		return tid;
 	}
 
 	/**
-	 *
 	 * Invoice
-	 * */
+	 */
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(nullable = false)
 	public Invoice getInvoice() {
@@ -58,50 +56,56 @@ public class InvoiceLine implements Serializable, Comparable<InvoiceLine> {
 	}
 
 	/**
-	 *
 	 * InvoiceLine text
-	 * */
+	 */
 	@Column(nullable = false)
-	@Type(type="text")
+	@Type(type = "text")
 	public String getLineText() {
 		return lineText;
 	}
 
 	/**
-	 *
 	 * InvoiceLine Quantity
-	 * */
+	 */
 	@Column(nullable = false)
 	public int getLineQt() {
 		return lineQt;
 	}
 
 	/**
-	 *
 	 * InvoiceLine Price
-	 * */
+	 */
 	@Column(nullable = false)
 	public float getLinePrice() {
 		return linePrice;
 	}
 
 	/**
-	 *
 	 * InvoiceLine Sum
-	 * */
+	 */
 	@Column(nullable = false)
 	public float getLineSum() {
 		return lineSum;
 	}
 
 	/**
-	 *
 	 * Constructor
-	 * */
-	public InvoiceLine () {}
+	 */
+	public InvoiceLine() {
+	}
 
-	public InvoiceLine(Invoice invoice, String lineText, int lineQt, float linePrice, float lineSum) {
-		this.invoice=invoice;
+	public InvoiceLine(final Invoice invoice,
+			     final String lineText,
+			     int lineQt,
+			     float linePrice,
+			     float lineSum) {
+		if (invoice == null) {
+			throw new IllegalArgumentException("Arguments must be not null");
+		}
+		if (StringUtils.isEmpty(lineText)) {
+			throw new IllegalArgumentException("Arguments must be not null or empty");
+		}
+		this.invoice = invoice;
 		this.lineText = lineText;
 		this.lineQt = lineQt;
 		this.linePrice = linePrice;
@@ -109,19 +113,17 @@ public class InvoiceLine implements Serializable, Comparable<InvoiceLine> {
 	}
 
 	/**
-	 *
 	 * Calc the {@link #lineSum} of this InvoiceLine</br>
-	 * */
-	public float calcLineSum () {
+	 */
+	public float calcLineSum() {
 		float res = 0;
-		res=this.getLinePrice()*this.getLineQt();
+		res = this.getLinePrice() * this.getLineQt();
 		return res;
 	}
 
 	/**
-	 *
 	 * Fields sequence: {@link #hashCode()} , {@link #getId()} , {@link #getLineText()} , {@link #getLinePrice()} , {@link #getLineQt()} , {@link #getLineSum()} , {@link ua.its.slot7.caccounting.model.invoice.Invoice#hashCode()} , {@link Invoice#getId()}
-	 * */
+	 */
 	@Override
 	public String toString() {
 		String res = null;
@@ -143,19 +145,18 @@ public class InvoiceLine implements Serializable, Comparable<InvoiceLine> {
 			.append(" | ")
 			.append(this.getInvoice().getId())
 			.append(" }");
-		res=sb.toString();
+		res = sb.toString();
 		return res;
 	}
 
 	/**
-	 *
 	 * Based on {@link #getLineText()#hashCode()}
-	 * */
+	 */
 	@Override
-	public boolean equals (Object anInvoiceLine) {
-		if ( this == anInvoiceLine ) return true;
+	public boolean equals(Object anInvoiceLine) {
+		if (this == anInvoiceLine) return true;
 
-		if ( !(anInvoiceLine instanceof InvoiceLine) ) return false;
+		if (!(anInvoiceLine instanceof InvoiceLine)) return false;
 
 		InvoiceLine that = (InvoiceLine) anInvoiceLine;
 
@@ -163,9 +164,8 @@ public class InvoiceLine implements Serializable, Comparable<InvoiceLine> {
 	}
 
 	/**
-	 *
 	 * Based on {@link #getLineText()#hashCode()}
-	 * */
+	 */
 	@Override
 	public int hashCode() {
 		return this.getLineText().hashCode();
@@ -174,7 +174,7 @@ public class InvoiceLine implements Serializable, Comparable<InvoiceLine> {
 	@Override
 	public int compareTo(InvoiceLine o) {
 		int res = 0;
-		res=o.getLineText().compareTo(this.getLineText());
+		res = o.getLineText().compareTo(this.getLineText());
 		return res;
 	}
 

@@ -20,8 +20,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * InvoiceLine Manager
- * */
-
+ */
 @Repository("InvoiceLineDBManagerAvatar")
 public class InvoiceLineDBManager implements InvoiceLineDBManagerAvatar {
 
