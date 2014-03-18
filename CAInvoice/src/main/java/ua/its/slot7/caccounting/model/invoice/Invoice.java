@@ -123,25 +123,19 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 		this.setPaymentState(new InvoicePaymentState(this));
 	}
 
-	public Invoice(Person person) {
-		Date d = new Date();
-		this.setDateCreation(d);
-		this.setDateUpdate(d);
+	public Invoice(final Person person) {
+		this();
+		if (person == null) {
+			throw new IllegalArgumentException("Arguments must be not null");
+		}
 		this.setPerson(person);
-		this.setNumber("");
-		this.setSum(0);
-		this.setInvoicesLines(new ArrayList<InvoiceLine>());
-		this.setPaymentState(new InvoicePaymentState(this));
 	}
 
-	public Invoice(Person person, float sum) {
-		Date d = new Date();
-		this.setDateCreation(d);
-		this.setDateUpdate(d);
-		this.setPerson(person);
-		this.setNumber("");
-		this.setSum(sum);
-		this.setInvoicesLines(new ArrayList<InvoiceLine>());
+	public Invoice(final Person person, final float sum) {
+		this(person);
+		if (person == null) {
+			throw new IllegalArgumentException("Arguments must be not null");
+		}
 		this.setPaymentState(new InvoicePaymentState(this));
 	}
 
