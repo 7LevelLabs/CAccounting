@@ -21,8 +21,22 @@
 
     <dependencies>
 
+        <!--ua.its.slot7.checks-->
+
         <dependency>
-            <groupId>org.apache.commons</groupId>
+            <groupId>ua.its.slot7.checks</groupId>
+            <artifactId>notnull</artifactId>
+            <version>0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ua.its.slot7.checks</groupId>
+            <artifactId>stringsnotempty</artifactId>
+            <version>0.1</version>
+        </dependency>
+
+        <dependency>
+        <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.0</version>
         </dependency>
