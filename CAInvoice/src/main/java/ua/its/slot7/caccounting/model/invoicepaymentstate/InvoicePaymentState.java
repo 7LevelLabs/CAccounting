@@ -22,34 +22,31 @@ import java.util.Date;
 
 /**
  * Invoice payment state: is invoice full paid?
- * */
+ */
 @Entity
 public class InvoicePaymentState implements Serializable {
 
 	/**
-	 *
 	 * Invoice payment state tech-ID
-	 * */
+	 */
 	@Id
-	@GeneratedValue(generator="increment")
-	@GenericGenerator(name="increment", strategy = "increment")
+	@GeneratedValue(generator = "increment")
+	@GenericGenerator(name = "increment", strategy = "increment")
 	public long getId() {
 		return id;
 	}
 
 	/**
-	 *
 	 * Invoice payment state
-	 * */
+	 */
 	@Column(nullable = false)
 	public boolean isPaid() {
 		return isPaid;
 	}
 
 	/**
-	 *
 	 * Invoice payment state changing date
-	 * */
+	 */
 	@Column(nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	public Date getLastDate() {
@@ -57,27 +54,27 @@ public class InvoicePaymentState implements Serializable {
 	}
 
 	/**
-	 *
 	 * Invoice
-	 * */
+	 */
 	@OneToOne
 	public Invoice getInvoice() {
 		return invoice;
 	}
 
 	/**
-	 *
 	 * Constructor
-	 * */
-	public InvoicePaymentState () {
+	 */
+	public InvoicePaymentState() {
 		this.setPaid(false);
 		this.setLastDate(new Date());
 	}
 
-	public InvoicePaymentState (Invoice invoice) {
+	public InvoicePaymentState(final Invoice invoice) {
+		this();
+		if (invoice == null) {
+			throw new IllegalArgumentException("Arguments must be not null");
+		}
 		this.setInvoice(invoice);
-		this.setPaid(false);
-		this.setLastDate(new Date());
 	}
 
 	public void setId(long id) {
