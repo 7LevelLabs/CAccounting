@@ -13,6 +13,7 @@ package ua.its.slot7.caccounting.model.setting;
  * <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
  */
 
+import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Index;
 import org.hibernate.annotations.Type;
@@ -56,6 +57,9 @@ public class Setting implements Serializable {
 		return settingvalue;
 	}
 
+	public Setting() {
+	}
+
 	/**
 	 *
 	 * Constructor
@@ -63,19 +67,17 @@ public class Setting implements Serializable {
 	 * @param key Key for value. Can't be null, can't be empty.
 	 * @param value Value of the setting. Can't be null, can't be empty.
 	 * */
-	public Setting (String scope, String key, String value) {
-		if ((scope==null) || (key==null) || (value==null)) {
-			throw new NullPointerException("Arguments can't be null.");
+	public Setting(final String scope, final String key, final String value) {
+		if ((StringUtils.isBlank(scope)) ||
+			(StringUtils.isBlank(key)) ||
+			(StringUtils.isBlank(value))) {
+			throw new IllegalArgumentException("Arguments must be not null or empty");
 		}
-		if ((scope.length()==0) || (key.length()==0) || (value.length()==0)) {
-			throw new IllegalArgumentException("Arguments can't be empty.");
-		}
+
 		this.setSettingscope(scope);
 		this.setSettingkey(key);
 		this.setSettingvalue(value);
 	}
-
-	public Setting () {}
 
 	@Override
 	public int hashCode() {
