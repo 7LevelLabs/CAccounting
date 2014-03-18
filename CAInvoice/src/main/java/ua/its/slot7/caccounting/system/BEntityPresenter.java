@@ -28,7 +28,7 @@ public class BEntityPresenter implements BEntityPresenterAvatar {
 	@Override
 	public String presentToHTML(Invoice invoice) {
 
-		if (invoice==null) {
+		if (invoice == null) {
 			throw new NullPointerException("Arguments can't be null.");
 		}
 
@@ -36,24 +36,25 @@ public class BEntityPresenter implements BEntityPresenterAvatar {
 
 		//delimiter - $
 		STGroup tplGroup = new STGroupDir("/", '$', '$');
-		ST mbST = new ST(tplGroup,invoiceTemplate);
+		ST mbST = new ST(tplGroup, invoiceTemplate);
 
-		mbST.add("invoice_number",invoice.getNumber());
+		mbST.add("invoice_number", invoice.getNumber());
 
 //		prepared by
-		mbST.add("invoice_prepared_by_name",invoice.getPerson().getUser().getNick());
-		mbST.add("invoice_prepared_by_email",invoice.getPerson().getUser().getEmail());
+		mbST.add("invoice_prepared_by_name", invoice.getPerson().getUser().getNick());
+		mbST.add("invoice_prepared_by_email", invoice.getPerson().getUser().getEmail());
 
 //		prepared for
-		mbST.add("invoice_prepared_for_name",invoice.getPerson().getName());
-		mbST.add("invoice_prepared_for_email",invoice.getPerson().getEmail());
-		mbST.add("invoice_prepared_for_phone",invoice.getPerson().getPhone());
+		mbST.add("invoice_prepared_for_name", invoice.getPerson().getName());
+		mbST.add("invoice_prepared_for_email", invoice.getPerson().getEmail());
+		mbST.add("invoice_prepared_for_phone", invoice.getPerson().getPhone());
 
 //		total
-		mbST.add("invoice_total",new Float(invoice.getSum()).toString());
+		mbST.add("invoice_total", new Float(invoice.getSum()).toString());
 
 //		date of issue
-		mbST.add("invoice_date_of_issue",invoice.getDateCreation().toString());
+		mbST.add("invoice_date_of_issue", invoice.getDateCreation().toString());
+
 
 		return mbST.render();
 	}

@@ -24,39 +24,32 @@ import java.util.List;
  * This work is licensed under a
  * <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
  */
-
-/**
- * Invoice</br>
- * Key field - {@link #getNumber()}
- * */
 @Entity
 public class Invoice implements Serializable, Comparable<Invoice> {
 	/**
-	 *
 	 * Invoice tech-ID
-	 * */
+	 */
 	@Id
-	@GeneratedValue(generator="increment")
-	@GenericGenerator(name="increment", strategy = "increment")
+	@GeneratedValue(generator = "increment")
+	@GenericGenerator(name = "increment", strategy = "increment")
 	public long getId() {
 		return id;
 	}
 
 	/**
-	 *
 	 * Invoice number
+	 *
 	 * @return Invoice number, string-style
-	 * */
+	 */
 	@Column(nullable = false)
-	@Index(name="number")
+	@Index(name = "number")
 	public String getNumber() {
 		return number;
 	}
 
 	/**
-	 *
 	 * Invoice creation date
-	 * */
+	 */
 	@Column(nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	public Date getDateCreation() {
@@ -64,9 +57,8 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 	}
 
 	/**
-	 *
 	 * Invoice update date
-	 * */
+	 */
 	@Column(nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	public Date getDateUpdate() {
@@ -74,18 +66,16 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 	}
 
 	/**
-	 *
 	 * Invoice sum
-	 * */
+	 */
 	@Column(nullable = false)
 	public float getSum() {
 		return sum;
 	}
 
 	/**
-	 *
 	 * Person
-	 * */
+	 */
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(nullable = false)
 	public Person getPerson() {
@@ -93,10 +83,9 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 	}
 
 	/**
-	 *
 	 * InvoiceLines</br>
 	 * The {@link java.util.List} of {@link ua.its.slot7.caccounting.model.invoiceline.InvoiceLine}
-	 * */
+	 */
 	@OneToMany(fetch = FetchType.LAZY,
 		mappedBy = "invoice",
 		cascade = {CascadeType.ALL})
@@ -105,9 +94,8 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 	}
 
 	/**
-	 *
 	 * Invoice payment state
-	 * */
+	 */
 	@OneToOne(cascade = CascadeType.ALL,
 		mappedBy = "invoice")
 	public InvoicePaymentState getPaymentState() {
@@ -115,18 +103,16 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 	}
 
 	/**
-	 *
 	 * Optimistic locking
-	 * */
+	 */
 	@Version
 	public Date getLastUpdate() {
 		return lastUpdate;
 	}
 
 	/**
-	 *
 	 * Constructor
-	 * */
+	 */
 	public Invoice() {
 		Date d = new Date();
 		this.setDateCreation(d);
@@ -137,7 +123,7 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 		this.setPaymentState(new InvoicePaymentState(this));
 	}
 
-	public Invoice (Person person) {
+	public Invoice(Person person) {
 		Date d = new Date();
 		this.setDateCreation(d);
 		this.setDateUpdate(d);
@@ -148,7 +134,7 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 		this.setPaymentState(new InvoicePaymentState(this));
 	}
 
-	public Invoice (Person person, float sum) {
+	public Invoice(Person person, float sum) {
 		Date d = new Date();
 		this.setDateCreation(d);
 		this.setDateUpdate(d);
@@ -160,10 +146,10 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 	}
 
 	/**
-	 *
 	 * Calc sum {@link #sum} of this Invoice
+	 *
 	 * @return Total of the Invoice
-	 * */
+	 */
 	public float calcInvoiceSum() {
 		float res = 0;
 		for (InvoiceLine il : this.getInvoicesLines()) {
@@ -173,9 +159,8 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 	}
 
 	/**
-	 *
 	 * Fields sequence: {@link #hashCode()} , {@link #getId()} , {@link #getNumber()} , {@link #getDateCreation()} , {@link #getDateUpdate()} , {@link #getSum()} , {@link ua.its.slot7.caccounting.model.person.Person#hashCode()} , {@link ua.its.slot7.caccounting.model.person.Person#getId()} , {@link ua.its.slot7.caccounting.model.invoicepaymentstate.InvoicePaymentState#isPaid()} , {@link #getLastUpdate()}
-	 * */
+	 */
 	@Override
 	public String toString() {
 		String res = null;
@@ -199,20 +184,19 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 			.append(" | ")
 			.append(this.getPaymentState().isPaid())
 			.append(" }");
-		res=sb.toString();
+		res = sb.toString();
 		return res;
 	}
 
 	/**
-	 *
 	 * Based on {@link #getNumber()#hashCode()}
-	 * */
+	 */
 	@Override
-	public boolean equals (Object anInvoice) {
+	public boolean equals(Object anInvoice) {
 		//check for self-comparison
-		if ( this == anInvoice ) return true;
+		if (this == anInvoice) return true;
 
-		if ( !(anInvoice instanceof Invoice) ) return false;
+		if (!(anInvoice instanceof Invoice)) return false;
 
 		//cast
 		Invoice that = (Invoice) anInvoice;
@@ -222,9 +206,8 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 	}
 
 	/**
-	 *
 	 * Based on {@link #getNumber()#hashCode()}
-	 * */
+	 */
 	@Override
 	public int hashCode() {
 		return this.getNumber().hashCode();

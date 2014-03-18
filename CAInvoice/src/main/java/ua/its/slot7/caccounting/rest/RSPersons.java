@@ -30,7 +30,7 @@ import java.util.List;
 @Path("/persons")
 public class RSPersons {
 
-	private final Logger LOGGER = Logger.getLogger(this.getClass());
+	private final Logger LOGGER = Logger.getLogger(RSPersons.class);
 
 	@Autowired
 	private PersonServiceAvatar personService;
@@ -42,7 +42,7 @@ public class RSPersons {
 	private BLServiceAvatar blService;
 
 	@GET
-	@Path("/get/{key}/{id}")
+	@Path("/{key}/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Person getPersonByIdForUser(@PathParam("key") String key,
 						@PathParam("id") Long id) {
@@ -54,7 +54,7 @@ public class RSPersons {
 	}
 
 	@GET
-	@Path("/get/{key}")
+	@Path("/{key}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Long> getPersonForUserByKey(@PathParam("key") String key) {
 		User user = userService.getUserByAPICode(key);
@@ -65,7 +65,7 @@ public class RSPersons {
 	}
 
 	@GET
-	@Path("/get/isok/{key}/{id}")
+	@Path("/isok/{key}/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public boolean getPersonIsOk(@PathParam("key") String key,
 					 @PathParam("id") Long id) {

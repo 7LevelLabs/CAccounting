@@ -1,6 +1,9 @@
 package ua.its.slot7.camailtask.model;
 
-import org.junit.*;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * CAccounting
@@ -18,23 +21,23 @@ public class MailTaskTest extends Assert {
 
 	private MailTask mailTask;
 
-	@BeforeClass
+	@Before
 	public void setUp() throws Exception {
 		this.mailTask = new MailTask("alex@test.com",
-			"",
-			"alex@test-test.com",
 			"Alex from the Test-test",
+			"alex@test-test.com",
+			"Alex to the Test-test",
 			"Test message : subject",
 			"Test message : body",
 			false);
 	}
 
-	@AfterClass
+	@After
 	public void tearDown() throws Exception {
-		this.mailTask=null;
+		this.mailTask = null;
 	}
 
-	@Test(expected = NullPointerException.class)
+	@Test(expected = IllegalArgumentException.class)
 	public void testConstructor() throws Exception {
 
 		MailTask mt;
@@ -47,8 +50,6 @@ public class MailTaskTest extends Assert {
 		String bb = "Test message : body";
 		boolean bh = false;
 
-		//for field From
-		//must fire NPE!
 		mt = new MailTask(null,
 			bfn,
 			bt,
@@ -59,8 +60,6 @@ public class MailTaskTest extends Assert {
 
 		mt = null;
 
-		//for field To
-		//must fire NPE!
 		mt = new MailTask(bf,
 			bfn,
 			null,
@@ -69,8 +68,6 @@ public class MailTaskTest extends Assert {
 			bb,
 			bh);
 
-		//for field Subject
-		//must fire NPE!
 		mt = new MailTask(bf,
 			bfn,
 			bt,
@@ -81,8 +78,6 @@ public class MailTaskTest extends Assert {
 
 		mt = null;
 
-		//for field Body
-		//must fire NPE!
 		mt = new MailTask(bf,
 			bfn,
 			bt,
@@ -93,18 +88,6 @@ public class MailTaskTest extends Assert {
 
 		mt = null;
 
-	}
-
-	@Test(expected = NullPointerException.class)
-	public void testEmailVerifyNull() throws Exception {
-		String assertRes = null;
-		assertTrue(this.mailTask.emailVerify(assertRes));
-	}
-
-	@Test(expected = IllegalArgumentException.class)
-	public void testEmailVerifyEmpty() throws Exception {
-		String assertRes = "";
-		assertTrue(this.mailTask.emailVerify(assertRes));
 	}
 
 	@Test
@@ -123,7 +106,7 @@ public class MailTaskTest extends Assert {
 	@Test
 	public void testGetTo() throws Exception {
 		String assertRes = "alex@test-test.com";
-		assertTrue(assertRes.equals(this.mailTask.getTo()));
+		assertEquals(assertRes, this.mailTask.getTo());
 	}
 
 	@Test
@@ -134,91 +117,19 @@ public class MailTaskTest extends Assert {
 
 	@Test
 	public void testGetIsHTMLMessage() throws Exception {
-		boolean assertRes = false;
-		assertTrue(assertRes==this.mailTask.getIsHTMLMessage());
+		assertEquals(false, this.mailTask.getIsHTMLMessage());
 	}
 
 	@Test
 	public void testGetMessageBody() throws Exception {
 		String assertRes = "Test message : body";
-		assertTrue(assertRes.equals(this.mailTask.getMessageBody()));
-	}
-
-	@Test
-	public void testHashCode() throws Exception {
-		int hash = -1155852906;
-		assertTrue(hash==this.mailTask.hashCode());
-	}
-
-	@Test
-	public void testEquals() throws Exception {
-		MailTask m1;
-
-		String bf = "alex@test.com";
-		String bfn = "";
-		String bt = "alex@test-test.com";
-		String btn = "Alex from the Test-test";
-		String bs = "Test message : subject";
-		String bb = "Test message : body";
-		boolean bh = false;
-
-		m1 = new MailTask(bf,
-			bfn,
-			bt,
-			btn,
-			bs,
-			bb,
-			bh);
-		assertTrue(m1.equals(this.mailTask));
-		m1 = null;
-
-		m1 = new MailTask("equals@equals.com",
-			bfn,
-			bt,
-			btn,
-			bs,
-			bb,
-			bh);
-
-		assertTrue(!m1.equals(this.mailTask));
-		m1 = null;
-
-		m1 = new MailTask(bf,
-			bfn,
-			"equals@equals.com",
-			btn,
-			bs,
-			bb,
-			bh);
-
-		assertTrue(!m1.equals(this.mailTask));
-		m1 = null;
-
-		m1 = new MailTask(bf,
-			bfn,
-			bt,
-			btn,
-			"equals",
-			bb,
-			bh);
-		assertTrue(!m1.equals(this.mailTask));
-		m1 = null;
-
-		m1 = new MailTask(bf,
-			bfn,
-			bt,
-			btn,
-			bs,
-			"equals",
-			bh);
-		assertTrue(!m1.equals(this.mailTask));
-		m1 = null;
+		assertEquals(assertRes, this.mailTask.getMessageBody());
 	}
 
 	@Test
 	public void testToString() throws Exception {
-		String assertRes = "MailTask { from='alex@test.com', fromName='', to='alex@test-test.com', toName='Alex from the Test-test', subject='Test message : subject', isHTMLMessage=false, messageBody='Test message : body'}";
-		assertTrue(assertRes.equals(this.mailTask.toString()));
+		String assertRes = "MailTask{from='alex@test.com', fromName='Alex from the Test-test', to='alex@test-test.com', toName='Alex to the Test-test', subject='Test message : subject', isHTMLMessage=false, messageBody='Test message : body'}";
+		assertEquals(assertRes, this.mailTask.toString());
 	}
 
 }

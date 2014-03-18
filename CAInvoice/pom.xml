@@ -4,11 +4,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ua.its.slot7.caccounting</groupId>
     <artifactId>CAInvoice</artifactId>
     <version>0.1</version>
     <packaging>war</packaging>
     <name>CAInvoice</name>
+
+    <parent>
+        <groupId>ua.its.slot7.caccounting</groupId>
+        <artifactId>CAccounting</artifactId>
+        <version>0.1</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
 
     <dependencies>
 
@@ -191,26 +197,10 @@
             <version>1.9.1</version>
         </dependency>
 
-        <!-- log4j -->
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-            <scope>provided</scope>
-        </dependency>
-
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.5.6</version>
-        </dependency>
-
-        <!-- JUnit -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
         </dependency>
 
         <!--StringTemplate-->

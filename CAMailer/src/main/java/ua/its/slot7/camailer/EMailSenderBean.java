@@ -1,5 +1,6 @@
 package ua.its.slot7.camailer;
 
+import org.apache.log4j.Logger;
 import ua.its.slot7.camailtask.model.MailTask;
 
 import javax.annotation.PostConstruct;
@@ -34,7 +35,7 @@ public class EMailSenderBean implements EMailSenderBeanAvatarLocal{
 	 * Logger
 	 *
 	 */
-//	private final Logger LOGGER = Logger.getLogger(this.getClass());
+	private final Logger LOGGER = Logger.getLogger(this.getClass());
 
 	/**
 	 *
@@ -61,13 +62,11 @@ public class EMailSenderBean implements EMailSenderBeanAvatarLocal{
 	 * */
 	@PostConstruct
 	void init () {
-//		LOGGER.info("EMailSenderBean.init");
-	}
 
+	}
 
 	@Override
 	public void sendEmail(MailTask mailTask) throws MessagingException, UnsupportedEncodingException {
-//		LOGGER.info("MailTask received : "+mailTask.toString());
 
 		Message msg = new MimeMessage(session);
 		msg.setSentDate(new Date());

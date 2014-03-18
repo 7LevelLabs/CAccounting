@@ -4,13 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ua.its.slot7.caccounting</groupId>
     <artifactId>CAMailer</artifactId>
     <version>0.1</version>
     <packaging>ejb</packaging>
 
+    <parent>
+        <groupId>ua.its.slot7.caccounting</groupId>
+        <artifactId>CAccounting</artifactId>
+        <version>0.1</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.ejb.plugin>2.3</version.ejb.plugin>
     </properties>
 
@@ -21,7 +26,6 @@
             <groupId>ua.its.slot7.caccounting</groupId>
             <artifactId>CAMailTask</artifactId>
             <version>0.1</version>
-            <scope>provided</scope>
         </dependency>
 
         <!--JavaEE API 7-->
@@ -32,26 +36,36 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- log4j -->
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- JUnit -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
 
     <build>
         <plugins>
+
+            <plugin>
+                <groupId>org.glassfish.maven.plugin</groupId>
+                <artifactId>maven-glassfish-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <user>admin</user>
+                    <adminPassword>admin</adminPassword>
+                    <glassfishDirectory>/home/alex/glassfish4/glassfish</glassfishDirectory>
+                    <components>
+                        <component>
+                            <name>${project.artifactId}</name>
+                            <artifact>
+                                ${project.build.directory}/${project.build.finalName}.ejb
+                            </artifact>
+                        </component>
+                    </components>
+                    <domain>
+                        <name>domain1</name>
+                        <adminPort>4848</adminPort>
+                        <httpPort>8080</httpPort>
+                        <httpsPort>8443</httpsPort>
+                    </domain>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-ejb-plugin</artifactId>

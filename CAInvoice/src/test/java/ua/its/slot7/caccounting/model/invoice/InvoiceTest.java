@@ -5,6 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 import ua.its.slot7.caccounting.model.invoiceline.InvoiceLine;
 
+import java.util.List;
+
 /**
  * CAccounting
  * 07.08.13 : 18:25
@@ -24,11 +26,24 @@ public class InvoiceTest extends Assert {
 
 	@Before
 	public void setUp() throws Exception {
-		invoice = new Invoice ();
+		invoice = new Invoice();
 		invoiceLine1 = new InvoiceLine();
 		invoiceLine2 = new InvoiceLine();
 		invoice.getInvoicesLines().add(invoiceLine1);
 		invoice.getInvoicesLines().add(invoiceLine2);
+	}
+
+	@Test
+	public void testLinesNumber() throws Exception {
+
+		List<InvoiceLine> invoiceLines = this.invoice.getInvoicesLines();
+
+		org.assertj.core.api.Assertions
+			.assertThat(invoiceLines)
+			.isNotEmpty();
+		org.assertj.core.api.Assertions
+			.assertThat(invoiceLines)
+			.hasSize(2);
 	}
 
 	@Test
@@ -39,7 +54,7 @@ public class InvoiceTest extends Assert {
 		invoiceLine2.setLinePrice(37.23f);
 		invoiceLine2.setLineQt(5);
 		res = invoice.calcInvoiceSum();
-		assertEquals(210.35f,res,0.0001f);
+		assertEquals(210.35f, res, 0.0001f);
 	}
 
 	@Test
@@ -48,13 +63,13 @@ public class InvoiceTest extends Assert {
 		invoiceLine1.setLinePrice(12.1f);
 		invoiceLine1.setLineQt(2);
 		res = invoice.calcInvoiceSum();
-		assertEquals(24.2f,res,0.0001f);
+		assertEquals(24.2f, res, 0.0001f);
 	}
 
 	@Test
 	public void testCalcInvoiceSumEmptyAllLines() throws Exception {
 		float res;
 		res = invoice.calcInvoiceSum();
-		assertEquals(0f,res,0.0001f);
+		assertEquals(0f, res, 0.0001f);
 	}
 }

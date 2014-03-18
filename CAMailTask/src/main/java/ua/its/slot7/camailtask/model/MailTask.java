@@ -13,6 +13,7 @@ package ua.its.slot7.camailtask.model;
  * <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
  */
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.validator.routines.EmailValidator;
 
 import java.io.Serializable;
@@ -20,46 +21,39 @@ import java.util.Objects;
 
 /**
  * Mail task - contain task to email: from, to, subject, text, etc.
- * */
+ */
 public class MailTask implements Serializable {
 
 	/**
-	 *
 	 * Constructor
-	 * @param from Field of the future email - From (email part). Email address validation according to RFC 822 standards. Can't be null, can't be empty.
-	 * @param fromName Field of the future email - From (name part). Can be empty, not null.
-	 * @param to Field of the future email - To (email part). Email address validation according to RFC 822 standards. Can't be null, can't be empty.
-	 * @param toName Field of the future email - To (name part). Can be empty, not null.
-	 * @param subject Field of the future email - Subject. Can't be null, can't be empty.
+	 *
+	 * @param from        Field of the future email - From (email part). Email address validation according to RFC 822 standards. Can't be null, can't be empty.
+	 * @param fromName    Field of the future email - From (name part). Can be empty, not null.
+	 * @param to          Field of the future email - To (email part). Email address validation according to RFC 822 standards. Can't be null, can't be empty.
+	 * @param toName      Field of the future email - To (name part). Can be empty, not null.
+	 * @param subject     Field of the future email - Subject. Can't be null, can't be empty.
 	 * @param messageBody Field of the future email - Subject. Can't be null, can't be empty.
-	 * */
-	public MailTask (String from,
-			   String fromName,
-			   String to,
-			   String toName,
-			   String subject,
-			   String messageBody,
-			   boolean isHTML) {
+	 */
+	public MailTask(final String from,
+			  final String fromName,
+			  final String to,
+			  final String toName,
+			  final String subject,
+			  final String messageBody,
+			  final boolean isHTML) {
 
-		if ((from==null) ||
-			(fromName==null) ||
-			(to==null) ||
-			(toName==null) ||
-			(subject==null) ||
-			(messageBody==null)) {
-			throw new NullPointerException("Arguments can't be null.");
-		}
-
-		if ((from.length()==0) ||
-			(to.length()==0) ||
-			(subject.length()==0) ||
-			(messageBody.length()==0)) {
-			throw new IllegalArgumentException("Arguments can't be empty.");
+		if (StringUtils.isBlank(from) ||
+			(StringUtils.isBlank(fromName)) ||
+			(StringUtils.isBlank(to)) ||
+			(StringUtils.isBlank(toName)) ||
+			(StringUtils.isBlank(subject)) ||
+			(StringUtils.isBlank(messageBody))) {
+			throw new IllegalArgumentException("Arguments can't be null or empty.");
 		}
 
 		if ((!this.emailVerify(from)) ||
 			(!this.emailVerify(to))) {
-			throw new IllegalArgumentException("EMail in the arguments must be valid according to RFC 822 standards.");
+			throw new IllegalArgumentException("EMail address must be valid according to RFC 822 standards.");
 		}
 
 		this.setFrom(from);
@@ -72,45 +66,41 @@ public class MailTask implements Serializable {
 	}
 
 	/**
-	 *
 	 * Return From field in full form (RFC 822) , if possible.
-	 * */
+	 */
 	public String getFromFullForm() {
 		String res;
-		if (this.getFromName().length()>0) {
-			res = this.getFromName()+" "+this.getFrom();
-		}
-		else {
-			res=this.getFrom();
+		if (this.getFromName().length() > 0) {
+			res = this.getFromName() + " " + this.getFrom();
+		} else {
+			res = this.getFrom();
 		}
 		return res;
 	}
 
 	/**
-	 *
 	 * Return To field in full form (RFC 822) , if possible.
-	 * */
+	 */
 	public String getToFullForm() {
 		String res;
-		if (this.getToName().length()>0) {
-			res = this.getToName()+" "+this.getTo();
-		}
-		else {
-			res=this.getTo();
+		if (this.getToName().length() > 0) {
+			res = this.getToName() + " " + this.getTo();
+		} else {
+			res = this.getTo();
 		}
 		return res;
 	}
 
 	/**
-	 *
 	 * Email address validation according to RFC 822 standards
+	 *
 	 * @param emailToVerify Email to verify. Can't be null, can't be empty.
-	 * */
-	public boolean emailVerify(String emailToVerify){
-		if (emailToVerify==null) {
+	 */
+	public boolean emailVerify(String emailToVerify) {
+		if (emailToVerify == null) {
 			throw new NullPointerException("Arguments can't be null.");
 		}
-		if (emailToVerify.length()==0) {
+		if (emailToVerify.length() == 0) {
 			throw new IllegalArgumentException("Arguments can't be empty.");
 		}
 
@@ -193,7 +183,7 @@ public class MailTask implements Serializable {
 
 	@Override
 	public String toString() {
-		final StringBuilder sb = new StringBuilder("MailTask { ");
+		final StringBuffer sb = new StringBuffer("MailTask{");
 		sb.append("from='").append(from).append('\'');
 		sb.append(", fromName='").append(fromName).append('\'');
 		sb.append(", to='").append(to).append('\'');
@@ -206,44 +196,37 @@ public class MailTask implements Serializable {
 	}
 
 	/**
-	 *
 	 * Future mail message - email-part of the From field
-	 * */
+	 */
 	private String from;
 
 	/**
-	 *
 	 * Future mail message - name-part of the From field
-	 * */
+	 */
 	private String fromName;
 
 	/**
-	 *
 	 * Future mail message - field To
-	 * */
+	 */
 	private String to;
 
 	/**
-	 *
 	 * Future mail message - name-part of the To field
-	 * */
+	 */
 	private String toName;
 
 	/**
-	 *
 	 * Future mail message - field Subject
-	 * */
+	 */
 	private String subject;
 
 	/**
-	 *
 	 * Future mail message - will it be HTML message?
-	 * */
+	 */
 	private boolean isHTMLMessage;
 
 	/**
-	 *
 	 * Future mail message - field Body
-	 * */
+	 */
 	private String messageBody;
 }
