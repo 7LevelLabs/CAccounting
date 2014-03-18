@@ -13,6 +13,7 @@ package ua.its.slot7.caccounting.model.user;
  * <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
  */
 
+import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Index;
 import ua.its.slot7.caccounting.model.userrole.UserRole;
@@ -25,97 +26,94 @@ import java.util.UUID;
 /**
  * User of the system. With login / password.</br>
  * Key field - {@link #getEmail()}
- * */
+ */
 @Entity
-public class User implements Serializable, Comparable<User>  {
+public class User implements Serializable, Comparable<User> {
 
 	/**
-	 *
 	 * Invoice tech-ID
-	 * */
+	 */
 	@Id
-	@GeneratedValue(generator="increment")
-	@GenericGenerator(name="increment", strategy = "increment")
+	@GeneratedValue(generator = "increment")
+	@GenericGenerator(name = "increment", strategy = "increment")
 	public long getId() {
 		return id;
 	}
 
 	/**
-	 *
 	 * User nick
+	 *
 	 * @return User's nick
-	 * */
+	 */
 	@Column(nullable = false)
-	@Index(name="nick")
+	@Index(name = "nick")
 	public String getNick() {
 		return nick;
 	}
 
 	/**
-	 *
 	 * User email
+	 *
 	 * @return User's email
-	 * */
+	 */
 	@Column(nullable = false)
-	@Index(name="email")
+	@Index(name = "email")
 	public String getEmail() {
 		return email;
 	}
 
 	/**
-	 *
 	 * User password
+	 *
 	 * @return User's password
-	 * */
+	 */
 	@Column(nullable = false)
 	public String getPass() {
 		return pass;
 	}
 
 	/**
-	 *
 	 * User API-code
+	 *
 	 * @return User's API code
-	 * */
+	 */
 	@Column(nullable = false)
 	public String getApiCode() {
 		return apiCode;
 	}
 
 	/**
-	 *
 	 * User userrole
+	 *
 	 * @return User's userrole
-	 * */
+	 */
 	@OneToOne(cascade = CascadeType.ALL)
 	public UserRole getUserRole() {
 		return userRole;
 	}
 
 	/**
-	 *
 	 * Is the user active?
+	 *
 	 * @return true or false
-	 * */
+	 */
 	@Column(nullable = false)
- 	public boolean isActive() {
+	public boolean isActive() {
 		return isActive;
 	}
 
 	/**
-	 *
 	 * Optimistic locking
-	 * */
+	 */
 	@Version
 	public Date getLastUpdate() {
 		return lastUpdate;
 	}
 
 	/**
-	 *
 	 * Constructor
-	 * */
-	public User () {
+	 */
+	public User() {
 		this.setNick("");
 		this.setEmail("");
 		this.setPass("");
@@ -125,38 +123,32 @@ public class User implements Serializable, Comparable<User>  {
 		this.setUserRole(new UserRole(UserRole.USER_ROLE_USER));
 	}
 
-	public User (String nick, String email, String pass) {
-		if ((nick==null) || (email==null) || (pass==null)) {
-			throw new NullPointerException("Arguments can't be null.");
-		}
-		if ((nick.length()==0) || (email.length()==0) || (pass.length()==0)) {
-			throw new IllegalArgumentException("Arguments can't be empty.");
+	public User(final String nick, final String email, final String pass) {
+		this();
+		if ((StringUtils.isBlank(nick)) ||
+			(StringUtils.isBlank(email)) ||
+			(StringUtils.isBlank(pass))) {
+			throw new IllegalArgumentException("Arguments must be not null or empty");
 		}
 		this.setNick(nick);
 		this.setEmail(email);
 		this.setPass(pass);
-		UUID uuid = UUID.randomUUID();
-		this.setApiCode(uuid.toString());
-		this.setActive(false);
-		this.setUserRole(new UserRole(UserRole.USER_ROLE_USER));
 	}
 
 	/**
-	 *
 	 * Based on {@link #email#hashCode()}
-	 * */
+	 */
 	@Override
-	public boolean equals (Object aUser) {
-		if ( this == aUser ) return true;
-		if ( !(aUser instanceof User) ) return false;
+	public boolean equals(Object aUser) {
+		if (this == aUser) return true;
+		if (!(aUser instanceof User)) return false;
 		User that = (User) aUser;
 		return this.getEmail().equalsIgnoreCase(that.getEmail());
 	}
 
 	/**
-	 *
 	 * Based on {@link #email#hashCode()}
-	 * */
+	 */
 	@Override
 	public int hashCode() {
 		return this.getEmail().hashCode();
@@ -180,7 +172,7 @@ public class User implements Serializable, Comparable<User>  {
 	@Override
 	public int compareTo(User o) {
 		int res = 0;
-		res=o.getNick().compareTo(this.getNick());
+		res = o.getNick().compareTo(this.getNick());
 		return res;
 	}
 
