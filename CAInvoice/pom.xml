@@ -23,7 +23,6 @@
             <groupId>ua.its.slot7.caccounting</groupId>
             <artifactId>CAMailTask</artifactId>
             <version>0.1</version>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
