@@ -1,6 +1,9 @@
 package ua.its.slot7.caccounting.model.user;
 
-import org.junit.*;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 import ua.its.slot7.caccounting.model.userrole.UserRole;
 
 /**
@@ -41,8 +44,7 @@ public class UserTest extends Assert {
 		assertTrue(this.user.getNick().equals("AlexIT"));
 	}
 
-
-	@Test(expected = NullPointerException.class)
+	@Test(expected = IllegalArgumentException.class)
 	public void testConstructorNull() throws Exception {
 		User u;
 		u = new User (null,"test@test.com","Mr.Test");
