@@ -16,7 +16,7 @@
        http://www.springframework.org/schema/jee/spring-jee.xsd"
         >
 
-    <context:annotation-config />
+    <context:annotation-config/>
 
     <context:component-scan base-package="ua.its.slot7.caccounting.model"/>
     <context:component-scan base-package="ua.its.slot7.caccounting.service"/>
@@ -26,7 +26,7 @@
     <!--DB & related staff-->
 
     <!--Use Glass-fish datasource-->
-    <jee:jndi-lookup id="dataSource" jndi-name="jdbc/its_caccounting" />
+    <jee:jndi-lookup id="dataSource" jndi-name="jdbc/its_caccounting"/>
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
@@ -56,16 +56,19 @@
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
-    <bean id="transactionManager"  class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-        <property name="sessionFactory" ref="sessionFactory" />
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
     <bean
             id="loggerListener"
-            class="org.springframework.security.authentication.event.LoggerListener" />
+            class="org.springframework.security.authentication.event.LoggerListener"/>
 
     <bean
             id="applicationEventsListener"
-            class="ua.its.slot7.caccounting.view.web.utils.ApplicationEventsListener" />
+            class="ua.its.slot7.caccounting.view.web.utils.ApplicationEventsListener"/>
+
+    <!-- Aspects -->
+    <bean id="anAspect" class="ua.ll7.slot7.checks.notnull.aspect.NotNullAspect"/>
 
 </beans>
