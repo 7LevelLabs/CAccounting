@@ -25,7 +25,7 @@
 
     <!--DB & related staff-->
 
-    <!--Use Glass-fish datasource-->
+    <!--Use datasource-->
     <jee:jndi-lookup id="dataSource" jndi-name="jdbc/its_caccounting"/>
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
