@@ -1,0 +1,2442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="321cdd0c-696d-4c4c-8d9d-1ee41e693641" name="Default" comment="" />
+    <ignored path="CAccounting.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/fragment.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376254346186" ignored="false" />
+    <file path="/Dummy.txt" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377255927003" ignored="false" />
+    <file path="/Person.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377070934879" ignored="false" />
+    <file path="/README" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377058821052" ignored="false" />
+    <file path="/DB" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370695088497" ignored="false" />
+    <file path="/TODO" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377057208915" ignored="false" />
+    <file path="/persistence.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370696733932" ignored="false" />
+    <file path="/hibernate.cfg.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1371306293427" ignored="false" />
+    <file path="/PersonManagerAvatar.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370797091660" ignored="false" />
+    <file path="/PersonManager.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370797297152" ignored="false" />
+    <file path="/HibernateUtil.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1371563232552" ignored="false" />
+    <file path="/CAApplicationConsole.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1371739261796" ignored="false" />
+    <file path="$PROJECT_DIR$/../IO/Utils/src/ua/its/slot7/io/utils/Johnny.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370704455427" ignored="false" />
+    <file path="/Johnny.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370751330196" ignored="false" />
+    <file path="/CAApplicationDumpData.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370805002710" ignored="false" />
+    <file path="$PROJECT_DIR$/../IO/Utils/src/utils/Johnny.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370706978231" ignored="false" />
+    <file path="$PROJECT_DIR$/../IO/Utils/src/ua/its/slot7/utils/Johnny.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370751399850" ignored="false" />
+    <file path="$PROJECT_DIR$/../IO/OldIOClient/src/ua/its/slot7/io/client/actions/IOSSAction01.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370708029110" ignored="false" />
+    <file path="/Invoice.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377187109523" ignored="false" />
+    <file path="/InvoiceManagerAvatar.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370802098359" ignored="false" />
+    <file path="/InvoiceManager.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370802393326" ignored="false" />
+    <file path="/InvoiceLine.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1375881945482" ignored="false" />
+    <file path="/BLControllerAvatar.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1371397847808" ignored="false" />
+    <file path="/CAInvoiceNumberCreator.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370858677990" ignored="false" />
+    <file path="/InvoiceDBManager.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376573630076" ignored="false" />
+    <file path="/InvoiceDBManagerAvatar.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377081650088" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/persistence_2_0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219822" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/javaee_5.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219822" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/spring.tld" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219822" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/jsp_2_1.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219822" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/orm_1_0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219822" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.3.0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219822" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/application_5.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219822" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-facesconfig_1_2.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/FlexCompilerSchema.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-jsptaglibrary_2_1.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.2.7.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.2.6.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-app_2_4.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.2.5.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.1.1.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-common_3_0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.1.0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.2.0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/orm_2_0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/xpath/lib/xpath.jar!/org/intellij/lang/xpath/xslt/resources/documentation.xsl" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.1.5.3.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/application-client_1_4.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/xpath/lib/xpath.jar!/org/intellij/lang/xpath/xslt/resources/documentation.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.1.5.2.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/xpath/lib/xpath.jar!/org/intellij/lang/xpath/xslt/resources/xslt-schema.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.1.5.1.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/application-client_6.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.1.5.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/ejb-jar_3_1.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.3.8.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/spring-form.tld" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219823" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.3.7.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219824" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.3.6.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219824" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/j2ee_web_services_client_1_1.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219824" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.3.5.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219824" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/jspxml.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219824" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.3.4.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219824" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/jspxml.tld" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219824" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.3.3.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219824" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/javaee_web_services_client_1_3.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219824" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.3.2.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219824" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/persistence.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219824" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.3.1.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219824" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/application-client_5.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219825" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/ejb-jar_3_0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219825" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/javaee_web_services_1_3.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219825" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/javaee_6.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219825" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-fragment_3_0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219825" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/jsp_2_0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219825" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/javaee_web_services_1_2.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219825" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/application_6.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219825" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/connector_1_6.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219825" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-jsptaglibrary_2_0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219825" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-app_2_5.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219825" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/javaee_web_services_client_1_2.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219825" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven.jar!/schemas/settings-1.0.0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven.jar!/schemas/maven-4.0.0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven.jar!/schemas/profiles-1.0.0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/html_basic.tld" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/xml.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/html_basic_2_0.tld" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jsf-ui.tld" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/composite.tld" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/ui.taglib.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jstl-fn.taglib.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/composite.taglib.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/web-facesconfig_1_2.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/web-facesconfig_1_1.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jsf-ui-2_0.tld" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/web-facesconfig_2_0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/javaee_5.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jsf_core_2_0.tld" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jstl.core.facelets.tld" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jstl.fn.facelets.tld" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/javaee_web_services_1_2.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xslt-1_0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/mojarra_ext.taglib.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/web-facesuicomponent_2_0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/html_basic.taglib.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/XMLSchema.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/web-partialresponse_2_0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219826" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/XMLSchema-instance.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jsf_core.tld" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jstl-core.taglib.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-transitional.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/facelets_jsf_core.taglib.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xml.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xslt-2_0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xinclude.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-strict.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-frameset.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/catalog.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-tx-2.5.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/html5/xhtml5.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-aop-2.5.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-aop-3.1.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-aop-3.2.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-tx-2.0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-aop-3.0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jms-2.5.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-oxm-3.0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jms-3.1.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-mvc-3.2.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-tx-3.2.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-oxm-3.1.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jee-2.0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219827" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jms-3.0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-tx-3.1.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-mvc-3.0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jee-3.2.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jee-3.0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jdbc-3.2.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-tx-3.0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-aop-2.0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-mvc-3.1.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jee-2.5.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jms-3.2.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jee-3.1.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jdbc-3.1.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-oxm-3.2.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jdbc-3.0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JBoss/lib/jbossIntegration.jar!/descriptors/jboss-deployment-structure-1_1.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JBoss/lib/jbossIntegration.jar!/descriptors/jboss-deployment-structure-1_0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/relaxng.rng" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/ejb-jar_2_1.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/application_1_4.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/connector_1_5.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/jsp_2_2.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/j2ee_1_4.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-app_3_0.xsd" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370874219828" ignored="false" />
+    <file path="/BLController.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372677850208" ignored="false" />
+    <file path="/CAConsolePresenter.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377102177487" ignored="false" />
+    <file path="/CAConsolePresenterAvatar.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1371475599423" ignored="false" />
+    <file path="/New Method Body.txt.ft" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370940867434" ignored="false" />
+    <file path="/Overridden Method Body.txt.ft" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370940879819" ignored="false" />
+    <file path="/Implemented Method Body.txt.ft" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1370940917276" ignored="false" />
+    <file path="/PersonDBManager.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376238834747" ignored="false" />
+    <file path="/InvoiceLineDBManagerAvatar.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1371642547981" ignored="false" />
+    <file path="/InvoiceLineDBManager.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1371402921995" ignored="false" />
+    <file path="/InvoicePaymentState.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1371207279199" ignored="false" />
+    <file path="/User.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1374745527463" ignored="false" />
+    <file path="/UserAdmission.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1371306254699" ignored="false" />
+    <file path="/UserDBManagerAvatar.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376487285959" ignored="false" />
+    <file path="/UserDBManager.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376487329309" ignored="false" />
+    <file path="$PROJECT_DIR$/../SpringTest/SpringTest.iml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1371468215974" ignored="false" />
+    <file path="/pom.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376482389642" ignored="false" />
+    <file path="$PROJECT_DIR$/../Johnny/pom.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1371557547187" ignored="false" />
+    <file path="$PROJECT_DIR$/../Johnny/src/main/java/ua/its/utils/Johnny.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1371557173277" ignored="false" />
+    <file path="$PROJECT_DIR$/../Test21/pom.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1371561799627" ignored="false" />
+    <file path="$PROJECT_DIR$/../Test21/src/main/java/ua/its.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1371561718738" ignored="false" />
+    <file path="$PROJECT_DIR$/../Test21/src/main/java/ua/its/slot7/Test7.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1371561918936" ignored="false" />
+    <file path="/Test7.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1371561908425" ignored="false" />
+    <file path="/PersonDBManagerAvatar.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376568339329" ignored="false" />
+    <file path="/InvoiceServiceAvatar.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377081859580" ignored="false" />
+    <file path="/UserServiceAvatar.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377082591815" ignored="false" />
+    <file path="/InvoiceLineServiceAvatar.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377080838381" ignored="false" />
+    <file path="/PersonServiceAvatar.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377080422344" ignored="false" />
+    <file path="/InvoiceService.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377185318111" ignored="false" />
+    <file path="/InvoiceLineService.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377185310656" ignored="false" />
+    <file path="/PersonService.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376569047984" ignored="false" />
+    <file path="/UserService.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377185334624" ignored="false" />
+    <file path="/spring-config.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376228103607" ignored="false" />
+    <file path="/a.txt" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376656775744" ignored="false" />
+    <file path="$USER_HOME$/RooProjects/TestSMVC/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1371988528439" ignored="false" />
+    <file path="$USER_HOME$/RooProjects/TestSMVC/TestSMVC.iml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1371988495543" ignored="false" />
+    <file path="$USER_HOME$/intellij-soapui-workspace.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372065299662" ignored="false" />
+    <file path="$USER_HOME$/soapui-settings.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372065299662" ignored="false" />
+    <file path="/mvc-dispatcher-servlet.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372064772059" ignored="false" />
+    <file path="/web.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377188215302" ignored="false" />
+    <file path="/faces-config.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377027213498" ignored="false" />
+    <file path="/Jspx File.txt.ft" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372335485396" ignored="false" />
+    <file path="/Jsp File.txt.ft" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372335510676" ignored="false" />
+    <file path="/index_page_template.txt.ft" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372335795914" ignored="false" />
+    <file path="/user_defined_create.txt.ft" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372335844040" ignored="false" />
+    <file path="/generate_create2.txt.ft" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372335838968" ignored="false" />
+    <file path="/generate_create.txt.ft" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372335834925" ignored="false" />
+    <file path="/user_defined_list.txt.ft" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372335806283" ignored="false" />
+    <file path="/generate_list.txt.ft" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372335815329" ignored="false" />
+    <file path="/generate_table.txt.ft" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372335822983" ignored="false" />
+    <file path="/generate_edit.txt.ft" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372335911122" ignored="false" />
+    <file path="/generate_edit_inplace.txt.ft" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372335918746" ignored="false" />
+    <file path="/user_defined_edit.txt.ft" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372335925202" ignored="false" />
+    <file path="/generate_view.txt.ft" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372335933305" ignored="false" />
+    <file path="/generate_view_M_N.txt.ft" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372335939622" ignored="false" />
+    <file path="/user_defined_view.txt.ft" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372335945610" ignored="false" />
+    <file path="/login.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1374927626289" ignored="false" />
+    <file path="/invoices.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377249609981" ignored="false" />
+    <file path="/BLServiceAvatar.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377081173425" ignored="false" />
+    <file path="/BLService.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377071204155" ignored="false" />
+    <file path="/applicationContext.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1374653347196" ignored="false" />
+    <file path="/MBPersonsList.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1372922750094" ignored="false" />
+    <file path="/persons.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376222832809" ignored="false" />
+    <file path="/index.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376999959366" ignored="false" />
+    <file path="/MBPerson.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377255622261" ignored="false" />
+    <file path="/MBPersons.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376237821188" ignored="false" />
+    <file path="/VPerson.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1373280369961" ignored="false" />
+    <file path="/log4j.properties" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1373118192859" ignored="false" />
+    <file path="/person.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377252822717" ignored="false" />
+    <file path="/MBInvoices.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377246598264" ignored="false" />
+    <file path="/invoice.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376221518131" ignored="false" />
+    <file path="/a.dummy" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377189026894" ignored="false" />
+    <file path="/MBInvoice.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1373875860673" ignored="false" />
+    <file path="/invoice-new.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377028066742" ignored="false" />
+    <file path="/MBInvoiceNew.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377079524505" ignored="false" />
+    <file path="/invoice-search.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377249049434" ignored="false" />
+    <file path="/invoice-present.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1374254869230" ignored="false" />
+    <file path="/invoice-list-unpaid.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377249951908" ignored="false" />
+    <file path="/person-list.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377203743985" ignored="false" />
+    <file path="/MBUserAccess.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1375085006895" ignored="false" />
+    <file path="/person-register-new.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377190747312" ignored="false" />
+    <file path="/dashboard.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1374577029594" ignored="false" />
+    <file path="/navigation_left.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376223461655" ignored="false" />
+    <file path="/person-new.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376222798022" ignored="false" />
+    <file path="/InvoiceDataModel.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376915220815" ignored="false" />
+    <file path="/InvoiceLineDataModel.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1374665180864" ignored="false" />
+    <file path="/Role.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1374739432614" ignored="false" />
+    <file path="/security-app-context.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376224165585" ignored="false" />
+    <file path="/MBUserRegister.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1375791780035" ignored="false" />
+    <file path="/user-register.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376999742976" ignored="false" />
+    <file path="/labels_en.properties" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376908356618" ignored="false" />
+    <file path="/labels_en_US.properties" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1374844725140" ignored="false" />
+    <file path="/UserRole.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1374916382905" ignored="false" />
+    <file path="/logout.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1375090026774" ignored="false" />
+    <file path="/LoginErrorPhaseListener.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1375283813471" ignored="false" />
+    <file path="/login-failure.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376909363438" ignored="false" />
+    <file path="$USER_HOME$/.IntelliJIdea12/config/options/cachedDictionary.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1375706344885" ignored="false" />
+    <file path="$USER_HOME$/.IntelliJIdea12/config/options/feature.usage.statistics.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1375712635944" ignored="false" />
+    <file path="$USER_HOME$/.IntelliJIdea12/config/options/runner.layout.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1375706344885" ignored="false" />
+    <file path="$USER_HOME$/.IntelliJIdea12/config/qaplug_profiles/Default.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1375706344885" ignored="false" />
+    <file path="/UserDetails.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377103223917" ignored="false" />
+    <file path="/InvoiceLineTest.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1375886619257" ignored="false" />
+    <file path="/InvoiceTest.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1375963999831" ignored="false" />
+    <file path="/MBUserLogin.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376227096383" ignored="false" />
+    <file path="/ApplicationEventsListener.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1375972112173" ignored="false" />
+    <file path="/user.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376572189220" ignored="false" />
+    <file path="/regular.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377252225639" ignored="false" />
+    <file path="/log.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376221015321" ignored="false" />
+    <file path="/Hibernate QL Fragment (PersonDBManager.java:1356).hql" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376238048741" ignored="false" />
+    <file path="/Hibernate QL Fragment (PersonDBManager.java:1730).hql" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376238164664" ignored="false" />
+    <file path="/RSPersons.java" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377071253579" ignored="false" />
+    <file path="/a.css" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376584692555" ignored="false" />
+    <file path="/a.regexp" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376646116353" ignored="false" />
+    <file path="/Data Source" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376646202034" ignored="false" />
+    <file path="$USER_HOME$/Документы/Projects/7LL/site/.idea/misc.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376769127297" ignored="false" />
+    <file path="$USER_HOME$/Документы/Projects/7LL/site/.idea/workspace.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376769294981" ignored="false" />
+    <file path="$USER_HOME$/Документы/Projects/7LL/site/.idea/qaplug_profiles.xml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376769127297" ignored="false" />
+    <file path="$USER_HOME$/Документы/Projects/7LL/site/index.html" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376769172179" ignored="false" />
+    <file path="/ca.css" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376999150199" ignored="false" />
+    <file path="/user-access-recover.xhtml" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1376998127239" ignored="false" />
+    <file path="/labels_fr.properties" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377027459468" ignored="false" />
+    <file path="/LICENCE" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377057137746" ignored="false" />
+    <file path="/ROADMAP" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377083377090" ignored="false" />
+    <file path="/.gitignore" changelist="321cdd0c-696d-4c4c-8d9d-1ee41e693641" time="1377077290334" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="ce7c84fb-0545-42ba-954a-ae94ce4a2a71" time="1377175919716" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/CAccounting$InvoiceTest.coverage" NAME="InvoiceTest Coverage Results" MODIFIED="1375890725619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ua.its.slot7.caccounting.model.invoice.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CAccounting$InvoiceLineTest.coverage" NAME="InvoiceLineTest Coverage Results" MODIFIED="1375885668005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ua.its.slot7.caccounting.model.invoiceline.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DatabaseView">
+    <flatten value="false" />
+    <groupTables value="false" />
+    <sortChildren value="false" />
+  </component>
+  <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="CAccounting" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="regular.xhtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/webapp/WEB-INF/tpl/regular.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="13" selection-start="670" selection-end="670" vertical-scroll-proportion="-9.875">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="person.xhtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/person.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="59" selection-start="538" selection-end="548" vertical-scroll-proportion="-5.0">
+              <folding>
+                <marker date="1377252837000" expanded="true" signature="3358:3368" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MBPerson.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/java/ua/its/slot7/caccounting/view/web/mb/MBPerson.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="74" column="7" selection-start="2134" selection-end="2134" vertical-scroll-proportion="0.2284264">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/java/ua/its/slot7/caccounting/service/PersonService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="73" column="14" selection-start="2305" selection-end="2305" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MBInvoices.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/java/ua/its/slot7/caccounting/view/web/mb/MBInvoices.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="86" column="47" selection-start="2744" selection-end="2777" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="person-register-new.xhtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/includes/person-register-new.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="32" selection-start="2168" selection-end="2168" vertical-scroll-proportion="-8.125">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navigation_left.xhtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/includes/navigation_left.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="31" selection-start="604" selection-end="612" vertical-scroll-proportion="-10.625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="AlexITStudio &lt;alex.itstudio@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="IL_01" />
+      </map>
+    </option>
+  </component>
+  <component name="GitLogSettings">
+    <option name="myContainedLocalBranches">
+      <list>
+        <option value="0.1" />
+      </list>
+    </option>
+    <option name="myStructureFilterPaths" />
+    <option name="myHighlight" value="false" />
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/persons.xhtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/invoices.xhtml" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/CAInvoice/src/main/java/ua/its/slot7/caccounting/model/invoiceline/InvoiceLine.java" />
+        <option value="$PROJECT_DIR$/CAInvoice/src/main/java/ua/its/slot7/caccounting/model/invoice/Invoice.java" />
+        <option value="$PROJECT_DIR$/CAInvoice/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/includes/person-list.xhtml" />
+        <option value="$PROJECT_DIR$/CAInvoice/src/main/java/ua/its/slot7/caccounting/view/web/mb/MBInvoice.java" />
+        <option value="$PROJECT_DIR$/CAInvoice/src/main/java/ua/its/slot7/caccounting/view/web/mb/MBInvoiceNew.java" />
+        <option value="$PROJECT_DIR$/CAInvoice/src/main/java/ua/its/slot7/caccounting/view/web/mb/MBPersons.java" />
+        <option value="$PROJECT_DIR$/CAInvoice/src/main/java/ua/its/slot7/caccounting/view/web/mb/MBUserRegister.java" />
+        <option value="$PROJECT_DIR$/CAInvoice/src/main/java/ua/its/slot7/caccounting/view/web/mb/MBInvoices.java" />
+        <option value="$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/includes/invoice-search.xhtml" />
+        <option value="$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/invoices.xhtml" />
+        <option value="$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/includes/invoice-list-unpaid.xhtml" />
+        <option value="$PROJECT_DIR$/CAInvoice/src/main/webapp/WEB-INF/tpl/regular.xhtml" />
+        <option value="$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/includes/person-register-new.xhtml" />
+        <option value="$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/person.xhtml" />
+        <option value="$PROJECT_DIR$/CAInvoice/src/main/java/ua/its/slot7/caccounting/view/web/mb/MBPerson.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="/opt/apache-maven-3.0.5" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="CAInvoice" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="CAInvoice" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Plugins" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="glassfish" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="CAInvoice" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="64" />
+    <option name="y" value="-4" />
+    <option name="width" value="1303" />
+    <option name="height" value="773" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Abstraction issues</id>
+          </State>
+          <State>
+            <id>Android</id>
+          </State>
+          <State>
+            <id>Android Lint</id>
+          </State>
+          <State>
+            <id>Application Server Specific Inspections</id>
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Class metrics</id>
+          </State>
+          <State>
+            <id>Declaration redundancy</id>
+          </State>
+          <State>
+            <id>Error handling</id>
+          </State>
+          <State>
+            <id>Finalization issues</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>Google Web Toolkit issues</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>HTML</id>
+          </State>
+          <State>
+            <id>Internationalization issues</id>
+          </State>
+          <State>
+            <id>J2ME issues</id>
+          </State>
+          <State>
+            <id>JSP Inspections</id>
+          </State>
+          <State>
+            <id>Java language level migration aids</id>
+          </State>
+          <State>
+            <id>JavaFX</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Method MetricsGroovy</id>
+          </State>
+          <State>
+            <id>Method metrics</id>
+          </State>
+          <State>
+            <id>Naming ConventionsGroovy</id>
+          </State>
+          <State>
+            <id>Naming conventions</id>
+          </State>
+          <State>
+            <id>OSGi</id>
+          </State>
+          <State>
+            <id>OtherGroovy</id>
+          </State>
+          <State>
+            <id>Properties Files</id>
+          </State>
+          <State>
+            <id>Resource management issues</id>
+          </State>
+          <State>
+            <id>SASS/SCSS</id>
+          </State>
+          <State>
+            <id>Security issues</id>
+          </State>
+          <State>
+            <id>Spring Model</id>
+          </State>
+          <State>
+            <id>Threading issues</id>
+          </State>
+          <State>
+            <id>Threading issuesGroovy</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Abstraction issues</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <OptionsSetting value="true" id="Undo Check Out" />
+    <OptionsSetting value="true" id="Get Latest Version" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="includes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="userrole" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="person" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="invoicepaymentstate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="invoiceline" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="caccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="invoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAccounting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CAInvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Problems" />
+        <subPane subId="Production">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Tests">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="CAInvoice">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="CAInvoice">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/test/java">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="All">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="73" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="157" />
+    <property name="project.structure.proportion" value="0.12543252" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="73" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="97" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="959" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="894" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="97" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="92" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/lib" />
+    <property name="options.splitter.details.proportions" value="0.4830986" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="options.lastSelected" value="Errors" />
+    <property name="project.structure.side.proportion" value="0.20418327" />
+    <property name="DefaultHtmlFileTemplate" value="Xhtml" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="false" />
+    <property name="TODO_SCOPE" value="Project Files" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="gradle.tool.window.active" value="Project" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="org.junit.Assert" />
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="ua.its.slot7.caccounting.model.invoice" />
+      <recent name="ua.its.slot7.caccounting.model.invoiceline" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/CAInvoice/src/main/webapp/pages" />
+      <recent name="$PROJECT_DIR$/CAInvoice/src/main/resources" />
+      <recent name="$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/includes" />
+      <recent name="$PROJECT_DIR$/CAInvoice/src/main/webapp/tpl" />
+    </key>
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="ua.its.slot7.caccounting.model" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ua.its.slot7.caccounting.view.web" />
+      <recent name="ua.its.slot7.caccounting.service" />
+      <recent name="ua.its.slot7.caccounting.model.user" />
+      <recent name="ua.its.slot7.caccounting.model.person" />
+      <recent name="ua.its.slot7.caccounting.model.invoicepaymentstate" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/CAInvoice/src/main/webapp/WEB-INF" />
+      <recent name="$PROJECT_DIR$/CAInvoice/src/main/webapp/resources/css" />
+      <recent name="$PROJECT_DIR$/CAInvoice/src/main/webapp/pages" />
+      <recent name="$PROJECT_DIR$/CAInvoice/src/main/webapp" />
+      <recent name="$PROJECT_DIR$/CAInvoice/src/main/resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.InvoiceTest">
+    <configuration default="false" name="InvoiceLineTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ua.its.slot7.caccounting.model.invoiceline.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="CAInvoice" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ua.its.slot7.caccounting.model.invoiceline" />
+      <option name="MAIN_CLASS_NAME" value="ua.its.slot7.caccounting.model.invoiceline.InvoiceLineTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Cover" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="InvoiceTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ua.its.slot7.caccounting.model.invoice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="CAInvoice" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="ua.its.slot7.caccounting.model.invoice" />
+      <option name="MAIN_CLASS_NAME" value="ua.its.slot7.caccounting.model.invoice.InvoiceTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Cover" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="Glassfish 3.1.2.2" show_console_on_std_out="true" show_console_on_std_err="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="DOMAIN" value="domain1" />
+        <option name="PRESERVE" value="false" />
+        <option name="VIRTUAL_SERVER" />
+        <option name="USERNAME" value="admin" />
+        <option name="PASSWORD" value="admin" />
+      </server-settings>
+      <predefined_log_file id="GlassFish" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="9009" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Glassfish 4.0.0" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="Glassfish 4.0.0" show_console_on_std_out="true" show_console_on_std_err="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="DOMAIN" value="domain1" />
+        <option name="PRESERVE" value="false" />
+        <option name="VIRTUAL_SERVER" />
+        <option name="USERNAME" value="admin" />
+        <option name="PASSWORD" value="admin" />
+      </server-settings>
+      <predefined_log_file id="GlassFish" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" runner="idea" />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="9009" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="false" />
+          <option name="SCRIPT" value="$USER_HOME$/glassfish4/glassfish/bin/asadmin" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="start-domain --debug domain1" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="false" />
+          <option name="SCRIPT" value="$USER_HOME$/glassfish4/glassfish/bin/asadmin" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="stop-domain domain1" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Glassfish Server.Glassfish 4.0.0" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.InvoiceLineTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.InvoiceTest" />
+    </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.InvoiceTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.InvoiceLineTest" />
+      </list>
+    </recent_temporary>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value="ALPHA_COMPARATOR,GROUP_BY_PREFIXES" />
+  </component>
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="321cdd0c-696d-4c4c-8d9d-1ee41e693641" name="Default" comment="" />
+      <created>1368738783325</created>
+      <updated>1368738783325</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial Commit. 0.0 .">
+      <created>1377078517285</created>
+      <updated>1377078517285</updated>
+    </task>
+    <task id="LOCAL-00002" summary="0.1&#10;MBInvoiceNew - create new invoice : remove hot-editing caps.">
+      <created>1377079652790</created>
+      <updated>1377079652790</updated>
+    </task>
+    <task id="LOCAL-00003" summary="JavaDocs - some improvements.">
+      <created>1377081277241</created>
+      <updated>1377081277241</updated>
+    </task>
+    <task id="LOCAL-00004" summary="JavaDocs - some improvements.">
+      <created>1377082072732</created>
+      <updated>1377082072732</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Code cosmetics.">
+      <created>1377082243222</created>
+      <updated>1377082243222</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Code structure - optimization, yes.">
+      <created>1377082325164</created>
+      <updated>1377082325164</updated>
+    </task>
+    <task id="LOCAL-00007" summary="JavaDocs - some improvements.">
+      <created>1377082456054</created>
+      <updated>1377082456054</updated>
+    </task>
+    <task id="LOCAL-00008" summary="User - UserServiceAvatar.setUserActive">
+      <created>1377082684911</created>
+      <updated>1377082684911</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Docs - some improvements.">
+      <created>1377083280852</created>
+      <updated>1377083280852</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Docs - some improvements.">
+      <created>1377083384219</created>
+      <updated>1377083384219</updated>
+    </task>
+    <task id="LOCAL-00011" summary="PDF generating - preparing.">
+      <created>1377083672527</created>
+      <updated>1377083672527</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Code structure - optimization, yes.">
+      <created>1377102462897</created>
+      <updated>1377102462897</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Code structure - optimization, yes.">
+      <created>1377103980564</created>
+      <updated>1377103980564</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Code structure - optimization, yes.">
+      <created>1377104285190</created>
+      <updated>1377104285190</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Delete .gitignore .">
+      <created>1377184265994</created>
+      <updated>1377184265994</updated>
+    </task>
+    <task id="LOCAL-00016" summary="LAZY">
+      <created>1377184578612</created>
+      <updated>1377184578612</updated>
+    </task>
+    <task id="LOCAL-00017" summary="implements Serializable">
+      <created>1377184849564</created>
+      <updated>1377184849565</updated>
+    </task>
+    <task id="LOCAL-00018" summary="FetchType.LAZY">
+      <created>1377185104588</created>
+      <updated>1377185104588</updated>
+    </task>
+    <task id="LOCAL-00019" summary="@PrimaryKeyJoinColumn">
+      <created>1377185204667</created>
+      <updated>1377185204667</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Invoice &amp; InvoiceLine - EAGER / LAZY">
+      <created>1377187178282</created>
+      <updated>1377187178282</updated>
+    </task>
+    <task id="LOCAL-00021" summary="SpringSecurityFilterChain - renaming.">
+      <created>1377188263271</created>
+      <updated>1377188263271</updated>
+    </task>
+    <task id="LOCAL-00022" summary="SpringSecurityFilterChain - un-renaming, yes.">
+      <created>1377188413741</created>
+      <updated>1377188413741</updated>
+    </task>
+    <task id="LOCAL-00023" summary="OpenSessionInViewFilter . Try to LAZY.">
+      <created>1377189059807</created>
+      <updated>1377189059807</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Using PF : person-register-new.xhtml">
+      <created>1377190474547</created>
+      <updated>1377190474547</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Gramma">
+      <created>1377190669628</created>
+      <updated>1377190669628</updated>
+    </task>
+    <task id="LOCAL-00026" summary="p:watermark">
+      <created>1377190974151</created>
+      <updated>1377190974151</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Form correction.">
+      <created>1377191280978</created>
+      <updated>1377191280978</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Cosmetics.">
+      <created>1377191589912</created>
+      <updated>1377191589912</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Cosmetics again.">
+      <created>1377191883261</created>
+      <updated>1377191883261</updated>
+    </task>
+    <task id="LOCAL-00030" summary="invoiceMakePaid &amp; updating lists">
+      <created>1377205491040</created>
+      <updated>1377205491040</updated>
+    </task>
+    <task id="LOCAL-00031" summary="invoiceSendByEmailPerson">
+      <created>1377205942396</created>
+      <updated>1377205942396</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Using PF : p:commandButton">
+      <created>1377206010811</created>
+      <updated>1377206010811</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Code cosmetics.">
+      <created>1377246512576</created>
+      <updated>1377246512576</updated>
+    </task>
+    <task id="LOCAL-00034" summary="invoiceSendByEmailPerson">
+      <created>1377246942539</created>
+      <updated>1377246942539</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Code cosmetics.">
+      <created>1377248475613</created>
+      <updated>1377248475613</updated>
+    </task>
+    <task id="LOCAL-00036" summary="p:growl for /includes/invoice-search.xhtml &amp; etc.">
+      <created>1377249599179</created>
+      <updated>1377249599179</updated>
+    </task>
+    <task id="LOCAL-00037" summary="To show messages in p:growl">
+      <created>1377249992775</created>
+      <updated>1377249992775</updated>
+    </task>
+    <task id="LOCAL-00038" summary="p:toolbar">
+      <created>1377250866577</created>
+      <updated>1377250866577</updated>
+    </task>
+    <task id="LOCAL-00039" summary="p:toolbar : test the main menuBar.">
+      <created>1377251710265</created>
+      <updated>1377251710265</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Main menuBar improvements.">
+      <created>1377252116419</created>
+      <updated>1377252116419</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Using PF : person.xhtml">
+      <created>1377252512504</created>
+      <updated>1377252512504</updated>
+    </task>
+    <task id="LOCAL-00042" summary="updatePerson">
+      <created>1377255929239</created>
+      <updated>1377255929239</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="1">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="64" y="-4" width="1303" height="773" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.641357" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279483" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" x="93" y="378" width="1251" height="203" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33333334" sideWeight="0.3796446" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32933652" sideWeight="0.6752827" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940048" sideWeight="0.6462036" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46526656" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33333334" sideWeight="0.3796446" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32933652" sideWeight="0.6833603" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279483" sideWeight="0.6833603" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33333334" sideWeight="0.3796446" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3457189" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40367705" sideWeight="0.6833603" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2286171" sideWeight="0.6462036" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279483" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3421263" sideWeight="0.74636513" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2536349" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32933652" sideWeight="0.6898223" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Roo Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32956383" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hibernate Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5056543" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="updatePerson" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="LAZY" />
+    <MESSAGE value="implements Serializable" />
+    <MESSAGE value="FetchType.LAZY" />
+    <MESSAGE value="@PrimaryKeyJoinColumn" />
+    <MESSAGE value="Invoice &amp; InvoiceLine - EAGER / LAZY" />
+    <MESSAGE value="SpringSecurityFilterChain - renaming." />
+    <MESSAGE value="SpringSecurityFilterChain - un-renaming, yes." />
+    <MESSAGE value="OpenSessionInViewFilter . Try to LAZY." />
+    <MESSAGE value="Using PF : person-register-new.xhtml" />
+    <MESSAGE value="Gramma" />
+    <MESSAGE value="p:watermark" />
+    <MESSAGE value="Form correction." />
+    <MESSAGE value="Cosmetics." />
+    <MESSAGE value="Cosmetics again." />
+    <MESSAGE value="invoiceMakePaid &amp; updating lists" />
+    <MESSAGE value="Using PF : p:commandButton" />
+    <MESSAGE value="invoiceSendByEmailPerson" />
+    <MESSAGE value="Code cosmetics." />
+    <MESSAGE value="p:growl for /includes/invoice-search.xhtml &amp; etc." />
+    <MESSAGE value="To show messages in p:growl" />
+    <MESSAGE value="p:toolbar" />
+    <MESSAGE value="p:toolbar : test the main menuBar." />
+    <MESSAGE value="Main menuBar improvements." />
+    <MESSAGE value="Using PF : person.xhtml" />
+    <MESSAGE value="updatePerson" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/invoice.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.4018692">
+          <folding>
+            <marker date="1376920196000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1376920196000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1376920196000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1376920196000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/includes/invoice-list-unpaid.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="47" selection-start="2512" selection-end="2512" vertical-scroll-proportion="-9.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/invoices.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="25" selection-start="3109" selection-end="3109" vertical-scroll-proportion="0.70108694">
+          <folding>
+            <marker date="1377249621000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1377249621000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1377249621000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/index.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.16814159">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/includes/invoice-search.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="47" selection-start="1143" selection-end="1143" vertical-scroll-proportion="0.6283186">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/includes/navigation_left.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="31" selection-start="604" selection-end="612" vertical-scroll-proportion="-10.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/person-new.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/webapp/WEB-INF/tpl/regular.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="13" selection-start="670" selection-end="670" vertical-scroll-proportion="-9.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/includes/person-register-new.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="32" selection-start="2168" selection-end="2168" vertical-scroll-proportion="-8.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/java/ua/its/slot7/caccounting/view/web/mb/MBInvoice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="13" selection-start="1037" selection-end="1037" vertical-scroll-proportion="0.3321234">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/java/ua/its/slot7/caccounting/view/web/mb/MBPersons.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="14" selection-start="1044" selection-end="1044" vertical-scroll-proportion="-3.5190563">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/java/ua/its/slot7/caccounting/service/PersonServiceAvatar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="31" selection-start="1544" selection-end="1556" vertical-scroll-proportion="0.3321234">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/java/ua/its/slot7/caccounting/view/web/mb/MBInvoices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="47" selection-start="2744" selection-end="2777" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/java/ua/its/slot7/caccounting/service/PersonService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="14" selection-start="2305" selection-end="2305" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/webapp/pages/person.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="59" selection-start="538" selection-end="548" vertical-scroll-proportion="-5.0">
+          <folding>
+            <marker date="1377252837000" expanded="true" signature="3358:3368" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CAInvoice/src/main/java/ua/its/slot7/caccounting/view/web/mb/MBPerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="7" selection-start="2134" selection-end="2134" vertical-scroll-proportion="0.2284264">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>CAInvoice:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20418327" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="Copyright.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web (CAInvoice)|Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20418327" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>mysql-connector-java-5.1.22-bin</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20418327" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20418327" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>CAccounting</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20418327" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.20418327" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <last-edited>Local</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+

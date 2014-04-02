@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ejb" name="CAMailer:ejb exploded">
+    <output-path>$PROJECT_DIR$/CAMailer/target/CAMailer-0.1</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="CAMailer/ejb/EJB" />
+      <element id="module-output" name="CAMailer" />
+    </root>
+  </artifact>
+</component>

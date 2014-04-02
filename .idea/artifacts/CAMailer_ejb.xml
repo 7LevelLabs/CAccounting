@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ejb-jar" name="CAMailer:ejb">
+    <output-path>$PROJECT_DIR$/CAMailer/target</output-path>
+    <root id="archive" name="CAMailer-0.1.jar">
+      <element id="artifact" artifact-name="CAMailer:ejb exploded" />
+    </root>
+  </artifact>
+</component>

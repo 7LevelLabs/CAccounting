@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="CAInvoice:war">
+    <output-path>$PROJECT_DIR$/CAInvoice/target</output-path>
+    <root id="archive" name="CAInvoice-0.1.war">
+      <element id="artifact" artifact-name="CAInvoice:war exploded" />
+    </root>
+  </artifact>
+</component>

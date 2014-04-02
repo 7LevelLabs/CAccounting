@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CAInvoice/CAInvoice.iml" filepath="$PROJECT_DIR$/CAInvoice/CAInvoice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CAMailTask/CAMailTask.iml" filepath="$PROJECT_DIR$/CAMailTask/CAMailTask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CAMailer/CAMailer.iml" filepath="$PROJECT_DIR$/CAMailer/CAMailer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CAccounting.iml" filepath="$PROJECT_DIR$/CAccounting.iml" />
+    </modules>
+  </component>
+</project>
+
