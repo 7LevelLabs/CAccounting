@@ -22,10 +22,10 @@
     <context:component-scan base-package="ua.its.slot7.caccounting.service"/>
 
     <!--Use datasource-->
-    <jee:jndi-lookup id="dataSource" jndi-name="jdbc/its.ca.test"/>
+    <jee:jndi-lookup id="dataSourceTest" jndi-name="jdbc/its.ca.test"/>
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
+        <property name="dataSource" ref="dataSourceTest"/>
 
         <property name="hibernateProperties">
             <props>

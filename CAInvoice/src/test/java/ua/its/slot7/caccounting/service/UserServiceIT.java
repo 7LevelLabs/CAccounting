@@ -2,11 +2,14 @@ package ua.its.slot7.caccounting.service;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 import ua.its.slot7.caccounting.model.user.User;
 import ua.its.slot7.caccounting.model.userrole.UserRole;
 
@@ -16,8 +19,8 @@ import ua.its.slot7.caccounting.model.userrole.UserRole;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring-config-IT.xml")
-//@Transactional
-//@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
+@Transactional
+@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
 public class UserServiceIT extends Assert {
 
 	private User user1;
@@ -29,13 +32,14 @@ public class UserServiceIT extends Assert {
 	@Autowired
 	private UserServiceAvatar userService;
 
+	@BeforeClass
+	public static void beforeClass() {
+		System.getProperties().put("java.naming.factory.initial", "weblogic.jndi.WLInitialContextFactory");
+		System.getProperties().put("java.naming.provider.url", "t3://localhost:80");
+	}
+
 	@Before
 	public void setUp() {
-
-//		this.setNick(nick);
-//		this.setEmail(email);
-//		this.setPass(pass);
-
 		user1 = new User(user1Nick, user1Email, user1Pass);
 	}
 
