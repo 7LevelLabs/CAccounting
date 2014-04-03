@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+
+
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/jee
+       http://www.springframework.org/schema/jee/spring-jee.xsd"
+        >
+
+    <context:annotation-config/>
+
+    <context:component-scan base-package="ua.its.slot7.caccounting.model"/>
+    <context:component-scan base-package="ua.its.slot7.caccounting.service"/>
+    <context:component-scan base-package="ua.its.slot7.caccounting.rest"/>
+    <context:component-scan base-package="ua.its.slot7.caccounting.system"/>
+
+    <!--DB & related staff-->
+
+    <!--Use datasource-->
+    <jee:jndi-lookup id="dataSource" jndi-name="jdbc/its_caccounting"/>
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.use_sql_comments">false</prop>
+                <prop key="hibernate.format_sql">false</prop>
+            </props>
+        </property>
+        <property name="annotatedClasses">
+            <list>
+                <value>ua.its.slot7.caccounting.model.person.Person</value>
+                <value>ua.its.slot7.caccounting.model.invoice.Invoice</value>
+                <value>ua.its.slot7.caccounting.model.invoiceline.InvoiceLine</value>
+                <value>ua.its.slot7.caccounting.model.invoicepaymentstate.InvoicePaymentState</value>
+                <value>ua.its.slot7.caccounting.model.user.User</value>
+                <value>ua.its.slot7.caccounting.model.userrole.UserRole</value>
+                <value>ua.its.slot7.caccounting.model.userartoken.UserARToken</value>
+                <value>ua.its.slot7.caccounting.model.setting.Setting</value>
+            </list>
+        </property>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean
+            id="loggerListener"
+            class="org.springframework.security.authentication.event.LoggerListener"/>
+
+    <bean
+            id="applicationEventsListener"
+            class="ua.its.slot7.caccounting.view.web.utils.ApplicationEventsListener"/>
+
+    <!-- Aspects -->
+    <bean id="anAspect" class="ua.ll7.slot7.checks.notnull.aspect.NotNullAspect"/>
+
+</beans>
