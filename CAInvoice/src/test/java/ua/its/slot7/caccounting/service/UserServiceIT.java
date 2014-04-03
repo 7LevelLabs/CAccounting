@@ -2,7 +2,6 @@ package ua.its.slot7.caccounting.service;
 
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,11 +31,11 @@ public class UserServiceIT extends Assert {
 	@Autowired
 	private UserServiceAvatar userService;
 
-	@BeforeClass
-	public static void beforeClass() {
-		System.getProperties().put("java.naming.factory.initial", "weblogic.jndi.WLInitialContextFactory");
-		System.getProperties().put("java.naming.provider.url", "t3://localhost:7001");
-	}
+//	@BeforeClass
+//	public static void beforeClass() {
+//		System.getProperties().put("java.naming.factory.initial", "weblogic.jndi.WLInitialContextFactory");
+//		System.getProperties().put("java.naming.provider.url", "t3://localhost:7001");
+//	}
 
 	@Before
 	public void setUp() {
