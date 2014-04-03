@@ -2,11 +2,14 @@ package ua.its.slot7.caccounting.model.invoice;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Index;
+import org.hibernate.validator.constraints.NotBlank;
 import ua.its.slot7.caccounting.model.invoiceline.InvoiceLine;
 import ua.its.slot7.caccounting.model.invoicepaymentstate.InvoicePaymentState;
 import ua.its.slot7.caccounting.model.person.Person;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -257,12 +260,23 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 	}
 
 	private long id;
+
+	@NotBlank(message = "Invoice number must be not blank")
 	private String number;
+
 	private Date dateCreation;
 	private Date dateUpdate;
+
+	@Min(value = 0, message = "Invoice sum must be > 0")
 	private float sum;
+
+	@NotNull(message = "Invoice person must be not null")
 	private Person person;
+
+	@NotNull(message = "Invoice lines must be not null")
 	private List<InvoiceLine> invoicesLines = null;
+
+	@NotNull(message = "Invoice payment state must be not null")
 	private InvoicePaymentState paymentState = null;
 
 	private Date lastUpdate;

@@ -16,9 +16,12 @@ package ua.its.slot7.caccounting.model.invoiceline;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
+import org.hibernate.validator.constraints.NotBlank;
 import ua.its.slot7.caccounting.model.invoice.Invoice;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -208,9 +211,19 @@ public class InvoiceLine implements Serializable, Comparable<InvoiceLine> {
 
 	private long id;
 	private long tid;
+
+	@NotNull(message = "Invoice must be not null")
 	private Invoice invoice;
+
+	@NotBlank(message = "Invoice line must be not blank")
 	private String lineText;
+
+	@Min(value = 1, message = "Invoice line quantity must be > 0")
 	private int lineQt;
+
+	@Min(value = 0, message = "Invoice line price must be > 0")
 	private float linePrice;
+
+	@Min(value = 0, message = "Invoice line sum must be > 0")
 	private float lineSum;
 }

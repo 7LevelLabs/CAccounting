@@ -3,6 +3,7 @@ package ua.its.slot7.caccounting.model.person;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Index;
+import org.hibernate.validator.constraints.NotBlank;
 import ua.its.slot7.caccounting.model.invoice.Invoice;
 import ua.its.slot7.caccounting.model.user.User;
 
@@ -303,9 +304,16 @@ public class Person implements Serializable, Comparable<Person> {
 	}
 
 	public long id;
+
+	@NotBlank(message = "Person's nick must be not blank")
 	private String nick;
+
+	@NotBlank(message = "Person's name must be not blank")
 	private String name;
+
 	private String phone;
+
+	@NotBlank(message = "Person's email must be not blank")
 	private String email;
 	private List<Invoice> invoices = null;
 	private User user;

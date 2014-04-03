@@ -16,6 +16,7 @@ package ua.its.slot7.caccounting.model.user;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Index;
+import org.hibernate.validator.constraints.NotBlank;
 import ua.its.slot7.caccounting.model.userrole.UserRole;
 
 import javax.persistence.*;
@@ -209,10 +210,18 @@ public class User implements Serializable, Comparable<User> {
 	}
 
 	private long id;
+
+	@NotBlank(message = "User's nick must be not blank")
 	private String nick;
+
+	@NotBlank(message = "User's nick must be not blank")
 	private String email;
+
 	private String pass;
+
+	@NotBlank(message = "User's API code must be not blank")
 	private String apiCode;
+
 	private UserRole userRole;
 	private boolean isActive;
 	private Date lastUpdate;

@@ -17,6 +17,7 @@ import org.hibernate.annotations.GenericGenerator;
 import ua.its.slot7.caccounting.model.invoice.Invoice;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -97,5 +98,7 @@ public class InvoicePaymentState implements Serializable {
 	private long id;
 	private boolean isPaid;
 	private Date lastDate;
+
+	@NotNull(message = "Invoice in the payment state must be not null")
 	private Invoice invoice;
 }
