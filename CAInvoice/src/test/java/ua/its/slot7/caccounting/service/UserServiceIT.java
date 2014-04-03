@@ -35,7 +35,7 @@ public class UserServiceIT extends Assert {
 	@BeforeClass
 	public static void beforeClass() {
 		System.getProperties().put("java.naming.factory.initial", "weblogic.jndi.WLInitialContextFactory");
-		System.getProperties().put("java.naming.provider.url", "t3://localhost:80");
+		System.getProperties().put("java.naming.provider.url", "t3://localhost:7001");
 	}
 
 	@Before
