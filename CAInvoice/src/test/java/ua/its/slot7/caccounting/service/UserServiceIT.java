@@ -7,8 +7,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.transaction.TransactionConfiguration;
-import org.springframework.transaction.annotation.Transactional;
 import ua.its.slot7.caccounting.model.user.User;
 import ua.its.slot7.caccounting.model.userrole.UserRole;
 
@@ -18,8 +16,8 @@ import ua.its.slot7.caccounting.model.userrole.UserRole;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring-config-IT.xml")
-@Transactional
-@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
+//@Transactional
+//@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
 public class UserServiceIT extends Assert {
 
 	private User user1;
