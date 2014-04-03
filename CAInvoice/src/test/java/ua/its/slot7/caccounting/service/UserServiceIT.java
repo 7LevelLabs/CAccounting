@@ -18,7 +18,7 @@ import ua.its.slot7.caccounting.model.userrole.UserRole;
  *         02.04.14 : 19:13
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:spring-config-IT.xml")
+@ContextConfiguration("classpath:spring-config.xml")
 @Transactional
 @TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
 public class UserServiceIT extends Assert {
