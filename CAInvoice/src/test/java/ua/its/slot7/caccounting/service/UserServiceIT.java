@@ -17,7 +17,7 @@ import ua.its.slot7.caccounting.model.userrole.UserRole;
  *         02.04.14 : 19:13
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:spring-config.xml")
+@ContextConfiguration("classpath:spring-config-IT.xml")
 @Transactional
 @TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
 public class UserServiceIT extends Assert {
@@ -30,12 +30,6 @@ public class UserServiceIT extends Assert {
 
 	@Autowired
 	private UserServiceAvatar userService;
-
-//	@BeforeClass
-//	public static void beforeClass() {
-//		System.getProperties().put("java.naming.factory.initial", "weblogic.jndi.WLInitialContextFactory");
-//		System.getProperties().put("java.naming.provider.url", "t3://localhost:7001");
-//	}
 
 	@Before
 	public void setUp() {
