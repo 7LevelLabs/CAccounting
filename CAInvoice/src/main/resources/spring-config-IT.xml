@@ -19,8 +19,8 @@
 
     <context:component-scan base-package="ua.its.slot7.caccounting.model"/>
     <context:component-scan base-package="ua.its.slot7.caccounting.service"/>
-    <context:component-scan base-package="ua.its.slot7.caccounting.rest"/>
-    <context:component-scan base-package="ua.its.slot7.caccounting.system"/>
+    <!--<context:component-scan base-package="ua.its.slot7.caccounting.rest"/>-->
+    <!--<context:component-scan base-package="ua.its.slot7.caccounting.system"/>-->
 
     <!--DB & related staff-->
 
