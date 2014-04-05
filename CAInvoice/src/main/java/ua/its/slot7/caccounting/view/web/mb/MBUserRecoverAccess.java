@@ -62,6 +62,9 @@ public class MBUserRecoverAccess {
 	private String localUserPasswordConfirm;
 
 	public String actionRecoverAccess () {
+
+		LOGGER.info("actionRecoverAccess : Go!");
+
 		String res = null;
 		if (!userService.areThereThisEMail(this.getLocalUserEmail())) {
 			FacesContext.getCurrentInstance().addMessage(
