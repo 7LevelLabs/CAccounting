@@ -42,6 +42,13 @@
                 <skip.integration.tests>false</skip.integration.tests>
             </properties>
         </profile>
+        <profile>
+            <id>quick</id>
+            <properties>
+                <skip.unit.tests>true</skip.unit.tests>
+                <skip.integration.tests>true</skip.integration.tests>
+            </properties>
+        </profile>
 
     </profiles>
 
