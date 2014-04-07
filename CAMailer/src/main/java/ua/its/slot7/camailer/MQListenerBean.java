@@ -38,7 +38,7 @@ public class MQListenerBean implements MessageListener {
 	 * Logger
 	 *
 	 */
-	private final Logger LOGGER = Logger.getLogger(this.getClass());
+	private final Logger LOGGER = Logger.getLogger(MQListenerBean.class);
 
 	@Resource
 	private MessageDrivenContext mdc;

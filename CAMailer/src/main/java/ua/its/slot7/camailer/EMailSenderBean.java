@@ -35,7 +35,7 @@ public class EMailSenderBean implements EMailSenderBeanAvatarLocal{
 	 * Logger
 	 *
 	 */
-	private final Logger LOGGER = Logger.getLogger(this.getClass());
+	private final Logger LOGGER = Logger.getLogger(EMailSenderBean.class);
 
 	/**
 	 *
