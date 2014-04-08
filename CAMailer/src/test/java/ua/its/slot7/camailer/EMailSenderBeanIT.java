@@ -19,7 +19,7 @@ public class EMailSenderBeanIT extends Assert {
 	// or java:global/CAMailer-0.1/EMailSenderBeanEJB!ua.its.slot7.camailer.EMailSenderBeanAvatarLocal
 
 	@Before
-	private void setUp() throws Exception {
+	public void setUp() throws Exception {
 		Properties properties = new Properties();
 		//
 //		InitialContext initialContext = new InitialContext(properties);
