@@ -37,37 +37,37 @@ public class BSystemSettings implements BSystemSettingsAvatar {
 
 	//Without trailing slash!
 	@Value("${system.base.url}")
-	public String SETTINGS_SYSTEM_BASE_URL;
+	private String SETTINGS_SYSTEM_BASE_URL;
 
 	@Value("${system.email.from.email}")
-	public String SETTINGS_SYSTEM_EMAIL_FROM_EMAIL;
+	private String SETTINGS_SYSTEM_EMAIL_FROM_EMAIL;
 
 	@Value("${system.email.from.name}")
-	public String SETTINGS_SYSTEM_EMAIL_FROM_NAME;
+	private String SETTINGS_SYSTEM_EMAIL_FROM_NAME;
 
 	@Value("${system.ur.welcome.subj}")
-	public String SETTINGS_SYSTEM_UR_WELCOME_SUBJ;
+	private String SETTINGS_SYSTEM_UR_WELCOME_SUBJ;
 
 	@Value("${system.ur.welcome.text}")
-	public String SETTINGS_SYSTEM_UR_WELCOME_TEXT = " ";
+	private String SETTINGS_SYSTEM_UR_WELCOME_TEXT = " ";
 
 	@Value("${system.ar.code.subj}")
-	public String SETTINGS_SYSTEM_AR_CODE_SUBJ;
+	private String SETTINGS_SYSTEM_AR_CODE_SUBJ;
 
 	@Value("${system.ar.code.text}")
-	public String SETTINGS_SYSTEM_AR_CODE_TEXT = " ";
+	private String SETTINGS_SYSTEM_AR_CODE_TEXT = " ";
 
 	@Value("${system.ar.code.done.subj}")
-	public String SETTINGS_SYSTEM_AR_CODE_DONE_SUBJ;
+	private String SETTINGS_SYSTEM_AR_CODE_DONE_SUBJ;
 
 	@Value("${system.ar.code.done.text}")
-	public String SETTINGS_SYSTEM_AR_CODE_DONE_TEXT = " ";
+	private String SETTINGS_SYSTEM_AR_CODE_DONE_TEXT = " ";
 
 	//mail templates
 	//invoice
 
 	@Value("${system.ebt.invoice}")
-	public String SETTINGS_SYSTEM_EBT_INVOICE = " ";
+	private String SETTINGS_SYSTEM_EBT_INVOICE = " ";
 
 	private HashMap<String,String> systemSettings;
 
