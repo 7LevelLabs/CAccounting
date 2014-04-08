@@ -2,6 +2,7 @@ package ua.its.slot7.caccounting.system;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import ua.its.slot7.caccounting.model.setting.Setting;
 import ua.its.slot7.caccounting.service.SettingServiceAvatar;
@@ -31,26 +32,42 @@ public class BSystemSettings implements BSystemSettingsAvatar {
 	@Autowired
 	private SettingServiceAvatar settingService;
 
-	public final String SETTINGS_SYSTEM_SCOPE = "system";
+	@Value("${system.scope}")
+	public String SETTINGS_SYSTEM_SCOPE;
 
 	//Without trailing slash!
-	public final String SETTINGS_SYSTEM_BASE_URL = "http://book21:8080/CAInvoice-0.1";
+	@Value("${system.base.url}")
+	public String SETTINGS_SYSTEM_BASE_URL;
 
-	public final String SETTINGS_SYSTEM_EMAIL_FROM_EMAIL = "alex.itstudio@gmail.com";
-	public final String SETTINGS_SYSTEM_EMAIL_FROM_NAME = "CAccounting";
+	@Value("${system.email.from.email}")
+	public String SETTINGS_SYSTEM_EMAIL_FROM_EMAIL;
 
-	public final String SETTINGS_SYSTEM_UR_WELCOME_SUBJ = "You are Welcome! :) : Cloud Accounting";
-	public final String SETTINGS_SYSTEM_UR_WELCOME_TEXT = " ";
+	@Value("${system.email.from.name}")
+	public String SETTINGS_SYSTEM_EMAIL_FROM_NAME;
 
-	public final String SETTINGS_SYSTEM_AR_CODE_SUBJ = "Access recover code : Cloud Accounting";
-	public final String SETTINGS_SYSTEM_AR_CODE_TEXT = " ";
+	@Value("${system.ur.welcome.subj}")
+	public String SETTINGS_SYSTEM_UR_WELCOME_SUBJ;
 
-	public final String SETTINGS_SYSTEM_AR_CODE_DONE_SUBJ = "Access recover done : Cloud Accounting";
-	public final String SETTINGS_SYSTEM_AR_CODE_DONE_TEXT = " ";
+	@Value("${system.ur.welcome.text}")
+	public String SETTINGS_SYSTEM_UR_WELCOME_TEXT = " ";
+
+	@Value("${system.ar.code.subj}")
+	public String SETTINGS_SYSTEM_AR_CODE_SUBJ;
+
+	@Value("${system.ar.code.text}")
+	public String SETTINGS_SYSTEM_AR_CODE_TEXT = " ";
+
+	@Value("${system.ar.code.done.subj}")
+	public String SETTINGS_SYSTEM_AR_CODE_DONE_SUBJ;
+
+	@Value("${system.ar.code.done.text}")
+	public String SETTINGS_SYSTEM_AR_CODE_DONE_TEXT = " ";
 
 	//mail templates
 	//invoice
-	public final String SETTINGS_SYSTEM_EBT_INVOICE = " ";
+
+	@Value("${system.ebt.invoice}")
+	public String SETTINGS_SYSTEM_EBT_INVOICE = " ";
 
 	private HashMap<String,String> systemSettings;
 
