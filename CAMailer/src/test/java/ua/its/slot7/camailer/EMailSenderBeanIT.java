@@ -4,6 +4,8 @@ import org.junit.*;
 
 import javax.ejb.embeddable.EJBContainer;
 import javax.naming.Context;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Alex Velichko
@@ -21,7 +23,9 @@ public class EMailSenderBeanIT extends Assert {
 
 	@BeforeClass
 	public static void setupContainer() throws Exception {
-		ejbContainer = EJBContainer.createEJBContainer();
+		Map properties = new HashMap();
+		properties.put(EJBContainer.PROVIDER, "weblogic.ejb.embeddable.EJBContainerProvider");
+		ejbContainer = EJBContainer.createEJBContainer(properties);
 		ctx = ejbContainer.getContext();
 	}
 
