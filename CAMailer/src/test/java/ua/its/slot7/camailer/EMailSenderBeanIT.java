@@ -15,7 +15,7 @@ public class EMailSenderBeanIT extends Assert {
 
 	private EMailSenderBean eMailSenderBean;
 
-	private static final String nameToTest = "java:global/CAMailer-0.1/EMailSenderBeanEJB";
+	private static final String nameToTest = "java:global.CAMailer-0.1.EMailSenderBeanEJB!ua.its.slot7.camailer.EMailSenderBeanAvatarLocal";
 	// or java:global/CAMailer-0.1/EMailSenderBeanEJB!ua.its.slot7.camailer.EMailSenderBeanAvatarLocal
 
 	@Before
