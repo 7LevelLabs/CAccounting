@@ -30,38 +30,28 @@ import java.util.Date;
  */
 @Stateless(name = "EMailSenderBeanEJB")
 @Local(EMailSenderBeanAvatarLocal.class)
-public class EMailSenderBean implements EMailSenderBeanAvatarLocal{
+public class EMailSenderBean implements EMailSenderBeanAvatarLocal {
 	/**
 	 * Logger
-	 *
 	 */
 	private final Logger LOGGER = Logger.getLogger(EMailSenderBean.class);
 
 	/**
-	 *
 	 * Lookup string for JavaMail app-server resource
 	 */
 	private final String EMAIL_SNNAME = "mail/CAEMailResource";
 
 	/**
-	 *
-	 * MailTask to send
-	 * */
-	private MailTask mailTask;
-
-	/**
-	 *
 	 * Resource of the Application server
-	 * */
+	 */
 	@Resource(name = EMAIL_SNNAME)
 	private Session session;
 
 	/**
-	 *
 	 * Post-construct procedure
-	 * */
+	 */
 	@PostConstruct
-	void init () {
+	void init() {
 
 	}
 
@@ -74,18 +64,20 @@ public class EMailSenderBean implements EMailSenderBeanAvatarLocal{
 		msg.setFrom(
 			new InternetAddress(
 				mailTask.getFrom(),
-				mailTask.getFromName()));
+				mailTask.getFromName())
+		);
 
 		msg.setRecipient(
 			MimeMessage.RecipientType.TO,
 			new InternetAddress(
 				mailTask.getTo(),
-				mailTask.getToName()));
+				mailTask.getToName())
+		);
 
 		msg.setSubject(mailTask.getSubject());
 
 		if (mailTask.getIsHTMLMessage()) {
-			msg.setContent(mailTask.getMessageBody(),"text/html");
+			msg.setContent(mailTask.getMessageBody(), "text/html");
 		} else {
 			msg.setText(mailTask.getMessageBody());
 		}
@@ -93,14 +85,7 @@ public class EMailSenderBean implements EMailSenderBeanAvatarLocal{
 		Transport.send(msg);
 	}
 
-	public MailTask getMailTask() {
-		return mailTask;
+	public EMailSenderBean() {
 	}
-
-	public void setMailTask(MailTask mailTask) {
-		this.mailTask = mailTask;
-	}
-
-	public EMailSenderBean() {}
 
 }
