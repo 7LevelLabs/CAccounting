@@ -23,7 +23,7 @@ public class EMailSenderBeanIT extends Assert {
 		Properties properties = new Properties();
 		//
 //		InitialContext initialContext = new InitialContext(properties);
-		InitialContext initialContext = new InitialContext(properties);
+		InitialContext initialContext = new InitialContext();
 
 		eMailSenderBean = (EMailSenderBean) initialContext.lookup(nameToTest);
 
