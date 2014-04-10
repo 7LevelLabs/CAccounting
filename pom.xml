@@ -91,7 +91,7 @@
                 </executions>
                 <configuration>
                     <additionalClasspathElements>
-                        <additionalClasspathElement>/opt/wls12120/user_projects/domains/mydomain/lib/wlclient.jar
+                        <additionalClasspathElement>/opt/wls12120/wlserver/server/lib/weblogic.jar
                         </additionalClasspathElement>
                     </additionalClasspathElements>
                 </configuration>
