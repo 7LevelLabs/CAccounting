@@ -25,7 +25,7 @@ public class EMailSenderBeanIT extends Assert {
 	public static void setupContainer() throws Exception {
 		Map properties = new HashMap();
 		properties.put(EJBContainer.MODULES, "EMailSenderBeanEJB");
-		properties.put(EJBContainer.PROVIDER, "javax.ejb.spi.EJBContainerProvider");
+		properties.put(EJBContainer.PROVIDER, "tomee-embedded");
 		ejbContainer = EJBContainer.createEJBContainer(properties);
 //		ejbContainer = EJBContainer.createEJBContainer();
 

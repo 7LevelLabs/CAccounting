@@ -89,12 +89,12 @@
                         </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <additionalClasspathElements>
-                        <additionalClasspathElement>/opt/wls12120/wlserver/server/lib/wlfullclient.jar
-                        </additionalClasspathElement>
-                    </additionalClasspathElements>
-                </configuration>
+                <!--<configuration>-->
+                <!--<additionalClasspathElements>-->
+                <!--<additionalClasspathElement>/opt/wls12120/wlserver/server/lib/wlfullclient.jar-->
+                <!--</additionalClasspathElement>-->
+                <!--</additionalClasspathElements>-->
+                <!--</configuration>-->
             </plugin>
 
         </plugins>
