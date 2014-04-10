@@ -6,7 +6,7 @@
 
     <artifactId>CAMailer</artifactId>
     <version>0.1</version>
-    <packaging>ejb</packaging>
+    <packaging>jar</packaging>
 
     <parent>
         <groupId>ua.its.slot7.caccounting</groupId>
@@ -14,10 +14,6 @@
         <version>0.1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-
-    <properties>
-        <version.ejb.plugin>2.3</version.ejb.plugin>
-    </properties>
 
     <dependencies>
 
@@ -36,27 +32,14 @@
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.openejb</groupId>
-            <artifactId>tomee-embedded</artifactId>
-            <version>1.6.0</version>
-        </dependency>
-
     </dependencies>
 
     <build>
-        <plugins>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-ejb-plugin</artifactId>
-                <version>${version.ejb.plugin}</version>
-                <configuration>
-                    <ejbVersion>3.1</ejbVersion>
-                    <generateClient>false</generateClient>
-                </configuration>
-            </plugin>
-            <plugin>
+        <finalName>${project.name}</finalName>
+
+        <plugins>
+        <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
@@ -75,7 +58,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 
