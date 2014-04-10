@@ -16,7 +16,7 @@ public class EMailSenderBeanIT extends Assert {
 	private static EJBContainer ejbContainer;
 	private static Context ctx;
 
-	private EMailSenderBean eMailSenderBean;
+	private static EMailSenderBean eMailSenderBean;
 
 	private static final String nameToTest = "java:global/CAMailer-0.1/EMailSenderBeanEJB!ua.its.slot7.camailer.EMailSenderBeanAvatarLocal";
 	// or java:global/CAMailer-0.1/EMailSenderBeanEJB!ua.its.slot7.camailer.EMailSenderBeanAvatarLocal
@@ -25,8 +25,13 @@ public class EMailSenderBeanIT extends Assert {
 	public static void setupContainer() throws Exception {
 		Map properties = new HashMap();
 		properties.put(EJBContainer.PROVIDER, "weblogic.ejb.embeddable.EJBContainerProvider");
-		ejbContainer = EJBContainer.createEJBContainer(properties);
+//		ejbContainer = EJBContainer.createEJBContainer(properties);
+
+		ejbContainer = EJBContainer.createEJBContainer();
 		ctx = ejbContainer.getContext();
+
+		eMailSenderBean = (EMailSenderBean) ctx.lookup("java:global/CAMailer-0.1/EMailSenderBeanEJB");
+
 	}
 
 	@Before
