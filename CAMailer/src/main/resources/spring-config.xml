@@ -9,7 +9,7 @@
     <context:annotation-config/>
 
     <bean id="emailSession" class="org.springframework.jndi.JndiObjectFactoryBean">
-        <property name="jndiName" value="${email.session}"/>
+        <property name="jndiName" value="mail/CAEMailResource"/>
     </bean>
 
     <bean id="emailSender" class="ua.its.slot7.camailer.EMailSender">
