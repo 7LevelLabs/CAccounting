@@ -25,7 +25,7 @@ public class EMailSenderBeanIT extends Assert {
 	public static void setupContainer() throws Exception {
 		Map properties = new HashMap();
 		properties.put(EJBContainer.MODULES, "EMailSenderBeanEJB");
-		properties.put(EJBContainer.PROVIDER, "weblogic.ejb.embeddable.EJBContainerProvider");
+		properties.put(EJBContainer.PROVIDER, "javax.ejb.spi.EJBContainerProvider");
 		ejbContainer = EJBContainer.createEJBContainer(properties);
 
 		ctx = ejbContainer.getContext();
