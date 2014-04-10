@@ -26,8 +26,8 @@ public class EMailSenderBeanIT extends Assert {
 		Map properties = new HashMap();
 		properties.put(EJBContainer.MODULES, "EMailSenderBeanEJB");
 		properties.put(EJBContainer.PROVIDER, "javax.ejb.spi.EJBContainerProvider");
-//		ejbContainer = EJBContainer.createEJBContainer(properties);
-		ejbContainer = EJBContainer.createEJBContainer();
+		ejbContainer = EJBContainer.createEJBContainer(properties);
+//		ejbContainer = EJBContainer.createEJBContainer();
 
 		ctx = ejbContainer.getContext();
 	}
