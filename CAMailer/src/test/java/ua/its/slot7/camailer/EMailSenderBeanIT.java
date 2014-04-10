@@ -9,7 +9,7 @@ import java.util.Map;
 
 /**
  * @author Alex Velichko
- *         08.04.14 : 15:45
+ *         10.04.14 : 13:20
  */
 public class EMailSenderBeanIT extends Assert {
 
@@ -26,7 +26,8 @@ public class EMailSenderBeanIT extends Assert {
 		Map properties = new HashMap();
 		properties.put(EJBContainer.MODULES, "EMailSenderBeanEJB");
 		properties.put(EJBContainer.PROVIDER, "javax.ejb.spi.EJBContainerProvider");
-		ejbContainer = EJBContainer.createEJBContainer(properties);
+//		ejbContainer = EJBContainer.createEJBContainer(properties);
+		ejbContainer = EJBContainer.createEJBContainer();
 
 		ctx = ejbContainer.getContext();
 
@@ -52,5 +53,7 @@ public class EMailSenderBeanIT extends Assert {
 
 	}
 
+
 }
+
 
