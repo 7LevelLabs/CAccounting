@@ -24,10 +24,10 @@ public class EMailSenderBeanIT extends Assert {
 	@BeforeClass
 	public static void setupContainer() throws Exception {
 		Map properties = new HashMap();
+		properties.put(EJBContainer.MODULES, "EMailSenderBeanEJB");
 		properties.put(EJBContainer.PROVIDER, "weblogic.ejb.embeddable.EJBContainerProvider");
-//		ejbContainer = EJBContainer.createEJBContainer(properties);
+		ejbContainer = EJBContainer.createEJBContainer(properties);
 
-		ejbContainer = EJBContainer.createEJBContainer();
 		ctx = ejbContainer.getContext();
 
 		eMailSenderBean = (EMailSenderBean) ctx.lookup("java:global/CAMailer-0.1/EMailSenderBeanEJB");
