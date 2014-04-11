@@ -50,7 +50,7 @@ public class EMailSenderTestIT extends Assert {
 		assertNotNull(eMailSender.getSession());
 	}
 
-	@Test
+	@Test(expected = NullPointerException.class)
 	public void testSendEMailWithNullTask() throws Exception {
 		eMailSender.sendEMail(null);
 	}
