@@ -78,5 +78,4 @@ public class EMailSenderTestIT extends Assert {
 		eMailSender.sendEMail(mailTask);
 	}
 
-
 }
