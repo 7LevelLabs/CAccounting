@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mock.jndi.SimpleNamingContextBuilder;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import ua.its.slot7.camailtask.model.MailTask;
 
 import javax.mail.Session;
 import javax.naming.NamingException;
@@ -36,6 +37,14 @@ public class EMailSenderTestIT extends Assert {
 
 		//TODO Setup real values
 
+		properties.setProperty("password", "zwcrTaGvmnumjdZcRb4bu");
+		properties.setProperty("host", "smtp.gmail.com");
+		properties.setProperty("mail.smtp.auth", "true");
+		properties.setProperty("mail.transport.protocol", "smtp");
+		properties.setProperty("port", "25");
+		properties.setProperty("username", "no-reply@7levellabs.com");
+		properties.setProperty("mail.smtp.starttls.enable", "true");
+
 		Session session = Session.getDefaultInstance(properties);
 		SimpleNamingContextBuilder builder = SimpleNamingContextBuilder.emptyActivatedContextBuilder();
 
@@ -54,4 +63,20 @@ public class EMailSenderTestIT extends Assert {
 	public void testSendEMailWithNullTask() throws Exception {
 		eMailSender.sendEMail(null);
 	}
+
+	@Test
+	public void testSendEMail() throws Exception {
+
+		MailTask mailTask = new MailTask("alex.velichko.kyiv@gmail.com",
+			"Alex From",
+			"alex.velichko@gmail.com",
+			"Alex To",
+			"Subject",
+			"Message body",
+			false);
+
+		eMailSender.sendEMail(mailTask);
+	}
+
+
 }
