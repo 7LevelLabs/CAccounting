@@ -69,11 +69,6 @@ public class EMailSenderTestIT extends Assert {
 	}
 
 	@Test
-	public void testSessionProperties() {
-		System.out.println(eMailSender.getSession().getProperties().toString());
-	}
-
-	@Test
 	public void testSendEMail() throws Exception {
 
 		MailTask mailTask = new MailTask("no-reply@7levellabs.com",
