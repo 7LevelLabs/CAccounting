@@ -42,7 +42,7 @@ public class EMailSenderTestIT extends Assert {
 		properties.setProperty("mail.smtp.user", "no-reply@7levellabs.com");
 		properties.setProperty("mail.smtp.password", "zwcrTaGvmnumjdZcRb4bu");
 		properties.setProperty("mail.smtp.starttls.enable", "true");
-		properties.setProperty("mail.smtp.port", "25");
+		properties.setProperty("mail.smtp.port", "465");
 		properties.setProperty("mail.smtp.socketFactory.port", "465");
 		properties.setProperty("mail.smtp.socketFactory.fallback", "false");
 		properties.setProperty("mail.smtp.debug", "true");
