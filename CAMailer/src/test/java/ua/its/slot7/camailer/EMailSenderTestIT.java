@@ -29,13 +29,17 @@ public class EMailSenderTestIT extends Assert {
 	@Value("${email.session}")
 	private String sessionJndiName;
 
+	@Value("${test.email.address.from}")
+	private String testEMailFrom;
+
+	@Value("${test.email.address.to}")
+	private String testEMailTo;
+
 	@Before
 	public void setUpClass() throws NamingException {
 
 		//setup properties
 		Properties properties = new Properties();
-
-		//TODO Setup real values
 
 		properties.setProperty("mail.transport.protocol", "smtp");
 		properties.setProperty("mail.smtp.host", "smtp.gmail.com");
@@ -69,11 +73,11 @@ public class EMailSenderTestIT extends Assert {
 	}
 
 	@Test
-	public void testSendEMail() throws Exception {
+	public void testSendEMailNoHtml() throws Exception {
 
-		MailTask mailTask = new MailTask("no-reply@7levellabs.com",
+		MailTask mailTask = new MailTask(testEMailFrom,
 			"CA Info",
-			"alex.velichko@gmail.com",
+			testEMailTo,
 			"Alex To",
 			"Subject",
 			"Message body",
@@ -81,5 +85,20 @@ public class EMailSenderTestIT extends Assert {
 
 		eMailSender.sendEMail(mailTask);
 	}
+
+	@Test
+	public void testSendEMailHtml() throws Exception {
+
+		MailTask mailTask = new MailTask(testEMailFrom,
+			"CA Info",
+			testEMailTo,
+			"Alex To",
+			"Subject",
+			"<b>Message</b> body",
+			true);
+
+		eMailSender.sendEMail(mailTask);
+	}
+
 
 }

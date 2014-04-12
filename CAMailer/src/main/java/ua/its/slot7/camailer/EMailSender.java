@@ -1,6 +1,8 @@
 package ua.its.slot7.camailer;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import ua.its.slot7.camailer.util.SmtpAuthenticator;
 import ua.its.slot7.camailtask.model.MailTask;
 
 import javax.mail.Message;
@@ -12,6 +14,7 @@ import javax.mail.internet.MimeMessage;
 import javax.validation.constraints.NotNull;
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
+import java.util.Properties;
 
 /**
  * @author Alex Velichko
@@ -22,10 +25,25 @@ public class EMailSender implements IEmailSender {
 
 	private Session session;
 
+	@Value("${mail.smtp.user.label}")
+	private String mailSmtpUserLabel;
+
+	@Value("${mail.smtp.password.label}")
+	private String mailSmtpPasswordLabel;
+
 	@Override
 	public void sendEMail(@NotNull final MailTask mailTask) throws MessagingException, UnsupportedEncodingException {
 
-		Message msg = new MimeMessage(session);
+		Properties properties = session.getProperties();
+
+		Session session2 = session.getInstance(
+			properties, new SmtpAuthenticator(
+				properties.getProperty(mailSmtpUserLabel),
+				properties.getProperty(mailSmtpPasswordLabel)
+			)
+		);
+
+		Message msg = new MimeMessage(session2);
 		msg.setSentDate(new Date());
 
 		msg.setFrom(
