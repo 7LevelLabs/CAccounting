@@ -37,13 +37,17 @@ public class EMailSenderTestIT extends Assert {
 
 		//TODO Setup real values
 
-		properties.setProperty("password", "zwcrTaGvmnumjdZcRb4bu");
-		properties.setProperty("host", "smtp.gmail.com");
-		properties.setProperty("mail.smtp.auth", "true");
 		properties.setProperty("mail.transport.protocol", "smtp");
-		properties.setProperty("port", "25");
-		properties.setProperty("username", "no-reply@7levellabs.com");
+		properties.setProperty("mail.smtp.host", "smtp.gmail.com");
+		properties.setProperty("mail.smtp.user", "no-reply@7levellabs.com");
+		properties.setProperty("mail.smtp.password", "zwcrTaGvmnumjdZcRb4bu");
 		properties.setProperty("mail.smtp.starttls.enable", "true");
+		properties.setProperty("mail.smtp.port", "25");
+		properties.setProperty("mail.smtp.socketFactory.port", "465");
+		properties.setProperty("mail.smtp.socketFactory.fallback", "false");
+		properties.setProperty("mail.smtp.debug", "true");
+		properties.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+		properties.setProperty("mail.smtp.auth", "true");
 
 		Session session = Session.getDefaultInstance(properties);
 		SimpleNamingContextBuilder builder = SimpleNamingContextBuilder.emptyActivatedContextBuilder();
@@ -67,8 +71,8 @@ public class EMailSenderTestIT extends Assert {
 	@Test
 	public void testSendEMail() throws Exception {
 
-		MailTask mailTask = new MailTask("alex.velichko.kyiv@gmail.com",
-			"Alex From",
+		MailTask mailTask = new MailTask("no-reply@7levellabs.com",
+			"CA Info",
 			"alex.velichko@gmail.com",
 			"Alex To",
 			"Subject",
