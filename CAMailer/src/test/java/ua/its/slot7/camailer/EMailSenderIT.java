@@ -21,7 +21,7 @@ import java.util.Properties;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring-config-IT.xml")
-public class EMailSenderTestIT extends Assert {
+public class EMailSenderIT extends Assert {
 
 	@Autowired
 	private EMailSender eMailSender;
