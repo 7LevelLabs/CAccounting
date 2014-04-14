@@ -16,4 +16,58 @@
         <property name="session" ref="emailSession"/>
     </bean>
 
+    <bean id="jndiTemplate" class="org.springframework.jndi.JndiTemplate">
+        <property name="environment">
+            <props>
+                <prop key="java.naming.factory.initial">
+                    weblogic.jndi.WLInitialContextFactory
+                </prop>
+                <prop key="java.naming.provider.url">t3://localhost:7001</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="queueConnectionFactory"
+          class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiTemplate">
+            <ref bean="jndiTemplate"/>
+        </property>
+        <property name="jndiName" value="${jms.connection.factory}"/>
+    </bean>
+
+    <bean id="jmsDestinationResolver"
+          class="org.springframework.jms.support.destination.JndiDestinationResolver">
+        <property name="jndiTemplate">
+            <ref bean="jndiTemplate"/>
+        </property>
+        <property name="cache">
+            <value>true</value>
+        </property>
+    </bean>
+
+    <bean id="invoiceQueueTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory">
+            <ref bean="queueConnectionFactory"/>
+        </property>
+        <property name="destinationResolver">
+            <ref bean="jmsDestinationResolver"/>
+        </property>
+    </bean>
+
+    <bean id="mailTaskQ" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiTemplate">
+            <ref bean="jndiTemplate"/>
+        </property>
+        <property name="jndiName" value="${jms.q}"/>
+    </bean>
+
+    <bean id="mailTaskQListener" class="ua.its.slot7.camailer.MQListener"/>
+
+    <bean id="invoicelistener" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="concurrentConsumers" value="5"/>
+        <property name="connectionFactory" ref="queueConnectionFactory"/>
+        <property name="destination" ref="mailTaskQ"/>
+        <property name="messageListener" ref="mailTaskQListener"/>
+    </bean>
+
 </beans>

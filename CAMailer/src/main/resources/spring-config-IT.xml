@@ -8,7 +8,8 @@
 
     <context:annotation-config/>
 
-    <bean id="emailSender" class="ua.its.slot7.camailer.EMailSender"/>
+    <bean id="mqListener" class="ua.its.slot7.camailer.MQListener"/>
 
+    <bean id="emailSender" class="ua.its.slot7.camailer.EMailSender"/>
 
 </beans>
