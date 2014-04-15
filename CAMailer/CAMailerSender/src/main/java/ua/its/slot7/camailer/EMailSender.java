@@ -11,7 +11,6 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import javax.validation.constraints.NotNull;
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.Properties;
@@ -32,7 +31,7 @@ public class EMailSender implements IEmailSender {
 	private String mailSmtpPasswordLabel;
 
 	@Override
-	public void sendEMail(@NotNull final MailTask mailTask) throws MessagingException, UnsupportedEncodingException {
+	public void sendEMail(final MailTask mailTask) throws MessagingException, UnsupportedEncodingException {
 
 		Properties properties = session.getProperties();
 
