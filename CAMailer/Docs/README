@@ -1,9 +1,1 @@
-MDB - read and process MailTasks from MQ
 
-Configurations:
-
-JavaMail Resource
-mail/CAEMailResource
-
-JMS Destination Resource
-jms/CAMailerQ

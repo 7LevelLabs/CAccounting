@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>CAMailer</artifactId>
+        <groupId>ua.its.slot7.caccounting.camailer</groupId>
+        <version>0.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>CAMailerEAR</artifactId>
+    <packaging>ear</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>ua.its.slot7.caccounting.camailer</groupId>
+            <artifactId>CAMailerSender</artifactId>
+            <version>0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>ua.its.slot7.caccounting.camailer</groupId>
+            <artifactId>CAMailerMQListener</artifactId>
+            <version>0.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>2.9</version>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>

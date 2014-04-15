@@ -4,9 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>ua.its.slot7.caccounting.camailer</groupId>
     <artifactId>CAMailer</artifactId>
     <version>0.1</version>
-    <packaging>jar</packaging>
+    <modules>
+        <module>CAMailerEAR</module>
+        <module>CAMailerSender</module>
+        <module>CAMailerMQListener</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <parent>
         <groupId>ua.its.slot7.caccounting</groupId>
@@ -22,13 +28,6 @@
             <groupId>ua.its.slot7.caccounting</groupId>
             <artifactId>CAMailTask</artifactId>
             <version>0.1</version>
-        </dependency>
-
-        <!--JavaEE API 7-->
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>${javaee-api.version}</version>
         </dependency>
 
     </dependencies>
