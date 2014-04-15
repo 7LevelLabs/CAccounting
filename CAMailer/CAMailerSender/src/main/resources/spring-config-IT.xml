@@ -10,4 +10,5 @@
 
     <bean id="emailSender" class="ua.its.slot7.camailer.EMailSender"/>
 
+
 </beans>

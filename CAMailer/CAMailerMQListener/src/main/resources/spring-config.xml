@@ -62,4 +62,12 @@
         <property name="messageListener" ref="mailTaskQListener"/>
     </bean>
 
+    <bean id="emailSession" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName" value="${email.session}"/>
+    </bean>
+
+    <bean id="emailSender" class="ua.its.slot7.camailer.EMailSender">
+        <property name="session" ref="emailSession"/>
+    </bean>
+
 </beans>
