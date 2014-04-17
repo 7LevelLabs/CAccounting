@@ -20,6 +20,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import ua.its.slot7.caccounting.model.userrole.UserRole;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
@@ -28,11 +29,12 @@ import java.util.UUID;
  * User of the system. With login / password.</br>
  * Key field - {@link #getEmail()}
  */
+//TODO fields PreparedBy & Discount - to the UI
 @Entity
 public class User implements Serializable, Comparable<User> {
 
 	/**
-	 * Invoice tech-ID
+	 * User tech-ID
 	 */
 	@Id
 	@GeneratedValue(generator = "increment")
@@ -50,6 +52,23 @@ public class User implements Serializable, Comparable<User> {
 	@Index(name = "nick")
 	public String getNick() {
 		return nick;
+	}
+
+	/**
+	 * User prepared by field for documents
+	 */
+	@Column(nullable = false)
+	@Index(name = "preparedBy")
+	public String getPreparedBy() {
+		return preparedBy;
+	}
+
+	/**
+	 * User discount for documents, in %
+	 */
+	@Column(nullable = false)
+	public int getDiscount() {
+		return discount;
 	}
 
 	/**
@@ -116,6 +135,7 @@ public class User implements Serializable, Comparable<User> {
 	 */
 	public User() {
 		this.setNick("");
+		this.setPreparedBy("");
 		this.setEmail("");
 		this.setPass("");
 		UUID uuid = UUID.randomUUID();
@@ -132,6 +152,7 @@ public class User implements Serializable, Comparable<User> {
 			throw new IllegalArgumentException("Arguments must be not null or empty");
 		}
 		this.setNick(nick);
+		this.setPreparedBy(nick);
 		this.setEmail(email);
 		this.setPass(pass);
 	}
@@ -157,15 +178,16 @@ public class User implements Serializable, Comparable<User> {
 
 	@Override
 	public String toString() {
-		final StringBuilder sb = new StringBuilder("User { ");
+		final StringBuilder sb = new StringBuilder("User{");
 		sb.append("id=").append(id);
 		sb.append(", nick='").append(nick).append('\'');
 		sb.append(", email='").append(email).append('\'');
 		sb.append(", pass='").append(pass).append('\'');
 		sb.append(", apiCode='").append(apiCode).append('\'');
-		sb.append(", userRole=").append(userRole.getRole());
 		sb.append(", isActive=").append(isActive);
 		sb.append(", lastUpdate=").append(lastUpdate);
+		sb.append(", preparedBy='").append(preparedBy).append('\'');
+		sb.append(", discount=").append(discount);
 		sb.append('}');
 		return sb.toString();
 	}
@@ -183,6 +205,10 @@ public class User implements Serializable, Comparable<User> {
 
 	public void setNick(String nick) {
 		this.nick = nick;
+	}
+
+	public void setPreparedBy(String preparedBy) {
+		this.preparedBy = preparedBy;
 	}
 
 	public void setEmail(String email) {
@@ -209,20 +235,30 @@ public class User implements Serializable, Comparable<User> {
 		this.apiCode = apiCode;
 	}
 
+	public void setDiscount(int discount) {
+		this.discount = discount;
+	}
+
 	private long id;
 
-	@NotBlank(message = "User's nick must be not blank")
+	@NotBlank(message = "User's 'Nick' must be not blank")
 	private String nick;
 
-	@NotBlank(message = "User's nick must be not blank")
+	@NotBlank(message = "User's 'Email' must be not blank")
 	private String email;
 
 	private String pass;
 
-	@NotBlank(message = "User's API code must be not blank")
+	@NotBlank(message = "User's 'API code' must be not blank")
 	private String apiCode;
 
 	private UserRole userRole;
 	private boolean isActive;
 	private Date lastUpdate;
+
+	@NotBlank(message = "User's 'Prepared by' must be not blank")
+	private String preparedBy;
+
+	@Min(value = 0, message = "User's 'Discount' must be >= 0")
+	private int discount;
 }
