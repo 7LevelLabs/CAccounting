@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import ua.its.slot7.caccounting.helper.PersonHelper;
 import ua.its.slot7.caccounting.model.invoice.Invoice;
 import ua.its.slot7.caccounting.model.invoiceline.InvoiceLine;
 import ua.its.slot7.caccounting.model.person.Person;
@@ -16,10 +17,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Iterator;
 
@@ -51,6 +48,9 @@ public class MBInvoiceNew implements Serializable {
 	@Autowired
 	private BLServiceAvatar blService;
 
+	@Autowired
+	private PersonHelper personHelper;
+
 	@ManagedProperty("#{param.personIdForNewInvoice}")
 	private long personIdForNewInvoice;
 
@@ -62,11 +62,11 @@ public class MBInvoiceNew implements Serializable {
 	private float lilLineSum;
 	private long lilSelectedID;
 
-	public void loadAction () {
+	public void loadAction() {
 		Person pp = personService.getPersonById(this.getPersonIdForNewInvoice());
-		if (pp!=null) {
+		if (pp != null) {
 			this.setPersonLocal(pp);
-			this.getInvoiceLocal().setNumber(pp.generateNextInvoiceNumber());
+			this.getInvoiceLocal().setNumber(personHelper.generateNextInvoiceNumber(pp));
 			this.getInvoiceLocal().setPerson(pp);
 		} else {
 			this.setInvoiceLocal(null);
@@ -75,11 +75,11 @@ public class MBInvoiceNew implements Serializable {
 	}
 
 	public void ilCreate() {
-		if (blService.isThereThatInvoiceLineText(this.getInvoiceLocal(),this.lilLineText)) {
+		if (blService.isThereThatInvoiceLineText(this.getInvoiceLocal(), this.lilLineText)) {
 			FacesMessage msg =
 				new FacesMessage("This Invoice line text already exist. Strings can't duplicate.");
 			msg.setSeverity(FacesMessage.SEVERITY_ERROR);
-			FacesContext.getCurrentInstance().addMessage(null,msg);
+			FacesContext.getCurrentInstance().addMessage(null, msg);
 			return;
 		}
 
@@ -120,7 +120,7 @@ public class MBInvoiceNew implements Serializable {
 
 		//delete il by id from the local invoice lines
 
-		InvoiceLine il = blService.locateInvoiceLineById(this.getInvoiceLocal(),ii);
+		InvoiceLine il = blService.locateInvoiceLineById(this.getInvoiceLocal(), ii);
 
 		this.getInvoiceLocal().getInvoicesLines().remove(il);
 
@@ -140,12 +140,12 @@ public class MBInvoiceNew implements Serializable {
 	public String createInvoice() {
 		String res;
 
-		if (this.getInvoiceLocal().getInvoicesLines().size()>0) {
+		if (this.getInvoiceLocal().getInvoicesLines().size() > 0) {
 			Invoice invoice = this.getInvoiceLocal();
 			invoiceService.createInvoice(invoice);
-			res="invoices?faces-redirect=true";
+			res = "invoices?faces-redirect=true";
 		} else {
-			res=null;
+			res = null;
 		}
 		return res;
 	}
@@ -159,7 +159,7 @@ public class MBInvoiceNew implements Serializable {
 		}
 	}
 
-	private void lilClearSelectedID () {
+	private void lilClearSelectedID() {
 		this.setLilSelectedID(0);
 	}
 
@@ -244,7 +244,7 @@ public class MBInvoiceNew implements Serializable {
 		this.personIdForNewInvoice = personIdForNewInvoice;
 	}
 
-	public MBInvoiceNew () {
+	public MBInvoiceNew() {
 		invoiceLocal = new Invoice();
 		this.setLilLineQt(1);
 	}

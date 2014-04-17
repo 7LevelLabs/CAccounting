@@ -4,12 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import ua.its.slot7.caccounting.helper.PersonHelper;
 import ua.its.slot7.caccounting.model.invoice.Invoice;
 import ua.its.slot7.caccounting.model.invoiceline.InvoiceLine;
 import ua.its.slot7.caccounting.model.person.Person;
 import ua.its.slot7.caccounting.model.user.User;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * CAccounting
@@ -36,6 +39,9 @@ public class BLService implements BLServiceAvatar {
 	@Autowired
 	private UserServiceAvatar userService;
 
+	@Autowired
+	private PersonHelper personHelper;
+
 	@Override
 	public ArrayList<Invoice> personGetInvoices(Person person) {
 		List<Invoice> sI = null;
@@ -47,7 +53,7 @@ public class BLService implements BLServiceAvatar {
 
 	@Override
 	public Invoice personGetLastInvoice(Person person) {
-		return person.theLastInvoice();
+		return personHelper.theLastInvoice(person);
 	}
 
 	@Override
@@ -63,7 +69,7 @@ public class BLService implements BLServiceAvatar {
 	@Override
 	public void invoiceCreate(Invoice invoice) {
 		Person person = invoice.getPerson();
-		invoice.setNumber(person.generateNextInvoiceNumber());
+		invoice.setNumber(personHelper.generateNextInvoiceNumber(person));
 		person.getInvoices().add(invoice);
 		personService.updatePerson(person);
 	}
@@ -108,7 +114,7 @@ public class BLService implements BLServiceAvatar {
 
 	@Override
 	public List<Invoice> invoiceGetByPeriod(Date fd, Date td) {
-		return invoiceService.getInvoicesByDatePeriod(fd,td);
+		return invoiceService.getInvoicesByDatePeriod(fd, td);
 	}
 
 	@Override
@@ -190,7 +196,7 @@ public class BLService implements BLServiceAvatar {
 		if (person == null) {
 			return person;
 		}
-		if (person.getUser()!=user) {
+		if (person.getUser() != user) {
 			return null;
 		}
 		return person;

@@ -8,9 +8,12 @@ import ua.its.slot7.caccounting.model.invoice.Invoice;
 import ua.its.slot7.caccounting.model.user.User;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.text.DecimalFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * CAccounting
@@ -61,6 +64,15 @@ public class Person implements Serializable, Comparable<Person> {
 	}
 
 	/**
+	 * Prepared for
+	 */
+	@Column(nullable = false)
+	@Index(name = "preparedFor")
+	public String getPreparedFor() {
+		return preparedFor;
+	}
+
+	/**
 	 * Person Phone
 	 */
 	@Column(nullable = false)
@@ -98,19 +110,47 @@ public class Person implements Serializable, Comparable<Person> {
 	}
 
 	/**
+	 * Last update
+	 */
+	@Column
+	@Temporal(TemporalType.TIMESTAMP)
+	public Date getLastUpdate() {
+		return lastUpdate;
+	}
+
+	/**
 	 * Optimistic locking
 	 */
 	@Version
-	public Date getLastUpdate() {
-		return lastUpdate;
+	public Long getVersion() {
+		return version;
+	}
+
+	/**
+	 * Discount
+	 */
+	@Column(nullable = false)
+	public int getDiscount() {
+		return discount;
+	}
+
+	@PrePersist
+	void prePersist() {
+		setLastUpdate(new Date());
+	}
+
+	@PreUpdate
+	void preUpdate() {
+		setLastUpdate(new Date());
 	}
 
 	/**
 	 * Constructor
 	 */
 	public Person() {
-		this.setName("");
 		this.setNick("");
+		this.setName("");
+		this.setPreparedFor("");
 		this.setPhone("");
 		this.setEmail("");
 		this.setInvoices(new ArrayList<Invoice>());
@@ -131,8 +171,9 @@ public class Person implements Serializable, Comparable<Person> {
 			(StringUtils.isBlank(phone))) {
 			throw new IllegalArgumentException("Arguments must be not null or empty");
 		}
-		this.setName(name);
 		this.setNick(nick);
+		this.setName(name);
+		this.setPreparedFor(name);
 		this.setPhone(phone);
 		this.setEmail(email);
 	}
@@ -140,7 +181,11 @@ public class Person implements Serializable, Comparable<Person> {
 	/**
 	 * Constructor
 	 */
-	public Person(String name, String nick, String email, String phone, User user) {
+	public Person(final String name,
+			final String nick,
+			final String email,
+			final String phone,
+			final User user) {
 		this(name, nick, email, phone);
 		if (user == null) {
 			throw new IllegalArgumentException("Arguments must be not null");
@@ -148,103 +193,21 @@ public class Person implements Serializable, Comparable<Person> {
 		this.setUser(user);
 	}
 
-	/**
-	 * Return the next free invoice number
-	 *
-	 * @return The next free invoice number, based on {@link #theLastInvoice()}
-	 */
-	public String generateNextInvoiceNumber() {
-		String res = null;
-		String in = null;
-		Invoice invoiceLatest = null;
-
-		if (this.getInvoices().size() > 0) {
-
-			invoiceLatest = this.theLastInvoice();
-
-			String str = invoiceLatest.getNumber();
-			StringTokenizer st = new StringTokenizer(str, "-");
-
-			//the first part of invoiceLatest.getNumber()
-			String temp = (String) st.nextElement();
-			//the second part of invoiceLatest.getNumber()
-			String temp1 = (String) st.nextElement();
-
-			Long l = new Long(temp1);
-
-			l++;
-
-			String temp2 = new DecimalFormat("000").format(l);
-
-			in = temp.concat("-");
-			in = in.concat(temp2);
-
-		} else {
-			in = new String(new Long(this.getId()).toString() + "-" + "001");
-		}
-
-		res = in;
-
-		return res;
-	}
-
-	/**
-	 * Return the latest invoice from {@link #invoices}
-	 *
-	 * @return The latest invoice from {@link #invoices} or null, if {@link #invoices} is empty
-	 */
-	public Invoice theLastInvoice() {
-		String res = null;
-		String in = null;
-
-		Iterator<Invoice> invoiceIterator = this.getInvoices().iterator();
-		Invoice invoice = null;
-		Invoice invoiceLatest = null;
-
-		Date d = null;
-		Date dmax = null;
-
-		if (this.getInvoices().size() > 0) {
-			invoiceLatest = invoiceIterator.next();
-			dmax = invoiceLatest.getDateCreation();
-
-			while (invoiceIterator.hasNext()) {
-				invoice = invoiceIterator.next();
-
-				d = invoice.getDateCreation();
-				if (d.after(dmax)) {
-					dmax = d;
-					invoiceLatest = invoice;
-				}
-			}
-		}
-		return invoiceLatest;
-	}
-
-	/**
-	 * Fields sequence: {@link #hashCode()} , {@link #getId()} , {@link #getNick()} , {@link #getName()} , {@link #getPhone()} , {@link #getEmail()} , {@link #getLastUpdate()}
-	 */
 	@Override
 	public String toString() {
-		String res = null;
-		StringBuilder sb = new StringBuilder();
-		sb.append("Person : { ")
-			.append(this.hashCode())
-			.append(" | ")
-			.append(this.getId())
-			.append(" | ")
-			.append(this.getNick())
-			.append(" | ")
-			.append(this.getName())
-			.append(" | ")
-			.append(this.getPhone())
-			.append(" | ")
-			.append(this.getEmail())
-			.append(" | ")
-			.append(this.getLastUpdate())
-			.append(" }");
-		res = sb.toString();
-		return res;
+		final StringBuilder sb = new StringBuilder("Person{");
+		sb.append("id=").append(id);
+		sb.append(", nick='").append(nick).append('\'');
+		sb.append(", name='").append(name).append('\'');
+		sb.append(", phone='").append(phone).append('\'');
+		sb.append(", email='").append(email).append('\'');
+		sb.append(", invoices=").append(invoices);
+		sb.append(", user=").append(user);
+		sb.append(", lastUpdate=").append(lastUpdate);
+		sb.append(", preparedFor='").append(preparedFor).append('\'');
+		sb.append(", discount=").append(discount);
+		sb.append('}');
+		return sb.toString();
 	}
 
 	@Override
@@ -282,6 +245,10 @@ public class Person implements Serializable, Comparable<Person> {
 		this.name = name;
 	}
 
+	public void setPreparedFor(String preparedFor) {
+		this.preparedFor = preparedFor;
+	}
+
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
@@ -294,13 +261,20 @@ public class Person implements Serializable, Comparable<Person> {
 		this.invoices = invoices;
 	}
 
-
 	public void setUser(User user) {
 		this.user = user;
 	}
 
 	public void setLastUpdate(Date lastUpdate) {
 		this.lastUpdate = lastUpdate;
+	}
+
+	public void setDiscount(int discount) {
+		this.discount = discount;
+	}
+
+	public void setVersion(Long version) {
+		this.version = version;
 	}
 
 	public long id;
@@ -315,7 +289,20 @@ public class Person implements Serializable, Comparable<Person> {
 
 	@NotBlank(message = "Person's email must be not blank")
 	private String email;
+
 	private List<Invoice> invoices = null;
+
+	@NotNull
 	private User user;
+
 	private Date lastUpdate;
+
+	@NotBlank(message = "Person's 'Prepared for' must be not blank")
+	private String preparedFor;
+
+	@Min(value = 0, message = "Person's 'Discount' must be >= 0")
+	private int discount;
+
+	private Long version;
+
 }

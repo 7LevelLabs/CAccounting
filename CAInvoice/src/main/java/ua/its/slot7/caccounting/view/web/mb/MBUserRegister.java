@@ -92,7 +92,7 @@ public class MBUserRegister implements Serializable {
 		StandardPasswordEncoder encoder = new StandardPasswordEncoder();
 		lPassword = encoder.encode(this.getLocalUserPassword());
 
-		User localUser = userHelper.getUser(this.getLocalUserNick(), this.getLocalUserEmail(), lPassword);
+		User localUser = userHelper.getNewUser(this.getLocalUserNick(), this.getLocalUserEmail(), lPassword);
 
 		localUser.setUserRole(new UserRole(UserRole.USER_ROLE_USER));
 
