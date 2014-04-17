@@ -18,7 +18,7 @@ public class UserHelper {
 		return userDefaultDiscount;
 	}
 
-	public User getUser(final String nick, final String email, final String pass) {
+	public User getNewUser(final String nick, final String email, final String pass) {
 		User user = new User(nick, email, pass);
 
 		//set defaults

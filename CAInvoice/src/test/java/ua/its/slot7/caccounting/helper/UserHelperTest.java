@@ -26,7 +26,7 @@ public class UserHelperTest extends Assert {
 
 	@Test
 	public void testGetUser() throws Exception {
-		User user = userHelper.getUser("nick", "email", "pass");
+		User user = userHelper.getNewUser("nick", "email", "pass");
 		assertEquals(user.getDiscount(), 5);
 	}
 }
