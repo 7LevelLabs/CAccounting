@@ -21,6 +21,7 @@
     <context:annotation-config/>
 
     <context:component-scan base-package="ua.its.slot7.caccounting.model"/>
+    <context:component-scan base-package="ua.its.slot7.caccounting.helper"/>
     <context:component-scan base-package="ua.its.slot7.caccounting.service"/>
     <context:component-scan base-package="ua.its.slot7.caccounting.rest"/>
     <context:component-scan base-package="ua.its.slot7.caccounting.system"/>

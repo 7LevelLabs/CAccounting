@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.security.crypto.password.StandardPasswordEncoder;
 import org.springframework.stereotype.Component;
 import ua.its.slot7.caccounting.communications.MailerWorkerAvatar;
+import ua.its.slot7.caccounting.helper.UserHelper;
 import ua.its.slot7.caccounting.model.user.User;
 import ua.its.slot7.caccounting.model.userrole.UserRole;
 import ua.its.slot7.caccounting.service.UserServiceAvatar;
@@ -48,13 +49,16 @@ public class MBUserRegister implements Serializable {
 	@Autowired
 	private BSystemSettingsAvatar bSystemSettings;
 
+	@Autowired
+	private UserHelper userHelper;
+
 	private String localUserEmail;
 	private String localUserPassword;
 	private String localUserPasswordConfirm;
 
 	private String localUserNick;
 
-	public String actionUserRegister () {
+	public String actionUserRegister() {
 		String res = "index";
 		if (!this.getLocalUserPassword().equals(this.getLocalUserPasswordConfirm())) {
 			FacesContext.getCurrentInstance().addMessage(
@@ -62,7 +66,8 @@ public class MBUserRegister implements Serializable {
 				new FacesMessage(
 					FacesMessage.SEVERITY_ERROR,
 					"Error",
-					"Passwords must match."));
+					"Passwords must match.")
+			);
 			this.setLocalUserPassword("");
 			this.setLocalUserPasswordConfirm("");
 			return null;
@@ -74,8 +79,10 @@ public class MBUserRegister implements Serializable {
 				new FacesMessage(
 					FacesMessage.SEVERITY_ERROR,
 					"Error",
-					"This EMail "+this.getLocalUserEmail()+" already in use. " +
-						"Please, use another email."));
+					"This EMail " + this.getLocalUserEmail() + " already in use. " +
+						"Please, use another email."
+				)
+			);
 			this.setLocalUserEmail("");
 			return null;
 		}
@@ -85,7 +92,7 @@ public class MBUserRegister implements Serializable {
 		StandardPasswordEncoder encoder = new StandardPasswordEncoder();
 		lPassword = encoder.encode(this.getLocalUserPassword());
 
-		User localUser = new User(this.getLocalUserNick(),this.getLocalUserEmail(),lPassword);
+		User localUser = userHelper.getUser(this.getLocalUserNick(), this.getLocalUserEmail(), lPassword);
 
 		localUser.setUserRole(new UserRole(UserRole.USER_ROLE_USER));
 
@@ -122,7 +129,8 @@ public class MBUserRegister implements Serializable {
 			new FacesMessage(
 				FacesMessage.SEVERITY_INFO,
 				"Register successful.",
-				"EMail "+localUser.getEmail()+" successfully registered. Check this email."));
+				"EMail " + localUser.getEmail() + " successfully registered. Check this email.")
+		);
 
 		return res;
 	}
@@ -159,7 +167,7 @@ public class MBUserRegister implements Serializable {
 		this.localUserPasswordConfirm = localUserPasswordConfirm;
 	}
 
-	public MBUserRegister () {
+	public MBUserRegister() {
 
 	}
 }
