@@ -39,18 +39,18 @@ public class PersonHelper {
 		return invoiceNumberDefault;
 	}
 
-	public Person getNewPerson(final String name,
-				      final String nick,
+	public Person getNewPerson(final String nick,
+				      final String name,
 				      final String email,
 				      final String phone,
 				      final User user,
 				      final PersonDiscountSourceSign discountStrategy) {
 
-		Person person = new Person();
+		Person person = new Person(nick, name, email, phone, user);
 
 		//set defaults
 		switch (discountStrategy) {
-			case ALL:
+			case PROPERTIES:
 				person.setDiscount(getPersonDefaultDiscount());
 				break;
 			case USER:
@@ -133,9 +133,8 @@ public class PersonHelper {
 		return invoiceLatest;
 	}
 
-
 	public enum PersonDiscountSourceSign {
-		ALL, USER
+		PROPERTIES, USER
 	}
 
 }

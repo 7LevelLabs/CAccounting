@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import ua.its.slot7.caccounting.helper.PersonHelper;
 import ua.its.slot7.caccounting.model.person.Person;
 import ua.its.slot7.caccounting.model.user.User;
 import ua.its.slot7.caccounting.service.PersonServiceAvatar;
@@ -40,6 +41,9 @@ public class MBPersons implements Serializable {
 	@Autowired
 	private MBUserLogin mbUserLogin;
 
+	@Autowired
+	private PersonHelper personHelper;
+
 	private String nick;
 	private String name;
 	private String phone;
@@ -52,13 +56,13 @@ public class MBPersons implements Serializable {
 	private long personToRedirectId;
 	private Person person;
 
-	private void loadPersonsList () {
+	private void loadPersonsList() {
 		mbUserLogin.refreshLoggedUser();
-		this.personsList=personService.getPersonsByTheUser(mbUserLogin.getLoggedUser());
+		this.personsList = personService.getPersonsByTheUser(mbUserLogin.getLoggedUser());
 	}
 
-	public void actionLoadPerson () {
-		person=personService.getPersonById(this.personToRedirectId);
+	public void actionLoadPerson() {
+		person = personService.getPersonById(this.personToRedirectId);
 		this.setNick(person.getNick());
 		this.setName(person.getName());
 		this.setEmail(person.getEmail());
@@ -66,26 +70,25 @@ public class MBPersons implements Serializable {
 	}
 
 	public String showPersonDetails(long personId) {
-		this.personToRedirectId=personId;
+		this.personToRedirectId = personId;
 		String res = "person";
 		return res;
 	}
 
-	public void refreshPersonsList () {
+	public void refreshPersonsList() {
 		this.loadPersonsList();
 	}
 
-	public String createPerson () {
-		Person person = new Person();
-		person.setNick(this.getNick());
-		person.setName(this.getName());
-		person.setEmail(this.getEmail());
-		person.setPhone(this.getPhone());
-
+	public String createPerson() {
 		mbUserLogin.refreshLoggedUser();
 		User loggedUser = mbUserLogin.getLoggedUser();
 
-		person.setUser(loggedUser);
+		Person person = personHelper.getNewPerson(this.getNick(),
+			this.getName(),
+			this.getEmail(),
+			this.getPhone(),
+			loggedUser,
+			PersonHelper.PersonDiscountSourceSign.USER);
 
 		personService.createPerson(person);
 

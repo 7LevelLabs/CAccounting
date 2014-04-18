@@ -29,7 +29,7 @@ public class PersonHelperTest extends Assert {
 	@Before
 	public void setUp() throws Exception {
 		aUser = new User("userNick", "userEmail", "userPass");
-		aPerson = new Person("personName", "personNick", "personEmail", "personPhone", aUser);
+		aPerson = new Person("personNick", "personName", "personEmail", "personPhone", aUser);
 	}
 
 	@Test
@@ -49,6 +49,33 @@ public class PersonHelperTest extends Assert {
 
 	@Test
 	public void testGetNewPerson() throws Exception {
+		User user = new User("userNick", "userEmail", "userPass");
+
+		//from User
+		user.setDiscount(7);
+		Person person = personHelper.getNewPerson("personNick",
+			"personName",
+			"personEmail",
+			"personPhone",
+			user,
+			PersonHelper.PersonDiscountSourceSign.USER);
+
+		assertEquals(person.getNick(), "personNick");
+		assertEquals(person.getName(), "personName");
+		assertEquals(person.getEmail(), "personEmail");
+		assertEquals(person.getPhone(), "personPhone");
+
+		assertEquals(person.getDiscount(), 7);
+
+		//from properties
+		person = personHelper.getNewPerson("personNick",
+			"personName",
+			"personEmail",
+			"personPhone",
+			user,
+			PersonHelper.PersonDiscountSourceSign.PROPERTIES);
+
+		assertEquals(person.getDiscount(), 5);
 
 	}
 
