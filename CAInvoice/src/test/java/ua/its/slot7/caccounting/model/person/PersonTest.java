@@ -39,7 +39,7 @@ public class PersonTest extends Assert {
 		this.user = new User(uNick, uEmail, uPass);
 		this.user.setApiCode("67419b24-4cbb-4d2f-af43-48cf28951b5a");
 
-		this.person = new Person("personName", "personNick", "personEMail", "personPhone", this.user);
+		this.person = new Person("personNick", "personName", "personEMail", "personPhone", this.user);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
