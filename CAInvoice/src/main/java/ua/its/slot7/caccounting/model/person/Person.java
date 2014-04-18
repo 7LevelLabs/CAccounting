@@ -160,13 +160,13 @@ public class Person implements Serializable, Comparable<Person> {
 	/**
 	 * Constructor
 	 */
-	public Person(final String name,
-			final String nick,
+	public Person(final String nick,
+			final String name,
 			final String email,
 			final String phone) {
 		this();
-		if ((StringUtils.isBlank(name)) ||
-			(StringUtils.isBlank(nick)) ||
+		if ((StringUtils.isBlank(nick)) ||
+			(StringUtils.isBlank(name)) ||
 			(StringUtils.isBlank(email)) ||
 			(StringUtils.isBlank(phone))) {
 			throw new IllegalArgumentException("Arguments must be not null or empty");
@@ -181,12 +181,12 @@ public class Person implements Serializable, Comparable<Person> {
 	/**
 	 * Constructor
 	 */
-	public Person(final String name,
-			final String nick,
+	public Person(final String nick,
+			final String name,
 			final String email,
 			final String phone,
 			final User user) {
-		this(name, nick, email, phone);
+		this(nick, name, email, phone);
 		if (user == null) {
 			throw new IllegalArgumentException("Arguments must be not null");
 		}

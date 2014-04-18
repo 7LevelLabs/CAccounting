@@ -77,8 +77,8 @@ public class MBPersons implements Serializable {
 
 	public String createPerson () {
 		Person person = new Person();
-		person.setName(this.getName());
 		person.setNick(this.getNick());
+		person.setName(this.getName());
 		person.setEmail(this.getEmail());
 		person.setPhone(this.getPhone());
 
