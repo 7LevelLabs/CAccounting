@@ -2,7 +2,15 @@ package ua.its.slot7.caccounting.model.invoiceline;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
+
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
+import java.math.BigDecimal;
+import java.util.Set;
 
 /**
  * CAccounting
@@ -20,6 +28,14 @@ public class InvoiceLineTest extends Assert {
 
 	private InvoiceLine invoiceLine;
 
+	private static Validator validator;
+
+	@BeforeClass
+	public static void setUpBeforeClass() {
+		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+		validator = factory.getValidator();
+	}
+
 	@Before
 	public void setUp() throws Exception {
 		invoiceLine = new InvoiceLine();
@@ -27,25 +43,41 @@ public class InvoiceLineTest extends Assert {
 
 	@Test
 	public void testCalcLineSum() throws Exception {
-		invoiceLine.setLinePrice(21.1f);
+		invoiceLine.setLinePrice(new BigDecimal(21.1));
 		invoiceLine.setLineQt(12);
-		float res = invoiceLine.calcLineSum();
-		assertEquals(253.2f,res,0.0001f);
+		BigDecimal res = invoiceLine.calcLineSum();
+		assertEquals(BigDecimal.valueOf(253.2), res);
 	}
 
 	@Test
 	public void testCalcLineSum01() throws Exception {
-		invoiceLine.setLinePrice(0);
+		invoiceLine.setLinePrice(new BigDecimal(0));
 		invoiceLine.setLineQt(12);
-		float res = invoiceLine.calcLineSum();
-		assertTrue(res==0);
+		BigDecimal res = invoiceLine.calcLineSum();
+		assertEquals(BigDecimal.valueOf(0), res);
 	}
 
 	@Test
 	public void testCalcLineSum10() throws Exception {
-		invoiceLine.setLinePrice(21.1f);
+		invoiceLine.setLinePrice(new BigDecimal(21.1));
 		invoiceLine.setLineQt(0);
-		float res = invoiceLine.calcLineSum();
-		assertTrue(res==0);
+		BigDecimal res = invoiceLine.calcLineSum();
+		assertEquals(BigDecimal.valueOf(0), res);
+	}
+
+	@Test
+	public void testValidation() {
+		invoiceLine.setInvoice(null);
+		invoiceLine.setLineText(" ");
+		invoiceLine.setLineQt(0);
+		invoiceLine.setLinePrice(BigDecimal.valueOf(-1));
+		invoiceLine.setLineSum(BigDecimal.valueOf(-1));
+
+		Set<ConstraintViolation<InvoiceLine>> constraintViolations =
+			validator.validate(invoiceLine);
+		org.assertj.core.api.Assertions
+			.assertThat(constraintViolations)
+			.hasSize(5);
+
 	}
 }
