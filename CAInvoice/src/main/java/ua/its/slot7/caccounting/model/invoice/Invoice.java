@@ -11,6 +11,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -72,7 +73,7 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 	 * Invoice sum
 	 */
 	@Column(nullable = false)
-	public float getSum() {
+	public BigDecimal getSum() {
 		return sum;
 	}
 
@@ -105,12 +106,31 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 		return paymentState;
 	}
 
+	@Column(nullable = false)
+	@Temporal(TemporalType.TIMESTAMP)
+	public Date getLastUpdate() {
+		return lastUpdate;
+	}
+
+
 	/**
 	 * Optimistic locking
 	 */
 	@Version
-	public Date getLastUpdate() {
-		return lastUpdate;
+	public Long getVersion() {
+		return version;
+	}
+
+	@PrePersist
+	void prePersist() {
+		Date d = new Date();
+		this.setDateCreation(d);
+		this.setDateUpdate(d);
+	}
+
+	@PreUpdate
+	void preUpdate() {
+		this.setDateUpdate(new Date());
 	}
 
 	/**
@@ -121,7 +141,7 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 		this.setDateCreation(d);
 		this.setDateUpdate(d);
 		this.setNumber("");
-		this.setSum(0);
+		this.setSum(BigDecimal.valueOf(0));
 		this.setInvoicesLines(new ArrayList<InvoiceLine>());
 		this.setPaymentState(new InvoicePaymentState(this));
 	}
@@ -147,10 +167,10 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 	 *
 	 * @return Total of the Invoice
 	 */
-	public float calcInvoiceSum() {
-		float res = 0;
+	public BigDecimal calcInvoiceSum() {
+		BigDecimal res = new BigDecimal(0);
 		for (InvoiceLine il : this.getInvoicesLines()) {
-			res = res + il.calcLineSum();
+			res.add(il.calcLineSum());
 		}
 		return res;
 	}
@@ -239,7 +259,7 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 		this.dateUpdate = dateUpdate;
 	}
 
-	public void setSum(float sum) {
+	public void setSum(BigDecimal sum) {
 		this.sum = sum;
 	}
 
@@ -259,6 +279,10 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 		this.lastUpdate = lastUpdate;
 	}
 
+	public void setVersion(Long version) {
+		this.version = version;
+	}
+
 	private long id;
 
 	@NotBlank(message = "Invoice number must be not blank")
@@ -268,7 +292,7 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 	private Date dateUpdate;
 
 	@Min(value = 0, message = "Invoice sum must be > 0")
-	private float sum;
+	private BigDecimal sum;
 
 	@NotNull(message = "Invoice person must be not null")
 	private Person person;
@@ -280,5 +304,8 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 	private InvoicePaymentState paymentState = null;
 
 	private Date lastUpdate;
+
+	private Long version;
+
 
 }

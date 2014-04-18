@@ -33,6 +33,7 @@ import java.util.List;
  * Key-field - {@link #getEmail()}
  */
 @Entity
+//TODO New fields to UI
 public class Person implements Serializable, Comparable<Person> {
 
 	/**

@@ -18,6 +18,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Iterator;
 
 /**
@@ -57,9 +58,9 @@ public class MBInvoiceNew implements Serializable {
 	private Person personLocal;
 	private Invoice invoiceLocal;
 	private String lilLineText;
-	private float lilLinePrice;
+	private BigDecimal lilLinePrice;
 	private int lilLineQt;
-	private float lilLineSum;
+	private BigDecimal lilLineSum;
 	private long lilSelectedID;
 
 	public void loadAction() {
@@ -168,23 +169,23 @@ public class MBInvoiceNew implements Serializable {
 	}
 
 	private void lilCalcAndSetLineTotal() {
-		float pr = this.getLilLinePrice();
+		BigDecimal pr = this.getLilLinePrice();
 		int qq = this.getLilLineQt();
-		this.setLilLineSum(pr * qq);
+		this.setLilLineSum(pr.multiply(BigDecimal.valueOf(qq)));
 	}
 
 	private void lilFieldsClear() {
 		this.setLilLineText("");
-		this.setLilLinePrice(0);
+		this.setLilLinePrice(BigDecimal.valueOf(0));
 		this.setLilLineQt(0);
-		this.setLilLineSum(0);
+		this.setLilLineSum(BigDecimal.valueOf(0));
 	}
 
-	public float getLilLineSum() {
+	public BigDecimal getLilLineSum() {
 		return lilLineSum;
 	}
 
-	public void setLilLineSum(float lilLineSum) {
+	public void setLilLineSum(BigDecimal lilLineSum) {
 		this.lilLineSum = lilLineSum;
 	}
 
@@ -212,11 +213,11 @@ public class MBInvoiceNew implements Serializable {
 		this.lilLineQt = lilLineQt;
 	}
 
-	public float getLilLinePrice() {
+	public BigDecimal getLilLinePrice() {
 		return lilLinePrice;
 	}
 
-	public void setLilLinePrice(float lilLinePrice) {
+	public void setLilLinePrice(BigDecimal lilLinePrice) {
 		this.lilLinePrice = lilLinePrice;
 	}
 

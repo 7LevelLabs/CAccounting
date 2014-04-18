@@ -10,6 +10,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Set;
 
 /**
@@ -46,7 +47,7 @@ public class InvoiceLineTest extends Assert {
 		invoiceLine.setLinePrice(new BigDecimal(21.1));
 		invoiceLine.setLineQt(12);
 		BigDecimal res = invoiceLine.calcLineSum();
-		assertEquals(BigDecimal.valueOf(253.2), res);
+		assertEquals(new BigDecimal("253.20"), res.setScale(2, RoundingMode.HALF_EVEN));
 	}
 
 	@Test
@@ -54,7 +55,7 @@ public class InvoiceLineTest extends Assert {
 		invoiceLine.setLinePrice(new BigDecimal(0));
 		invoiceLine.setLineQt(12);
 		BigDecimal res = invoiceLine.calcLineSum();
-		assertEquals(BigDecimal.valueOf(0), res);
+		assertEquals(new BigDecimal("0.0"), res);
 	}
 
 	@Test
@@ -62,7 +63,7 @@ public class InvoiceLineTest extends Assert {
 		invoiceLine.setLinePrice(new BigDecimal(21.1));
 		invoiceLine.setLineQt(0);
 		BigDecimal res = invoiceLine.calcLineSum();
-		assertEquals(BigDecimal.valueOf(0), res);
+		assertEquals(new BigDecimal("0.0"), res);
 	}
 
 	@Test

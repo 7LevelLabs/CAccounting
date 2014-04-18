@@ -18,6 +18,7 @@ import ua.its.slot7.caccounting.model.invoiceline.InvoiceLine;
 import ua.its.slot7.caccounting.model.person.Person;
 import ua.its.slot7.caccounting.model.user.User;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -79,7 +80,7 @@ public interface BLServiceAvatar {
 	 * Calc sum of the Invoice
 	 * @param invoice Invoice to Calc sum
 	 * */
-	public float calcInvoiceSum(Invoice invoice);
+	public BigDecimal calcInvoiceSum(Invoice invoice);
 
 	/**
 	 *
