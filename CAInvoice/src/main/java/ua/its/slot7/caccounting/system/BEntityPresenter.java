@@ -50,7 +50,7 @@ public class BEntityPresenter implements BEntityPresenterAvatar {
 		mbST.add("invoice_prepared_for_phone", invoice.getPerson().getPhone());
 
 //		total
-		mbST.add("invoice_total", new Float(invoice.getSum().floatValue()).toString());
+		mbST.add("invoice_total", new Float(invoice.getTotal().floatValue()).toString());
 
 //		date of issue
 		mbST.add("invoice_date_of_issue", invoice.getDateCreation().toString());

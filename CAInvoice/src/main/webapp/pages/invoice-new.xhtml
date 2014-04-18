@@ -10,8 +10,8 @@
       xmlns:p="http://primefaces.org/ui">
 
 <f:metadata>
-    <f:viewParam name="personIdForNewInvoice" value="#{MBInvoiceNew.personIdForNewInvoice}" />
-    <f:event type="preRenderView" listener="#{MBInvoiceNew.loadAction}" />
+    <f:viewParam name="personIdForNewInvoice" value="#{MBInvoiceNew.personIdForNewInvoice}"/>
+    <f:event type="preRenderView" listener="#{MBInvoiceNew.loadAction}"/>
 </f:metadata>
 
 <h:head>
@@ -25,7 +25,8 @@
 
             <h:form id="formInvoiceLines">
 
-                <p:panel id="invoiceLinesAjaxPanel" header="New Invoice for #{MBInvoiceNew.personLocal.name} : #{MBInvoiceNew.personLocal.phone}">
+                <p:panel id="invoiceLinesAjaxPanel"
+                         header="New Invoice for #{MBInvoiceNew.personLocal.name} : #{MBInvoiceNew.personLocal.phone}">
 
                     <h:panelGrid columns="6" id="invoicePanelGrid1">
 
@@ -71,13 +72,13 @@
 
                             <p:column>
                                 <f:facet name="header">Sum</f:facet>
-                                <h:outputText value="#{il.lineSum}"/>
+                                <h:outputText value="#{il.lineTotal}"/>
                             </p:column>
 
                             <p:column>
                                 <p:commandLink value="Delete"
-                                        action="#{MBInvoiceNew.ilDelete(il.tid)}"
-                                        update=":formInvoiceLines:invoiceOutputPanel2,:formInvoiceLines:invoicePanelGrid2,:growl"/>
+                                               action="#{MBInvoiceNew.ilDelete(il.tid)}"
+                                               update=":formInvoiceLines:invoiceOutputPanel2,:formInvoiceLines:invoicePanelGrid2,:growl"/>
                             </p:column>
 
                         </p:dataTable>
@@ -93,17 +94,17 @@
                                     id="liltext"
                                     rows="7" cols="51"
                                     autoResize="true">
-                                <f:validateRequired />
+                                <f:validateRequired/>
                             </p:inputTextarea>
 
                             <h:outputText value="Price"/>
                             <p:inputText value="#{MBInvoiceNew.lilLinePrice}" id="lilprice">
-                                <f:validateRequired />
+                                <f:validateRequired/>
                             </p:inputText>
 
                             <h:outputText value="Qt"/>
                             <p:inputText value="#{MBInvoiceNew.lilLineQt}" id="lilqt">
-                                <f:validateRequired />
+                                <f:validateRequired/>
                             </p:inputText>
 
                         </h:panelGrid>

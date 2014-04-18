@@ -10,8 +10,8 @@
       xmlns:p="http://primefaces.org/ui">
 
 <f:metadata>
-    <f:viewParam name="invoiceId" value="#{MBInvoice.invoiceId}" />
-    <f:event type="preRenderView" listener="#{MBInvoice.loadAction}" />
+    <f:viewParam name="invoiceId" value="#{MBInvoice.invoiceId}"/>
+    <f:event type="preRenderView" listener="#{MBInvoice.loadAction}"/>
 </f:metadata>
 
 <h:outputStylesheet>
@@ -91,7 +91,7 @@
 
                         <p:column>
                             <f:facet name="header">Sum</f:facet>
-                            <h:outputText value="#{invoiceline.lineSum}"/>
+                            <h:outputText value="#{invoiceline.lineTotal}"/>
                         </p:column>
 
                     </p:dataTable>

@@ -85,11 +85,19 @@ public class InvoiceLine implements Serializable, Comparable<InvoiceLine> {
 	}
 
 	/**
+	 * Tax for the line
+	 */
+	@Column(nullable = false)
+	public BigDecimal getLineTax() {
+		return lineTax;
+	}
+
+	/**
 	 * InvoiceLine Sum
 	 */
 	@Column(nullable = false)
-	public BigDecimal getLineSum() {
-		return lineSum;
+	public BigDecimal getLineTotal() {
+		return lineTotal;
 	}
 
 	@Column
@@ -100,24 +108,27 @@ public class InvoiceLine implements Serializable, Comparable<InvoiceLine> {
 
 	@PrePersist
 	void prePersist() {
-		this.calcLineSum();
+		this.calcLineTotal();
 	}
 
 	@PreUpdate
 	void preUpdate() {
-		this.calcLineSum();
+		this.calcLineTotal();
 	}
 
 	/**
 	 * Constructor
 	 */
-	public InvoiceLine() {}
+	public InvoiceLine() {
+		this.lineTotal = new BigDecimal(0);
+		this.lineTax = new BigDecimal(0);
+	}
 
 	public InvoiceLine(final Invoice invoice,
 			     final String lineText,
 			     int lineQt,
-			     BigDecimal linePrice,
-			     BigDecimal lineSum) {
+			     BigDecimal linePrice) {
+		this();
 		if (invoice == null) {
 			throw new IllegalArgumentException("Arguments must be not null");
 		}
@@ -128,15 +139,14 @@ public class InvoiceLine implements Serializable, Comparable<InvoiceLine> {
 		this.lineText = lineText;
 		this.lineQt = lineQt;
 		this.linePrice = linePrice;
-		this.lineSum = lineSum;
 	}
 
 	/**
-	 * Calc the {@link #lineSum} of this InvoiceLine
+	 * Calc the {@link #lineTotal} of this InvoiceLine, including tax
 	 */
-	public BigDecimal calcLineSum() {
-		BigDecimal res = new BigDecimal(0);
-		res = BigDecimal.valueOf(this.getLinePrice().floatValue() * this.getLineQt());
+	public BigDecimal calcLineTotal() {
+		BigDecimal res;
+		res = this.getLineTax().add(this.getLinePrice().multiply(BigDecimal.valueOf(this.getLineQt())));
 		return res;
 	}
 
@@ -149,7 +159,8 @@ public class InvoiceLine implements Serializable, Comparable<InvoiceLine> {
 		sb.append(", lineText='").append(lineText).append('\'');
 		sb.append(", lineQt=").append(lineQt);
 		sb.append(", linePrice=").append(linePrice);
-		sb.append(", lineSum=").append(lineSum);
+		sb.append(", lineTotal=").append(lineTotal);
+		sb.append(", lineTax=").append(lineTax);
 		sb.append(", version=").append(version);
 		sb.append('}');
 		return sb.toString();
@@ -208,8 +219,12 @@ public class InvoiceLine implements Serializable, Comparable<InvoiceLine> {
 		this.linePrice = linePrice;
 	}
 
-	public void setLineSum(BigDecimal lineSum) {
-		this.lineSum = lineSum;
+	public void setLineTax(BigDecimal lineTax) {
+		this.lineTax = lineTax;
+	}
+
+	public void setLineTotal(BigDecimal lineSum) {
+		this.lineTotal = lineSum;
 	}
 
 	public void setVersion(Long version) {
@@ -232,7 +247,10 @@ public class InvoiceLine implements Serializable, Comparable<InvoiceLine> {
 	private BigDecimal linePrice;
 
 	@Min(value = 0, message = "Invoice line sum must be > 0")
-	private BigDecimal lineSum;
+	private BigDecimal lineTotal;
+
+	private BigDecimal lineTax;
+
 
 	private Long version;
 

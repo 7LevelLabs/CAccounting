@@ -6,12 +6,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
 
 <f:metadata>
-    <f:viewParam name="invoiceId" value="#{MBInvoice.invoiceId}" />
-    <f:event type="preRenderView" listener="#{MBInvoice.loadAction}" />
+    <f:viewParam name="invoiceId" value="#{MBInvoice.invoiceId}"/>
+    <f:event type="preRenderView" listener="#{MBInvoice.loadAction}"/>
 </f:metadata>
 
 <h:outputStylesheet>
@@ -37,67 +36,67 @@
 
     <f:view locale="#{facesContext.externalContext.requestLocale}">
 
-            <h:form id="formInvoiceData">
-                <p:panel header="Invoice : #{MBInvoice.invoiceLocal.number}">
-                    <h:panelGrid columns="4" id="invoiceShowPanel">
+        <h:form id="formInvoiceData">
+            <p:panel header="Invoice : #{MBInvoice.invoiceLocal.number}">
+                <h:panelGrid columns="4" id="invoiceShowPanel">
 
-                        <h:outputText value="#"/>
-                        <h:outputText value="#{MBInvoice.invoiceLocal.number}"/>
+                    <h:outputText value="#"/>
+                    <h:outputText value="#{MBInvoice.invoiceLocal.number}"/>
 
-                        <h:outputText value="Total"/>
-                        <h:outputText value="#{MBInvoice.invoiceLocal.sum}"/>
+                    <h:outputText value="Total"/>
+                    <h:outputText value="#{MBInvoice.invoiceLocal.sum}"/>
 
-                        <h:outputText value="Created"/>
-                        <h:outputText value="#{MBInvoice.invoiceLocal.dateCreation}"/>
+                    <h:outputText value="Created"/>
+                    <h:outputText value="#{MBInvoice.invoiceLocal.dateCreation}"/>
 
-                        <h:outputText value="Last update"/>
-                        <h:outputText value="#{MBInvoice.invoiceLocal.dateUpdate}"/>
+                    <h:outputText value="Last update"/>
+                    <h:outputText value="#{MBInvoice.invoiceLocal.dateUpdate}"/>
 
-                        <h:outputText value="Is paid"/>
-                        <h:outputText value="#{MBInvoice.invoiceLocal.paymentState.paid}"/>
+                    <h:outputText value="Is paid"/>
+                    <h:outputText value="#{MBInvoice.invoiceLocal.paymentState.paid}"/>
 
-                        <h:outputText value="Person : nick"/>
-                        <h:outputText value="#{MBInvoice.invoiceLocal.person.nick}"/>
+                    <h:outputText value="Person : nick"/>
+                    <h:outputText value="#{MBInvoice.invoiceLocal.person.nick}"/>
 
-                        <h:outputText value="Person : email"/>
-                        <h:outputText value="#{MBInvoice.invoiceLocal.person.email}"/>
+                    <h:outputText value="Person : email"/>
+                    <h:outputText value="#{MBInvoice.invoiceLocal.person.email}"/>
 
-                        <h:outputText value="Person : phone"/>
-                        <h:outputText value="#{MBInvoice.invoiceLocal.person.phone}"/>
+                    <h:outputText value="Person : phone"/>
+                    <h:outputText value="#{MBInvoice.invoiceLocal.person.phone}"/>
 
-                    </h:panelGrid>
+                </h:panelGrid>
 
-                    <p:dataTable id="invoiceLinesTable"
-                                 value="#{MBInvoice.invoiceLocal.invoicesLines}"
-                                 var="invoiceline"
-                                 rows="5"
-                                 rowClasses="odd-row, even-row"
-                                 style="width:100%"
-                            >
+                <p:dataTable id="invoiceLinesTable"
+                             value="#{MBInvoice.invoiceLocal.invoicesLines}"
+                             var="invoiceline"
+                             rows="5"
+                             rowClasses="odd-row, even-row"
+                             style="width:100%"
+                        >
 
-                        <p:column>
-                            <h:outputText value="#{invoiceline.lineText}"/>
-                        </p:column>
+                    <p:column>
+                        <h:outputText value="#{invoiceline.lineText}"/>
+                    </p:column>
 
-                        <p:column>
-                            <f:facet name="header">Price</f:facet>
-                            <h:outputText value="#{invoiceline.linePrice}"/>
-                        </p:column>
+                    <p:column>
+                        <f:facet name="header">Price</f:facet>
+                        <h:outputText value="#{invoiceline.linePrice}"/>
+                    </p:column>
 
-                        <p:column>
-                            <f:facet name="header">Qt</f:facet>
-                            <h:outputText value="#{invoiceline.lineQt}"/>
-                        </p:column>
+                    <p:column>
+                        <f:facet name="header">Qt</f:facet>
+                        <h:outputText value="#{invoiceline.lineQt}"/>
+                    </p:column>
 
-                        <p:column>
-                            <f:facet name="header">Sum</f:facet>
-                            <h:outputText value="#{invoiceline.lineSum}"/>
-                        </p:column>
+                    <p:column>
+                        <f:facet name="header">Sum</f:facet>
+                        <h:outputText value="#{invoiceline.lineTotal}"/>
+                    </p:column>
 
-                    </p:dataTable>
+                </p:dataTable>
 
-                </p:panel>
-            </h:form>
+            </p:panel>
+        </h:form>
 
     </f:view>
 

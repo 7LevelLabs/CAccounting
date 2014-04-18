@@ -70,11 +70,45 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 	}
 
 	/**
-	 * Invoice sum
+	 * Invoice total
 	 */
 	@Column(nullable = false)
-	public BigDecimal getSum() {
-		return sum;
+	public BigDecimal getTotal() {
+		return total;
+	}
+
+	/**
+	 * Date issue
+	 */
+	@Column
+	@Temporal(TemporalType.TIMESTAMP)
+	public Date getDateIssue() {
+		return dateIssue;
+	}
+
+	/**
+	 * Payment due
+	 */
+	@Column
+	@Temporal(TemporalType.TIMESTAMP)
+	public Date getDatePaymentDue() {
+		return datePaymentDue;
+	}
+
+	/**
+	 * Discount, percents
+	 */
+	@Column
+	public int getDiscount() {
+		return discount;
+	}
+
+	/**
+	 * Subtotal, dirty sum (without discount)
+	 */
+	@Column
+	public BigDecimal getSubTotal() {
+		return subTotal;
 	}
 
 	/**
@@ -106,13 +140,6 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 		return paymentState;
 	}
 
-	@Column(nullable = false)
-	@Temporal(TemporalType.TIMESTAMP)
-	public Date getLastUpdate() {
-		return lastUpdate;
-	}
-
-
 	/**
 	 * Optimistic locking
 	 */
@@ -141,7 +168,8 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 		this.setDateCreation(d);
 		this.setDateUpdate(d);
 		this.setNumber("");
-		this.setSum(BigDecimal.valueOf(0));
+		this.setSubTotal(BigDecimal.valueOf(0));
+		this.setTotal(BigDecimal.valueOf(0));
 		this.setInvoicesLines(new ArrayList<InvoiceLine>());
 		this.setPaymentState(new InvoicePaymentState(this));
 	}
@@ -154,80 +182,41 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 		this.setPerson(person);
 	}
 
-	public Invoice(final Person person, final float sum) {
-		this(person);
-		if (person == null) {
-			throw new IllegalArgumentException("Arguments must be not null");
-		}
-		this.setPaymentState(new InvoicePaymentState(this));
-	}
-
-	/**
-	 * Calc sum {@link #sum} of this Invoice
-	 *
-	 * @return Total of the Invoice
-	 */
-	public BigDecimal calcInvoiceSum() {
-		BigDecimal res = new BigDecimal(0);
-		for (InvoiceLine il : this.getInvoicesLines()) {
-			res.add(il.calcLineSum());
-		}
-		return res;
-	}
-
-	/**
-	 * Fields sequence: {@link #hashCode()} , {@link #getId()} , {@link #getNumber()} , {@link #getDateCreation()} , {@link #getDateUpdate()} , {@link #getSum()} , {@link ua.its.slot7.caccounting.model.person.Person#hashCode()} , {@link ua.its.slot7.caccounting.model.person.Person#getId()} , {@link ua.its.slot7.caccounting.model.invoicepaymentstate.InvoicePaymentState#isPaid()} , {@link #getLastUpdate()}
-	 */
 	@Override
 	public String toString() {
-		String res = null;
-		StringBuilder sb = new StringBuilder();
-		sb.append("Invoice : { ")
-			.append(this.hashCode())
-			.append(" | ")
-			.append(this.getId())
-			.append(" | ")
-			.append(this.getNumber())
-			.append(" | ")
-			.append(this.getDateCreation().toString())
-			.append(" | ")
-			.append(this.getDateUpdate().toString())
-			.append(" | ")
-			.append(this.getSum())
-			.append(" | ")
-			.append(this.getPerson().hashCode())
-			.append(" | ")
-			.append(this.getPerson().getId())
-			.append(" | ")
-			.append(this.getPaymentState().isPaid())
-			.append(" }");
-		res = sb.toString();
-		return res;
+		final StringBuilder sb = new StringBuilder("Invoice{");
+		sb.append("id=").append(id);
+		sb.append(", number='").append(number).append('\'');
+		sb.append(", dateCreation=").append(dateCreation);
+		sb.append(", dateUpdate=").append(dateUpdate);
+		sb.append(", subTotal=").append(subTotal);
+		sb.append(", discount=").append(discount);
+		sb.append(", total=").append(total);
+		sb.append(", person=").append(person);
+		sb.append(", invoicesLines=").append(invoicesLines);
+		sb.append(", paymentState=").append(paymentState);
+		sb.append(", dateIssue=").append(dateIssue);
+		sb.append(", datePaymentDue=").append(datePaymentDue);
+		sb.append(", version=").append(version);
+		sb.append('}');
+		return sb.toString();
 	}
 
-	/**
-	 * Based on {@link #getNumber()#hashCode()}
-	 */
 	@Override
-	public boolean equals(Object anInvoice) {
-		//check for self-comparison
-		if (this == anInvoice) return true;
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
 
-		if (!(anInvoice instanceof Invoice)) return false;
+		Invoice invoice = (Invoice) o;
 
-		//cast
-		Invoice that = (Invoice) anInvoice;
+		if (!number.equals(invoice.number)) return false;
 
-		//key field - number
-		return this.getNumber().equalsIgnoreCase(that.getNumber());
+		return true;
 	}
 
-	/**
-	 * Based on {@link #getNumber()#hashCode()}
-	 */
 	@Override
 	public int hashCode() {
-		return this.getNumber().hashCode();
+		return number.hashCode();
 	}
 
 	@Override
@@ -259,8 +248,8 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 		this.dateUpdate = dateUpdate;
 	}
 
-	public void setSum(BigDecimal sum) {
-		this.sum = sum;
+	public void setTotal(BigDecimal total) {
+		this.total = total;
 	}
 
 	public void setPerson(Person person) {
@@ -275,12 +264,24 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 		this.paymentState = paymentState;
 	}
 
-	public void setLastUpdate(Date lastUpdate) {
-		this.lastUpdate = lastUpdate;
-	}
-
 	public void setVersion(Long version) {
 		this.version = version;
+	}
+
+	public void setDateIssue(Date dateIssue) {
+		this.dateIssue = dateIssue;
+	}
+
+	public void setDatePaymentDue(Date datePaymentDue) {
+		this.datePaymentDue = datePaymentDue;
+	}
+
+	public void setDiscount(int discount) {
+		this.discount = discount;
+	}
+
+	public void setSubTotal(BigDecimal subTotal) {
+		this.subTotal = subTotal;
 	}
 
 	private long id;
@@ -291,8 +292,13 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 	private Date dateCreation;
 	private Date dateUpdate;
 
-	@Min(value = 0, message = "Invoice sum must be > 0")
-	private BigDecimal sum;
+	@Min(value = 0, message = "Invoice subtotal must be > 0")
+	private BigDecimal subTotal;
+
+	private int discount;
+
+	@Min(value = 0, message = "Invoice total must be > 0")
+	private BigDecimal total;
 
 	@NotNull(message = "Invoice person must be not null")
 	private Person person;
@@ -303,9 +309,10 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 	@NotNull(message = "Invoice payment state must be not null")
 	private InvoicePaymentState paymentState = null;
 
-	private Date lastUpdate;
+	private Date dateIssue;
+
+	private Date datePaymentDue;
+
 
 	private Long version;
-
-
 }

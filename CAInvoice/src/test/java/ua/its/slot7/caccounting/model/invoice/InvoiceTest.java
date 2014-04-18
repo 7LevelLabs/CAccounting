@@ -5,7 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 import ua.its.slot7.caccounting.model.invoiceline.InvoiceLine;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -47,30 +46,4 @@ public class InvoiceTest extends Assert {
 			.hasSize(2);
 	}
 
-	@Test
-	public void testCalcInvoiceSum() throws Exception {
-		BigDecimal res;
-		invoiceLine1.setLinePrice(BigDecimal.valueOf(12.1));
-		invoiceLine1.setLineQt(2);
-		invoiceLine2.setLinePrice(BigDecimal.valueOf(37.23));
-		invoiceLine2.setLineQt(5);
-		res = invoice.calcInvoiceSum();
-		assertEquals(BigDecimal.valueOf(210.35), res);
-	}
-
-	@Test
-	public void testCalcInvoiceSumEmptyLine() throws Exception {
-		BigDecimal res;
-		invoiceLine1.setLinePrice(BigDecimal.valueOf(12.1));
-		invoiceLine1.setLineQt(2);
-		res = invoice.calcInvoiceSum();
-		assertEquals(BigDecimal.valueOf(24.2), res);
-	}
-
-	@Test
-	public void testCalcInvoiceSumEmptyAllLines() throws Exception {
-		BigDecimal res;
-		res = invoice.calcInvoiceSum();
-		assertEquals(BigDecimal.valueOf(0), res);
-	}
 }

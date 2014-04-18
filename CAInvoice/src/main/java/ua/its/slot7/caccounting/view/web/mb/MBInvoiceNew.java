@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import ua.its.slot7.caccounting.helper.InvoiceHelper;
 import ua.its.slot7.caccounting.helper.PersonHelper;
 import ua.its.slot7.caccounting.model.invoice.Invoice;
 import ua.its.slot7.caccounting.model.invoiceline.InvoiceLine;
@@ -52,6 +53,9 @@ public class MBInvoiceNew implements Serializable {
 	@Autowired
 	private PersonHelper personHelper;
 
+	@Autowired
+	private InvoiceHelper invoiceHelper;
+
 	@ManagedProperty("#{param.personIdForNewInvoice}")
 	private long personIdForNewInvoice;
 
@@ -66,9 +70,9 @@ public class MBInvoiceNew implements Serializable {
 	public void loadAction() {
 		Person pp = personService.getPersonById(this.getPersonIdForNewInvoice());
 		if (pp != null) {
+			invoiceLocal = invoiceHelper.getNewInvoice(pp);
 			this.setPersonLocal(pp);
-			this.getInvoiceLocal().setNumber(personHelper.generateNextInvoiceNumber(pp));
-			this.getInvoiceLocal().setPerson(pp);
+			this.setLilLineQt(1);
 		} else {
 			this.setInvoiceLocal(null);
 			this.setPersonLocal(null);
@@ -93,7 +97,7 @@ public class MBInvoiceNew implements Serializable {
 		il.setLineText(this.getLilLineText());
 		il.setLinePrice(this.getLilLinePrice());
 		il.setLineQt(this.getLilLineQt());
-		il.setLineSum(this.getLilLineSum());
+		il.setLineTotal(this.getLilLineSum());
 
 		/**
 		 * calc new {@link InvoiceLine#tid}
@@ -165,7 +169,7 @@ public class MBInvoiceNew implements Serializable {
 	}
 
 	private void lilCalcAndSetInvoiceTotal() {
-		this.getInvoiceLocal().setSum(blService.calcInvoiceSum(this.getInvoiceLocal()));
+		this.getInvoiceLocal().setTotal(blService.calcInvoiceTotal(this.getInvoiceLocal()));
 	}
 
 	private void lilCalcAndSetLineTotal() {
@@ -246,8 +250,7 @@ public class MBInvoiceNew implements Serializable {
 	}
 
 	public MBInvoiceNew() {
-		invoiceLocal = new Invoice();
-		this.setLilLineQt(1);
+
 	}
 
 }

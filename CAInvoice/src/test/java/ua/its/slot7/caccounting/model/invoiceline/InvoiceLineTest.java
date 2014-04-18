@@ -46,7 +46,7 @@ public class InvoiceLineTest extends Assert {
 	public void testCalcLineSum() throws Exception {
 		invoiceLine.setLinePrice(new BigDecimal(21.1));
 		invoiceLine.setLineQt(12);
-		BigDecimal res = invoiceLine.calcLineSum();
+		BigDecimal res = invoiceLine.calcLineTotal();
 		assertEquals(new BigDecimal("253.20"), res.setScale(2, RoundingMode.HALF_EVEN));
 	}
 
@@ -54,16 +54,24 @@ public class InvoiceLineTest extends Assert {
 	public void testCalcLineSum01() throws Exception {
 		invoiceLine.setLinePrice(new BigDecimal(0));
 		invoiceLine.setLineQt(12);
-		BigDecimal res = invoiceLine.calcLineSum();
-		assertEquals(new BigDecimal("0.0"), res);
+		BigDecimal res = invoiceLine.calcLineTotal();
+		assertEquals(new BigDecimal("0.0"), res.setScale(1, RoundingMode.HALF_EVEN));
 	}
 
 	@Test
 	public void testCalcLineSum10() throws Exception {
 		invoiceLine.setLinePrice(new BigDecimal(21.1));
 		invoiceLine.setLineQt(0);
-		BigDecimal res = invoiceLine.calcLineSum();
-		assertEquals(new BigDecimal("0.0"), res);
+		BigDecimal res = invoiceLine.calcLineTotal();
+		assertEquals(new BigDecimal("0.0"), res.setScale(1, RoundingMode.HALF_EVEN));
+	}
+
+	public void testTaxes() throws Exception {
+		invoiceLine.setLinePrice(new BigDecimal(100));
+		invoiceLine.setLineQt(1);
+		invoiceLine.setLineTax(new BigDecimal(15));
+		BigDecimal res = invoiceLine.calcLineTotal();
+		assertEquals(new BigDecimal("115.0"), res.setScale(1, RoundingMode.HALF_EVEN));
 	}
 
 	@Test
@@ -72,7 +80,7 @@ public class InvoiceLineTest extends Assert {
 		invoiceLine.setLineText(" ");
 		invoiceLine.setLineQt(0);
 		invoiceLine.setLinePrice(BigDecimal.valueOf(-1));
-		invoiceLine.setLineSum(BigDecimal.valueOf(-1));
+		invoiceLine.setLineTotal(BigDecimal.valueOf(-1));
 
 		Set<ConstraintViolation<InvoiceLine>> constraintViolations =
 			validator.validate(invoiceLine);

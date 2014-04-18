@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import ua.its.slot7.caccounting.helper.InvoiceHelper;
 import ua.its.slot7.caccounting.helper.PersonHelper;
 import ua.its.slot7.caccounting.model.invoice.Invoice;
 import ua.its.slot7.caccounting.model.invoiceline.InvoiceLine;
@@ -42,6 +43,9 @@ public class BLService implements BLServiceAvatar {
 
 	@Autowired
 	private PersonHelper personHelper;
+
+	@Autowired
+	private InvoiceHelper invoiceHelper;
 
 	@Override
 	public ArrayList<Invoice> personGetInvoices(Person person) {
@@ -90,7 +94,7 @@ public class BLService implements BLServiceAvatar {
 			invoiceLine.setInvoice(n);
 			invoiceLine.setLinePrice(invoiceLineTemplate.getLinePrice());
 			invoiceLine.setLineQt(invoiceLineTemplate.getLineQt());
-			invoiceLine.setLineSum(invoiceLineTemplate.getLineSum());
+			invoiceLine.setLineTotal(invoiceLineTemplate.getLineTotal());
 			invoiceLine.setLineText(invoiceLineTemplate.getLineText());
 
 			invoiceLineList.add(invoiceLine);
@@ -100,7 +104,7 @@ public class BLService implements BLServiceAvatar {
 
 		n.setDateCreation(date);
 		n.setDateUpdate(date);
-		n.setSum(invoiceTemplate.getSum());
+		n.setTotal(invoiceTemplate.getTotal());
 
 		this.invoiceCreate(n);
 
@@ -119,8 +123,8 @@ public class BLService implements BLServiceAvatar {
 	}
 
 	@Override
-	public BigDecimal calcInvoiceSum(Invoice invoice) {
-		return invoice.calcInvoiceSum();
+	public BigDecimal calcInvoiceTotal(Invoice invoice) {
+		return invoiceHelper.calcInvoiceSubTotal(invoice);
 	}
 
 	@Override
