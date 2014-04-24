@@ -1,25 +1,16 @@
-##+++ prepared by
-##
-##+++ prepared for
-##
-##total
-##
-##date of issue
-##
-##payment due date
-##
-##description	cost	qty	tax	total
-##
-##subtotal (usd)
-##
-##+++ discount (%)
+<h3>Invoice $invoice.getNumber()</h3>
+<p>Preared by : $invoice.getPreparedBy()</p>
+<p>Prepared for : $invoice.getPreparedFor()</p>
+<p>Total : $invoice.getTotal()</p>
+<p>Issue date : $invoice.getIssueDate()</p>
+<p>Payment due date : $invoice.getPaymentDueDate()</p>
+<p><span>Description</span> : <span>Cost</span> : <span>qty</span> : <span>tax</span> : <span>Total</span></p>
 
-<h3>Invoice ${invoice.number}</h3>
-<p>Preared by : ${invoice.preparedBy}</p>
-<p>Prepared for : ${invoice.preparedFor}</p>
-<p>Total : ${invoice.total}</p>
-<p>Issue date : ${invoice.issueDate}</p>
-<p>Payment due date : ${invoice.paymentDueDate}</p>
-{Lines}
-<p>Subtotal : ${invoice.subtotal}</p>
-<p>Discount, % : ${invoice.discount}</p>
+#foreach( $invoiceLine in $invoice.getLines() )
+<p><span>$invoiceLine.getLineText()</span> : <span>$invoiceLine.getLinePrice()</span> :
+    <span>$invoiceLine.getLineQt()</span> : <span>$invoiceLine.getLineTax()</span> :
+    <span>$invoiceLine.getLineTotal()</span></p>
+#end
+
+<p>Subtotal : $invoice.getSubtotal()</p>
+<p>Discount, % : $invoice.getDiscount()</p>

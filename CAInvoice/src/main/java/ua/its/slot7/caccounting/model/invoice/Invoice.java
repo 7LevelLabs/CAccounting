@@ -193,7 +193,7 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 		sb.append(", discount=").append(discount);
 		sb.append(", total=").append(total);
 		sb.append(", person=").append(person);
-		sb.append(", invoicesLines=").append(invoicesLines);
+		sb.append(", invoicesLines=").append(invoicesLines.size());
 		sb.append(", paymentState=").append(paymentState);
 		sb.append(", dateIssue=").append(dateIssue);
 		sb.append(", datePaymentDue=").append(datePaymentDue);

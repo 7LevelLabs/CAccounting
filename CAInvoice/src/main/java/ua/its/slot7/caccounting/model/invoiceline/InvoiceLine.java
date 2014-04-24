@@ -155,7 +155,7 @@ public class InvoiceLine implements Serializable, Comparable<InvoiceLine> {
 		final StringBuilder sb = new StringBuilder("InvoiceLine{");
 		sb.append("id=").append(id);
 		sb.append(", tid=").append(tid);
-		sb.append(", invoice=").append(invoice);
+		sb.append(", invoice=").append(invoice.getNumber());
 		sb.append(", lineText='").append(lineText).append('\'');
 		sb.append(", lineQt=").append(lineQt);
 		sb.append(", linePrice=").append(linePrice);

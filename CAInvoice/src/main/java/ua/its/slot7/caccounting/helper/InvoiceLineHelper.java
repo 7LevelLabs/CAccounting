@@ -37,6 +37,26 @@ public class InvoiceLineHelper {
 			this.lineTotal = lineTotal;
 			this.lineTax = lineTax;
 		}
+
+		public String getLineText() {
+			return lineText;
+		}
+
+		public String getLineQt() {
+			return lineQt;
+		}
+
+		public String getLinePrice() {
+			return linePrice;
+		}
+
+		public String getLineTotal() {
+			return lineTotal;
+		}
+
+		public String getLineTax() {
+			return lineTax;
+		}
 	}
 
 }

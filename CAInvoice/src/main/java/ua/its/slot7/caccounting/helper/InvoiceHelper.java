@@ -138,6 +138,41 @@ public class InvoiceHelper {
 			this.lines.add(lineVO);
 		}
 
+		public String getNumber() {
+			return number;
+		}
+
+		public String getPreparedBy() {
+			return preparedBy;
+		}
+
+		public String getPreparedFor() {
+			return preparedFor;
+		}
+
+		public String getTotal() {
+			return total;
+		}
+
+		public String getIssueDate() {
+			return issueDate;
+		}
+
+		public String getPaymentDueDate() {
+			return paymentDueDate;
+		}
+
+		public String getSubtotal() {
+			return subtotal;
+		}
+
+		public String getDiscount() {
+			return discount;
+		}
+
+		public Collection<InvoiceLineHelper.InvoiceLineVO> getLines() {
+			return lines;
+		}
 	}
 
 }
