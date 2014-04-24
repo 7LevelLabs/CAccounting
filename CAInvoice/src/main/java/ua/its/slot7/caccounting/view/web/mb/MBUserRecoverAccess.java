@@ -10,7 +10,6 @@ import ua.its.slot7.caccounting.model.user.User;
 import ua.its.slot7.caccounting.model.userartoken.UserARToken;
 import ua.its.slot7.caccounting.service.UserARTokenServiceAvatar;
 import ua.its.slot7.caccounting.service.UserServiceAvatar;
-import ua.its.slot7.caccounting.system.BSystemSettingsAvatar;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -36,16 +35,13 @@ import java.util.Date;
 @RequestScoped
 @ManagedBean(name = "MBUserRecoverAccess")
 public class MBUserRecoverAccess {
-	private final Logger LOGGER = Logger.getLogger("MBUserRecoverAccess");
+	private final Logger LOGGER = Logger.getLogger(MBUserRecoverAccess.class);
 
 	@Autowired
 	private UserServiceAvatar userService;
 
 	@Autowired
 	private UserARTokenServiceAvatar userARTokenService;
-
-	@Autowired
-	private BSystemSettingsAvatar bSystemSettings;
 
 	@Autowired
 	private IMailerProcessor mailerProcessor;
