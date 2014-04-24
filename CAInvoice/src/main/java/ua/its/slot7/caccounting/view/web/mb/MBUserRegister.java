@@ -104,7 +104,7 @@ public class MBUserRegister implements Serializable {
 		//email sending
 
 		try {
-			mailerProcessor.sendEmailWAboard(localUser.getNick(), localUser.getEmail());
+			mailerProcessor.sendEmailWelcomeAboard(localUser.getNick(), localUser.getEmail());
 		} catch (JMSException e) {
 			e.printStackTrace();
 			return res;

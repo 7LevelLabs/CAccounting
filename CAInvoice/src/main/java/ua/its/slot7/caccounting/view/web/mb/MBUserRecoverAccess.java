@@ -5,13 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.security.crypto.password.StandardPasswordEncoder;
 import org.springframework.stereotype.Component;
-import ua.its.slot7.caccounting.communications.MailerWorkerAvatar;
+import ua.its.slot7.caccounting.communications.IMailerProcessor;
 import ua.its.slot7.caccounting.model.user.User;
 import ua.its.slot7.caccounting.model.userartoken.UserARToken;
 import ua.its.slot7.caccounting.service.UserARTokenServiceAvatar;
 import ua.its.slot7.caccounting.service.UserServiceAvatar;
 import ua.its.slot7.caccounting.system.BSystemSettingsAvatar;
-import ua.its.slot7.camailtask.model.MailTask;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -46,10 +45,10 @@ public class MBUserRecoverAccess {
 	private UserARTokenServiceAvatar userARTokenService;
 
 	@Autowired
-	private MailerWorkerAvatar mailerWorker;
+	private BSystemSettingsAvatar bSystemSettings;
 
 	@Autowired
-	private BSystemSettingsAvatar bSystemSettings;
+	private IMailerProcessor mailerProcessor;
 
 	private String localUserEmail;
 
@@ -82,45 +81,12 @@ public class MBUserRecoverAccess {
 
 		User lUser = userService.getUserByEMail(userARToken.getEmail());
 
-		String mf, mfn, mt, mtn, ms, mb;
-
-		mf = bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_EMAIL_FROM_EMAIL");
-		mfn = bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_EMAIL_FROM_NAME");
-
-		mt = userARToken.getEmail();
-		mtn = lUser.getNick();
-		ms = bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_AR_CODE_SUBJ");
-
-		//StringTemplate
-
-//		STGroup group = new STGroupDir("/", '$','$');
-//		ST mbST = new ST(group,bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_AR_CODE_TEXT"));
-//
-//		mbST.add("ar_email",userARToken.getEmail());
-//		mbST.add("ar_code",userARToken.getTokenCode());
-//		mbST.add(
-//			"ar_url_ph2",
-//			bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_BASE_URL")+"/"+
-//				"user-access-recover-f2.xhtml"
-//		);
-//		mbST.add("ar_code_exp_time",userARToken.getPeriodEnd().toString());
-//
-//		mb = mbST.render();
-
-		//TODO Fix it
-		mb = "//TODO Fix it";
-
-
-		MailTask mailTask = new MailTask(mf,
-			mfn,
-			mt,
-			mtn,
-			ms,
-			mb,
-			true);
-
 		try {
-			mailerWorker.sendOutboundMailTaskQMessage(mailTask);
+			mailerProcessor.sendAccessRecoveryPh1(lUser.getNick(),
+				userARToken.getEmail(),
+				userARToken.getTokenCode(),
+				userARToken.getPeriodEnd().toString());
+
 		} catch (JMSException e) {
 			e.printStackTrace();
 			FacesContext.getCurrentInstance().addMessage(
@@ -223,26 +189,9 @@ public class MBUserRecoverAccess {
 		userService.updateUser(localUser);
 
 		//send email
-		String mf, mfn, mt, mtn, ms, mb;
-
-		mf = bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_EMAIL_FROM_EMAIL");
-		mfn = bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_EMAIL_FROM_NAME");
-
-		mt = userARToken.getEmail();
-		mtn = localUser.getNick();
-		ms = bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_AR_CODE_DONE_SUBJ");
-		mb = bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_AR_CODE_DONE_TEXT");
-
-		MailTask mailTask = new MailTask(mf,
-			mfn,
-			mt,
-			mtn,
-			ms,
-			mb,
-			true);
-
 		try {
-			mailerWorker.sendOutboundMailTaskQMessage(mailTask);
+			mailerProcessor.sendAccessRecoveryPh2(localUser.getNick(), userARToken.getEmail());
+
 		} catch (JMSException e) {
 			e.printStackTrace();
 		}

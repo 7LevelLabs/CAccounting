@@ -36,7 +36,7 @@ public class BSystemSettings implements BSystemSettingsAvatar {
 	public String SETTINGS_SYSTEM_SCOPE;
 
 	//Without trailing slash!
-	@Value("${system.base.url}")
+	@Value("${system.url.base}")
 	private String SETTINGS_SYSTEM_BASE_URL;
 
 	@Value("${system.email.from.email}")
@@ -69,7 +69,7 @@ public class BSystemSettings implements BSystemSettingsAvatar {
 	@Value("${system.ebt.invoice}")
 	private String SETTINGS_SYSTEM_EBT_INVOICE = " ";
 
-	private HashMap<String,String> systemSettings;
+	private HashMap<String, String> systemSettings;
 
 	@PostConstruct
 	@Override
@@ -78,21 +78,20 @@ public class BSystemSettings implements BSystemSettingsAvatar {
 		List<Setting> settingsList;
 		settingsList = settingService.getSettingsByScope(SETTINGS_SYSTEM_SCOPE);
 
-		if (settingsList!=null) {
+		if (settingsList != null) {
 			Iterator<Setting> iterator = settingsList.iterator();
 			Setting s;
 			while (iterator.hasNext()) {
 				s = iterator.next();
-				systemSettings.put(s.getSettingkey(),s.getSettingvalue());
+				systemSettings.put(s.getSettingkey(), s.getSettingvalue());
 			}
 		}
 		initSetDefault();
 	}
 
 	/**
-	 *
 	 * Set default values of system-wide setting
-	 * */
+	 */
 	public void initSetDefault() {
 
 		//SETTINGS_SYSTEM_BASE_URL
@@ -154,10 +153,10 @@ public class BSystemSettings implements BSystemSettingsAvatar {
 	}
 
 	@Override
-	public void setSystemSettingByKeyAndValue (String key, String value) {
-		Setting setting = settingService.getSettingByScopeAndKey(SETTINGS_SYSTEM_SCOPE,key);
-		if (setting==null) {
-			setting = new Setting(SETTINGS_SYSTEM_SCOPE,key,value);
+	public void setSystemSettingByKeyAndValue(String key, String value) {
+		Setting setting = settingService.getSettingByScopeAndKey(SETTINGS_SYSTEM_SCOPE, key);
+		if (setting == null) {
+			setting = new Setting(SETTINGS_SYSTEM_SCOPE, key, value);
 			//local
 			systemSettings.put(setting.getSettingkey(), setting.getSettingvalue());
 			//remote
@@ -167,18 +166,18 @@ public class BSystemSettings implements BSystemSettingsAvatar {
 
 	@Override
 	public void updateSystemSettingByKeyAndValue(String key, String value) {
-		Setting setting = settingService.getSettingByScopeAndKey(SETTINGS_SYSTEM_SCOPE,key);
-		if (setting!=null) {
+		Setting setting = settingService.getSettingByScopeAndKey(SETTINGS_SYSTEM_SCOPE, key);
+		if (setting != null) {
 			setting.setSettingvalue(value);
 			//local
 			systemSettings.remove(setting.getSettingkey());
-			systemSettings.put(setting.getSettingkey(),setting.getSettingvalue());
+			systemSettings.put(setting.getSettingkey(), setting.getSettingvalue());
 			//remote
 			settingService.updateSetting(setting);
 		}
 	}
 
-	public BSystemSettings () {
+	public BSystemSettings() {
 
 	}
 }

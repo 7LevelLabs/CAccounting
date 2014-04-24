@@ -11,5 +11,17 @@ public interface IMailerProcessor {
 	/**
 	 * Send Welcome Aboard
 	 */
-	public void sendEmailWAboard(final String nick, final String email) throws JMSException;
+	public void sendEmailWelcomeAboard(final String nick, final String email) throws JMSException;
+
+	/**
+	 * Send Access Recovery Ph1
+	 */
+	public void sendAccessRecoveryPh1(final String nick, final String email, final String code, final String codeExpTime) throws JMSException;
+
+	/**
+	 * Send Access Recovery Ph2
+	 */
+	public void sendAccessRecoveryPh2(final String nick, final String email) throws JMSException;
+
+
 }
