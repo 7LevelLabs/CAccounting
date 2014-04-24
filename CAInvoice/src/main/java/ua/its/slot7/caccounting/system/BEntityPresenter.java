@@ -2,9 +2,6 @@ package ua.its.slot7.caccounting.system;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.stringtemplate.v4.ST;
-import org.stringtemplate.v4.STGroup;
-import org.stringtemplate.v4.STGroupDir;
 import ua.its.slot7.caccounting.model.invoice.Invoice;
 
 /**
@@ -34,29 +31,29 @@ public class BEntityPresenter implements BEntityPresenterAvatar {
 
 		String invoiceTemplate = bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_EBT_INVOICE");
 
-		//delimiter - $
-		STGroup tplGroup = new STGroupDir("/", '$', '$');
-		ST mbST = new ST(tplGroup, invoiceTemplate);
-
-		mbST.add("invoice_number", invoice.getNumber());
-
-//		prepared by
-		mbST.add("invoice_prepared_by_name", invoice.getPerson().getUser().getNick());
-		mbST.add("invoice_prepared_by_email", invoice.getPerson().getUser().getEmail());
-
-//		prepared for
-		mbST.add("invoice_prepared_for_name", invoice.getPerson().getName());
-		mbST.add("invoice_prepared_for_email", invoice.getPerson().getEmail());
-		mbST.add("invoice_prepared_for_phone", invoice.getPerson().getPhone());
-
-//		total
-		mbST.add("invoice_total", new Float(invoice.getTotal().floatValue()).toString());
-
-//		date of issue
-		mbST.add("invoice_date_of_issue", invoice.getDateCreation().toString());
-
-
-		return mbST.render();
+//		//delimiter - $
+//		STGroup tplGroup = new STGroupDir("/", '$', '$');
+//		ST mbST = new ST(tplGroup, invoiceTemplate);
+//
+//		mbST.add("invoice_number", invoice.getNumber());
+//
+////		prepared by
+//		mbST.add("invoice_prepared_by_name", invoice.getPerson().getUser().getPreparedBy());
+//		mbST.add("invoice_prepared_by_email", invoice.getPerson().getUser().getEmail());
+//
+////		prepared for
+//		mbST.add("invoice_prepared_for_name", invoice.getPerson().getPreparedFor());
+//		mbST.add("invoice_prepared_for_email", invoice.getPerson().getEmail());
+//		mbST.add("invoice_prepared_for_phone", invoice.getPerson().getPhone());
+//
+////		total
+//		mbST.add("invoice_total", new Float(invoice.getTotal().floatValue()).toString());
+//
+////		date of issue
+//		mbST.add("invoice_date_of_issue", invoice.getDateCreation().toString());
+//
+//		return mbST.render();
+		return "";
 	}
 
 

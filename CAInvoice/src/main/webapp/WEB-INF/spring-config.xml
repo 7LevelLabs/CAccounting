@@ -16,7 +16,7 @@
        http://www.springframework.org/schema/jee/spring-jee.xsd"
         >
 
-    <context:property-placeholder location="classpath:application.runtime.properties"/>
+    <context:property-placeholder location="classpath:application.runtime.properties,email.templates.properties"/>
 
     <context:annotation-config/>
 
@@ -85,6 +85,12 @@
                 <prop key="file.resource.loader.cache">false</prop>
             </props>
         </property>
+    </bean>
+
+    <bean id="mailerProcessor" class="ua.its.slot7.caccounting.communications.MailerProcessor"/>
+
+    <bean id="mailBodyProcessor" class="ua.its.slot7.caccounting.communications.MailBodyProcessor">
+        <property name="velocityEngine" ref="velocityEngine"/>
     </bean>
 
 </beans>

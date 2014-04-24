@@ -1,0 +1,10 @@
+<div>
+    <p style="font-weight: normal;">Hi, ${nick} ( ${email} )! We are pleased to welcome you as a customer with <a
+            href="http://7levellabs.com:7001/CAccounting" target="_blank">Cloud Accounting</a>.</p>
+
+    <p style="font-weight: normal;">Please feel free to take a moment to browse our service. Feel free to get started
+        and let us know if there is anything we can do to help you get setup quicker.</p>
+</div>
+<div>
+    #include("include/footer.vm")
+</div>

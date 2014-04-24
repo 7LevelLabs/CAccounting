@@ -1,0 +1,18 @@
+<div>
+    <p style="font-weight: normal;">Hi, ${nick} ( ${email} )!</p>
+
+    <p>You just requested to recover access to <strong><a href="${url_application}" target="_blank">Cloud Accounting</a></strong>.
+    </p>
+
+    <p>Your email : ${email} ,<br/>
+        <strong>Your code</strong> : ${code} .</p>
+
+    <p>Please, <strong>put this code and your new password on the Access recovery page</strong> : <a href="${url_ph2}"
+                                                                                                     target="_blank">${url_ph2}</a>
+        .</p>
+
+    <p>Please, pay your attention : period of use of the code will expire on ${code_exp_time} .</p>
+</div>
+<div>
+    #include("include/footer.vm")
+</div>

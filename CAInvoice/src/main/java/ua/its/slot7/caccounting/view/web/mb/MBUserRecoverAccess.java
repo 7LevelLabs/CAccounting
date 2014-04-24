@@ -5,9 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.security.crypto.password.StandardPasswordEncoder;
 import org.springframework.stereotype.Component;
-import org.stringtemplate.v4.ST;
-import org.stringtemplate.v4.STGroup;
-import org.stringtemplate.v4.STGroupDir;
 import ua.its.slot7.caccounting.communications.MailerWorkerAvatar;
 import ua.its.slot7.caccounting.model.user.User;
 import ua.its.slot7.caccounting.model.userartoken.UserARToken;
@@ -61,7 +58,7 @@ public class MBUserRecoverAccess {
 	private String localUserPassword;
 	private String localUserPasswordConfirm;
 
-	public String actionRecoverAccess () {
+	public String actionRecoverAccess() {
 
 		LOGGER.info("actionRecoverAccess : Go!");
 
@@ -72,8 +69,10 @@ public class MBUserRecoverAccess {
 				new FacesMessage(
 					FacesMessage.SEVERITY_ERROR,
 					"Error",
-					"This EMail "+this.getLocalUserEmail()+" is not in use. " +
-						"Please, use another email."));
+					"This EMail " + this.getLocalUserEmail() + " is not in use. " +
+						"Please, use another email."
+				)
+			);
 			this.setLocalUserEmail("");
 			return res;
 		}
@@ -94,19 +93,23 @@ public class MBUserRecoverAccess {
 
 		//StringTemplate
 
-		STGroup group = new STGroupDir("/", '$','$');
-		ST mbST = new ST(group,bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_AR_CODE_TEXT"));
+//		STGroup group = new STGroupDir("/", '$','$');
+//		ST mbST = new ST(group,bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_AR_CODE_TEXT"));
+//
+//		mbST.add("ar_email",userARToken.getEmail());
+//		mbST.add("ar_code",userARToken.getTokenCode());
+//		mbST.add(
+//			"ar_url_ph2",
+//			bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_BASE_URL")+"/"+
+//				"user-access-recover-f2.xhtml"
+//		);
+//		mbST.add("ar_code_exp_time",userARToken.getPeriodEnd().toString());
+//
+//		mb = mbST.render();
 
-		mbST.add("ar_email",userARToken.getEmail());
-		mbST.add("ar_code",userARToken.getTokenCode());
-		mbST.add(
-			"ar_url_ph2",
-			bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_BASE_URL")+"/"+
-				"user-access-recover-f2.xhtml"
-		);
-		mbST.add("ar_code_exp_time",userARToken.getPeriodEnd().toString());
+		//TODO Fix it
+		mb = "//TODO Fix it";
 
-		mb = mbST.render();
 
 		MailTask mailTask = new MailTask(mf,
 			mfn,
@@ -125,7 +128,8 @@ public class MBUserRecoverAccess {
 				new FacesMessage(
 					FacesMessage.SEVERITY_ERROR,
 					"Error",
-					"Communications error. Please, try later."));
+					"Communications error. Please, try later.")
+			);
 			return res;
 		}
 		FacesContext.getCurrentInstance().addMessage(
@@ -134,11 +138,13 @@ public class MBUserRecoverAccess {
 				FacesMessage.SEVERITY_INFO,
 				"Info",
 				"We just send you email. " +
-					"Please, read appropriate mailbox."));
+					"Please, read appropriate mailbox."
+			)
+		);
 		return res;
 	}
 
-	public String actionRecoveryAccessF2 () {
+	public String actionRecoveryAccessF2() {
 		String res = null;
 		if (!userService.areThereThisEMail(this.getLocalUserEmail())) {
 			FacesContext.getCurrentInstance().addMessage(
@@ -146,8 +152,10 @@ public class MBUserRecoverAccess {
 				new FacesMessage(
 					FacesMessage.SEVERITY_ERROR,
 					"Error",
-					"This EMail "+this.getLocalUserEmail()+" is not in use. " +
-						"Please, use another email."));
+					"This EMail " + this.getLocalUserEmail() + " is not in use. " +
+						"Please, use another email."
+				)
+			);
 			this.setLocalUserEmail("");
 			return res;
 		}
@@ -157,7 +165,8 @@ public class MBUserRecoverAccess {
 				new FacesMessage(
 					FacesMessage.SEVERITY_ERROR,
 					"Error",
-					"Passwords must match."));
+					"Passwords must match.")
+			);
 			this.setLocalUserPassword("");
 			this.setLocalUserPasswordConfirm("");
 			return null;
@@ -165,13 +174,14 @@ public class MBUserRecoverAccess {
 
 		UserARToken userARToken = userARTokenService.getUserARTokenByEMail(this.getLocalUserEmail());
 
-		if (userARToken==null) {
+		if (userARToken == null) {
 			FacesContext.getCurrentInstance().addMessage(
 				null,
 				new FacesMessage(
 					FacesMessage.SEVERITY_ERROR,
 					"Error",
-					"Wrong code."));
+					"Wrong code.")
+			);
 			this.setLocalUserARCode("");
 			return null;
 		}
@@ -182,7 +192,8 @@ public class MBUserRecoverAccess {
 				new FacesMessage(
 					FacesMessage.SEVERITY_ERROR,
 					"Error",
-					"Wrong code-email."));
+					"Wrong code-email.")
+			);
 			this.setLocalUserARCode("");
 			return null;
 		}
@@ -192,7 +203,7 @@ public class MBUserRecoverAccess {
 			//delete token
 			userARTokenService.deleteUserARToken(userARToken);
 			//return
-			res="index?faces-redirect-true";
+			res = "index?faces-redirect-true";
 			return res;
 		}
 
@@ -243,8 +254,9 @@ public class MBUserRecoverAccess {
 			new FacesMessage(
 				FacesMessage.SEVERITY_INFO,
 				"Change password.",
-				"Password successfully changed."));
-		res="index";
+				"Password successfully changed.")
+		);
+		res = "index";
 		return res;
 	}
 

@@ -5,13 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.security.crypto.password.StandardPasswordEncoder;
 import org.springframework.stereotype.Component;
+import ua.its.slot7.caccounting.communications.IMailerProcessor;
 import ua.its.slot7.caccounting.communications.MailerWorkerAvatar;
 import ua.its.slot7.caccounting.helper.UserHelper;
 import ua.its.slot7.caccounting.model.user.User;
 import ua.its.slot7.caccounting.model.userrole.UserRole;
 import ua.its.slot7.caccounting.service.UserServiceAvatar;
 import ua.its.slot7.caccounting.system.BSystemSettingsAvatar;
-import ua.its.slot7.camailtask.model.MailTask;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -51,6 +51,9 @@ public class MBUserRegister implements Serializable {
 
 	@Autowired
 	private UserHelper userHelper;
+
+	@Autowired
+	private IMailerProcessor mailerProcessor;
 
 	private String localUserEmail;
 	private String localUserPassword;
@@ -100,28 +103,11 @@ public class MBUserRegister implements Serializable {
 
 		//email sending
 
-		String mf, mfn, mt, mtn, ms, mb;
-
-		mf = bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_EMAIL_FROM_EMAIL");
-		mfn = bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_EMAIL_FROM_NAME");
-
-		mt = localUser.getEmail();
-		mtn = localUser.getNick();
-		ms = bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_UR_WELCOME_SUBJ");
-		mb = bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_UR_WELCOME_TEXT");
-
-		MailTask mailTask = new MailTask(mf,
-			mfn,
-			mt,
-			mtn,
-			ms,
-			mb,
-			true);
-
 		try {
-			mailerWorker.sendOutboundMailTaskQMessage(mailTask);
+			mailerProcessor.sendEmailWAboard(localUser.getNick(), localUser.getEmail());
 		} catch (JMSException e) {
 			e.printStackTrace();
+			return res;
 		}
 
 		FacesContext.getCurrentInstance().addMessage(

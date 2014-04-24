@@ -1,0 +1,9 @@
+<div>
+    <p style="font-weight: normal;">Hi, ${nick} ( ${email} )!</p>
+
+    <p>Your access to <strong><a href="${url_application}" target="_blank">Cloud Accounting</a></strong> was just
+        recovered.</p>
+</div>
+<div>
+    #include("include/footer.vm")
+</div>

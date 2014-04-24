@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:tx="http://www.springframework.org/schema/tx"
@@ -13,7 +14,7 @@
        http://www.springframework.org/schema/context/spring-context.xsd"
         >
 
-    <context:property-placeholder location="classpath:test.runtime.properties"/>
+    <context:property-placeholder location="classpath:test.runtime.properties,email.templates.properties"/>
 
     <context:annotation-config/>
 
@@ -21,7 +22,7 @@
     <context:component-scan base-package="ua.its.slot7.caccounting.helper"/>
     <context:component-scan base-package="ua.its.slot7.caccounting.service"/>
     <!--<context:component-scan base-package="ua.its.slot7.caccounting.rest"/>-->
-    <!--<context:component-scan base-package="ua.its.slot7.caccounting.system"/>-->
+    <context:component-scan base-package="ua.its.slot7.caccounting.system"/>
 
     <!--DB & related staff-->
 
@@ -79,16 +80,14 @@
     <!-- Aspects -->
     <bean id="anAspect" class="ua.ll7.slot7.checks.notnull.aspect.NotNullAspect"/>
 
-    <bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
-        <property name="velocityProperties">
-            <props>
-                <prop key="resource.loader">file</prop>
-                <prop key="file.resource.loader.class">
-                    org.apache.velocity.runtime.resource.loader.FileResourceLoader
-                </prop>
-                <prop key="file.resource.loader.cache">false</prop>
-            </props>
-        </property>
+    <bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean"
+          p:resourceLoaderPath="classpath:/templates/emails/,/templates/model/"
+          p:preferFileSystemAccess="false"/>
+
+    <!--<bean id="mailerProcessor" class="ua.its.slot7.caccounting.communications.MailerProcessor"/>-->
+
+    <bean id="mailBodyProcessor" class="ua.its.slot7.caccounting.communications.MailBodyProcessor">
+        <property name="velocityEngine" ref="velocityEngine"/>
     </bean>
 
 </beans>
