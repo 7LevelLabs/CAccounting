@@ -8,7 +8,9 @@ import ua.its.slot7.caccounting.model.invoiceline.InvoiceLine;
 import ua.its.slot7.caccounting.model.person.Person;
 
 import java.math.BigDecimal;
+import java.util.Collection;
 import java.util.Date;
+import java.util.LinkedList;
 
 /**
  * @author Alex Velichko
@@ -22,6 +24,9 @@ public class InvoiceHelper {
 
 	@Autowired
 	private PersonHelper personHelper;
+
+	@Autowired
+	private InvoiceLineHelper invoiceLineHelper;
 
 	public String getDuePaymentPeriodDefault() {
 		return duePaymentPeriodDefault;
@@ -80,5 +85,59 @@ public class InvoiceHelper {
 		return res;
 	}
 
+	public InvoiceVO getInvoiceVO(final Invoice invoice) {
+		InvoiceVO invoiceVO = new InvoiceVO(invoice.getNumber(),
+			invoice.getPerson().getUser().getPreparedBy(),
+			invoice.getPerson().getPreparedFor(),
+			invoice.getTotal().toString(),
+			invoice.getDateIssue().toString(),
+			invoice.getDatePaymentDue().toString(),
+			invoice.getSubTotal().toString(),
+			Integer.toString(invoice.getDiscount()));
+
+		for (InvoiceLine invoiceLine : invoice.getInvoicesLines()) {
+			invoiceVO.addLine(invoiceLineHelper.getInvoiceLineVO(invoiceLine));
+		}
+		return invoiceVO;
+	}
+
+	public class InvoiceVO {
+
+		private String number;
+		private String preparedBy;
+		private String preparedFor;
+		private String total;
+		private String issueDate;
+		private String paymentDueDate;
+		private String subtotal;
+		private String discount;
+
+		private Collection<InvoiceLineHelper.InvoiceLineVO> lines;
+
+		public InvoiceVO(final String number,
+				   final String preparedBy,
+				   final String preparedFor,
+				   final String total,
+				   final String issueDate,
+				   final String paymentDueDate,
+				   final String subtotal,
+				   final String discount) {
+			this.number = number;
+			this.preparedBy = preparedBy;
+			this.preparedFor = preparedFor;
+			this.total = total;
+			this.issueDate = issueDate;
+			this.paymentDueDate = paymentDueDate;
+			this.subtotal = subtotal;
+			this.discount = discount;
+
+			lines = new LinkedList<InvoiceLineHelper.InvoiceLineVO>();
+		}
+
+		public void addLine(final InvoiceLineHelper.InvoiceLineVO lineVO) {
+			this.lines.add(lineVO);
+		}
+
+	}
 
 }

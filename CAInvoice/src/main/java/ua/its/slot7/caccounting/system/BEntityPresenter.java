@@ -1,8 +1,14 @@
 package ua.its.slot7.caccounting.system;
 
+import org.apache.velocity.app.VelocityEngine;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.ui.velocity.VelocityEngineUtils;
+import ua.its.slot7.caccounting.helper.InvoiceHelper;
 import ua.its.slot7.caccounting.model.invoice.Invoice;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * CAccounting
@@ -16,45 +22,36 @@ import ua.its.slot7.caccounting.model.invoice.Invoice;
  * This work is licensed under a
  * <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
  */
-@Component("BEntityPresenterAvatar")
 public class BEntityPresenter implements BEntityPresenterAvatar {
 
 	@Autowired
 	private BSystemSettingsAvatar bSystemSettings;
 
+	@Autowired
+	private InvoiceHelper invoiceHelper;
+
+	@Value("${template.encoding}")
+	private String templateEncoding;
+
+	@Value("${model.invoice}")
+	private String templateInvoice;
+
+	private VelocityEngine velocityEngine;
+
 	@Override
-	public String presentToHTML(Invoice invoice) {
+	public String presentToHTML(final Invoice invoice) {
+		String result;
+		Map model = new HashMap();
+		InvoiceHelper.InvoiceVO invoiceVO = invoiceHelper.getInvoiceVO(invoice);
 
-		if (invoice == null) {
-			throw new NullPointerException("Arguments can't be null.");
-		}
+		model.put("invoice", invoiceVO);
 
-		String invoiceTemplate = bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_EBT_INVOICE");
-
-//		//delimiter - $
-//		STGroup tplGroup = new STGroupDir("/", '$', '$');
-//		ST mbST = new ST(tplGroup, invoiceTemplate);
-//
-//		mbST.add("invoice_number", invoice.getNumber());
-//
-////		prepared by
-//		mbST.add("invoice_prepared_by_name", invoice.getPerson().getUser().getPreparedBy());
-//		mbST.add("invoice_prepared_by_email", invoice.getPerson().getUser().getEmail());
-//
-////		prepared for
-//		mbST.add("invoice_prepared_for_name", invoice.getPerson().getPreparedFor());
-//		mbST.add("invoice_prepared_for_email", invoice.getPerson().getEmail());
-//		mbST.add("invoice_prepared_for_phone", invoice.getPerson().getPhone());
-//
-////		total
-//		mbST.add("invoice_total", new Float(invoice.getTotal().floatValue()).toString());
-//
-////		date of issue
-//		mbST.add("invoice_date_of_issue", invoice.getDateCreation().toString());
-//
-//		return mbST.render();
-		return "";
+		result = VelocityEngineUtils.mergeTemplateIntoString(
+			velocityEngine, templateInvoice, templateEncoding, model);
+		return result;
 	}
 
-
+	public void setVelocityEngine(VelocityEngine velocityEngine) {
+		this.velocityEngine = velocityEngine;
+	}
 }

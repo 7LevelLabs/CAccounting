@@ -124,7 +124,6 @@ public class MailerProcessor implements IMailerProcessor {
 
 	}
 
-
 	private void processMailTask(MailTask mailTask) throws JMSException {
 		mailerWorker.sendOutboundMailTaskQMessage(mailTask);
 	}

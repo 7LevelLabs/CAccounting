@@ -14,7 +14,7 @@
        http://www.springframework.org/schema/context/spring-context.xsd"
         >
 
-    <context:property-placeholder location="classpath:test.runtime.properties,email.templates.properties"/>
+    <context:property-placeholder location="classpath:test.runtime.properties,templates.properties"/>
 
     <context:annotation-config/>
 
@@ -87,6 +87,10 @@
     <!--<bean id="mailerProcessor" class="ua.its.slot7.caccounting.communications.MailerProcessor"/>-->
 
     <bean id="mailBodyProcessor" class="ua.its.slot7.caccounting.communications.MailBodyProcessor">
+        <property name="velocityEngine" ref="velocityEngine"/>
+    </bean>
+
+    <bean id="entityPresenter" class="ua.its.slot7.caccounting.system.BEntityPresenter">
         <property name="velocityEngine" ref="velocityEngine"/>
     </bean>
 

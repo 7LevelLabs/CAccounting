@@ -1,0 +1,25 @@
+##+++ prepared by
+##
+##+++ prepared for
+##
+##total
+##
+##date of issue
+##
+##payment due date
+##
+##description	cost	qty	tax	total
+##
+##subtotal (usd)
+##
+##+++ discount (%)
+
+<h3>Invoice ${invoice.number}</h3>
+<p>Preared by : ${invoice.preparedBy}</p>
+<p>Prepared for : ${invoice.preparedFor}</p>
+<p>Total : ${invoice.total}</p>
+<p>Issue date : ${invoice.issueDate}</p>
+<p>Payment due date : ${invoice.paymentDueDate}</p>
+{Lines}
+<p>Subtotal : ${invoice.subtotal}</p>
+<p>Discount, % : ${invoice.discount}</p>

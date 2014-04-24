@@ -93,4 +93,8 @@
         <property name="velocityEngine" ref="velocityEngine"/>
     </bean>
 
+    <bean id="entityPresenter" class="ua.its.slot7.caccounting.system.BEntityPresenter">
+        <property name="velocityEngine" ref="velocityEngine"/>
+    </bean>
+
 </beans>

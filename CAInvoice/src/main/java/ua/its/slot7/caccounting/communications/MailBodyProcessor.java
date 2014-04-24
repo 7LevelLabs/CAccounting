@@ -22,7 +22,7 @@ public class MailBodyProcessor implements IMailBodyProcessor {
 	@Value("${access.recover.2}")
 	private String templateAccessRecoverPh2;
 
-	@Value("${email.encoding}")
+	@Value("${template.encoding}")
 	private String emailEncoding;
 
 	private VelocityEngine velocityEngine;
