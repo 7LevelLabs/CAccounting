@@ -52,6 +52,10 @@
         <junit.version>4.11</junit.version>
         <assertj-core.version>1.5.0</assertj-core.version>
 
+        <cglib.version>2.2</cglib.version>
+
+        <itextpdf.version>5.5.0</itextpdf.version>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <skip.integration.tests>true</skip.integration.tests>

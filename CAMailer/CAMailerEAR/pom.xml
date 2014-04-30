@@ -37,16 +37,19 @@
                 <version>2.9</version>
 
                 <configuration>
+                    <displayName>CAMailer</displayName>
                     <modules>
                         <jarModule>
                             <groupId>ua.its.slot7.caccounting.camailer</groupId>
                             <artifactId>CAMailerSender</artifactId>
                             <bundleDir>/</bundleDir>
+                            <includeInApplicationXml>true</includeInApplicationXml>
                         </jarModule>
                         <jarModule>
                             <groupId>ua.its.slot7.caccounting.camailer</groupId>
                             <artifactId>CAMailerMQListener</artifactId>
                             <bundleDir>/</bundleDir>
+                            <includeInApplicationXml>true</includeInApplicationXml>
                         </jarModule>
 
                     </modules>
