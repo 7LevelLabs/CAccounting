@@ -32,7 +32,7 @@ public class MailBodyProcessorIT extends Assert {
 			"Ph2URL",
 			"ExpTime");
 
-		assertTrue(result.contains("Hi, Nick ( test@test.com )!"));
+		assertTrue(result.contains("Hi, Nick ( EMail )!"));
 		assertTrue(result.contains("Please, pay your attention : period of use of the code will expire on ExpTime"));
 	}
 
@@ -41,9 +41,7 @@ public class MailBodyProcessorIT extends Assert {
 
 		String result = mailBodyProcessor.userAccessRecoverPh2("Nick", "EMail", "ApplicationURL");
 
-		System.out.println(result);
-
-		assertTrue(result.contains("Hi, Nick ( test@test.com )!"));
+		assertTrue(result.contains("Hi, Nick ( EMail )!"));
 		assertTrue(result.contains("<p>Your access to <strong><a href=\"ApplicationURL\" target=\"_blank\">Cloud Accounting</a></strong> was just recovered.</p>"));
 	}
 
