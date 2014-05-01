@@ -16,7 +16,7 @@ import java.util.Date;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring-config-IT.xml")
-public class BEntityPresenterTest extends Assert {
+public class BEntityPresenterIT extends Assert {
 
 	@Autowired
 	private BEntityPresenter entityPresenter;
