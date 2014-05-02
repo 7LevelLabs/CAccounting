@@ -5,12 +5,10 @@
 <p>Issue date : $invoice.getIssueDate()</p>
 <p>Payment due date : $invoice.getPaymentDueDate()</p>
 <p><span>Description</span> : <span>Cost</span> : <span>qty</span> : <span>tax</span> : <span>Total</span></p>
-
 #foreach( $invoiceLine in $invoice.getLines() )
 <p><span>$invoiceLine.getLineText()</span> : <span>$invoiceLine.getLinePrice()</span> :
     <span>$invoiceLine.getLineQt()</span> : <span>$invoiceLine.getLineTax()</span> :
     <span>$invoiceLine.getLineTotal()</span></p>
 #end
-
 <p>Subtotal : $invoice.getSubtotal()</p>
 <p>Discount, % : $invoice.getDiscount()</p>
