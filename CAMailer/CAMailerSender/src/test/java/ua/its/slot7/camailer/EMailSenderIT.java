@@ -94,7 +94,7 @@ public class EMailSenderIT extends Assert {
 			testEMailTo,
 			"Alex To",
 			"Subject",
-			"<b>Message</b> body",
+			"<b>Message</b> body : <a href='http://test.com'>test.com</a>",
 			true);
 
 		eMailSender.sendEMail(mailTask);
