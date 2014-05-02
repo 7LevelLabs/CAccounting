@@ -42,7 +42,7 @@ public class MailBodyProcessorIT extends Assert {
 		String result = mailBodyProcessor.userAccessRecoverPh2("Nick", "EMail", "ApplicationURL");
 
 		assertTrue(result.contains("Hi, Nick ( EMail )!"));
-		assertTrue(result.contains("<p>Your access to <strong><a href=\"ApplicationURL\" target=\"_blank\">Cloud Accounting</a></strong> was just recovered.</p>"));
+		assertTrue(result.contains("<p>Your access to <strong><a href='ApplicationURL' target='_blank'>Cloud Accounting</a></strong> was just recovered.</p>"));
 	}
 
 	@Test
