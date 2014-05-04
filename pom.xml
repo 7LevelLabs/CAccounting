@@ -55,6 +55,7 @@
         <cglib.version>2.2</cglib.version>
 
         <itextpdf.version>5.5.0</itextpdf.version>
+        <core-renderer.version>R8</core-renderer.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -193,6 +194,8 @@
             <artifactId>spring-jms</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+
 
     </dependencies>
 

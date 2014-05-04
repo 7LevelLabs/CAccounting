@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style type="text/css">
+
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #4e4e4e;
+            padding: 0.4em 0.4em 0.4em 0em;
+            margin: 0.4em 0.4em 0.4em 0em;
+            display: table-row;
+        }
+
+        h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+            color: #4e4e4e;
+            padding: 0.4em 0.4em 1em 0em;
+
+        }
+
+        span.header {
+            /*width: 30%;*/
+            display: table-cell;
+
+        }
+
+        span.content {
+            display: table-cell;
+        }
+
+    </style>
+    <title>$title</title>
+</head>
+<body>
+

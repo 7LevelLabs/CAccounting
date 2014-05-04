@@ -81,7 +81,7 @@
     <bean id="anAspect" class="ua.ll7.slot7.checks.notnull.aspect.NotNullAspect"/>
 
     <bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean"
-          p:resourceLoaderPath="classpath:/templates/emails/,/templates/model/"
+          p:resourceLoaderPath="classpath:/templates/emails/,/templates/model/,/templates/system/"
           p:preferFileSystemAccess="false"/>
 
     <!--<bean id="mailerProcessor" class="ua.its.slot7.caccounting.communications.MailerProcessor"/>-->

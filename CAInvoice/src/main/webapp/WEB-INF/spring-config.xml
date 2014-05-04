@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:tx="http://www.springframework.org/schema/tx"
@@ -16,7 +17,7 @@
        http://www.springframework.org/schema/jee/spring-jee.xsd"
         >
 
-    <context:property-placeholder location="classpath:application.runtime.properties,email.templates.properties"/>
+    <context:property-placeholder location="classpath:application.runtime.properties,templates.properties"/>
 
     <context:annotation-config/>
 
@@ -74,18 +75,9 @@
     <!-- Aspects -->
     <bean id="anAspect" class="ua.ll7.slot7.checks.notnull.aspect.NotNullAspect"/>
 
-    <bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
-        <property name="velocityProperties">
-            <props>
-                <prop key="resource.loader">file</prop>
-                <prop key="file.resource.loader.class">
-                    org.apache.velocity.runtime.resource.loader.FileResourceLoader
-                </prop>
-                <prop key="file.resource.loader.path">${webapp.root}/WEB-INF/emails</prop>
-                <prop key="file.resource.loader.cache">false</prop>
-            </props>
-        </property>
-    </bean>
+    <bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean"
+          p:resourceLoaderPath="classpath:/templates/emails/,/templates/model/,/templates/system/"
+          p:preferFileSystemAccess="false"/>
 
     <bean id="mailerProcessor" class="ua.its.slot7.caccounting.communications.MailerProcessor"/>
 

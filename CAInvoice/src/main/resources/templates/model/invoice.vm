@@ -1,14 +1,14 @@
 <h3>Invoice $invoice.getNumber()</h3>
-<p>Preared by : $invoice.getPreparedBy()</p>
-<p>Prepared for : $invoice.getPreparedFor()</p>
-<p>Total : $invoice.getTotal()</p>
-<p>Issue date : $invoice.getIssueDate()</p>
-<p>Payment due date : $invoice.getPaymentDueDate()</p>
+<p><span class="header">Preared by :</span> $invoice.getPreparedBy()</p>
+<p><span class="header">Prepared for :</span> $invoice.getPreparedFor()</p>
+<p><span class="header">Total :</span> $invoice.getTotal()</p>
+<p><span class="header">Issue date :</span> $invoice.getIssueDate()</p>
+<p><span class="header">Payment due date :</span> $invoice.getPaymentDueDate()</p>
 <p><span>Description</span> : <span>Cost</span> : <span>qty</span> : <span>tax</span> : <span>Total</span></p>
 #foreach( $invoiceLine in $invoice.getLines() )
 <p><span>$invoiceLine.getLineText()</span> : <span>$invoiceLine.getLinePrice()</span> :
     <span>$invoiceLine.getLineQt()</span> : <span>$invoiceLine.getLineTax()</span> :
     <span>$invoiceLine.getLineTotal()</span></p>
 #end
-<p>Subtotal : $invoice.getSubtotal()</p>
-<p>Discount, % : $invoice.getDiscount()</p>
+<p><span class="header">Subtotal :</span> $invoice.getSubtotal()</p>
+<p><span class="header">Discount, % :</span> $invoice.getDiscount()</p>

@@ -2,6 +2,9 @@ package ua.its.slot7.caccounting.system;
 
 import ua.its.slot7.caccounting.model.invoice.Invoice;
 
+import java.io.File;
+import java.io.IOException;
+
 /**
  * CAccounting
  * 01.09.13 : 16:14
@@ -21,7 +24,19 @@ public interface BEntityPresenterAvatar {
 	 *
 	 * Presents {@link Invoice} as HTML
 	 * */
-	public String presentToHTML(Invoice invoice);
+	public String presentToHTML(final Invoice invoice);
+
+	/**
+	 *
+	 * Presents {@link Invoice} as XHTML
+	 * */
+	public String presentToXHTML(final Invoice invoice);
+
+	/**
+	 *
+	 * Presents {@link Invoice} as PDF
+	 * */
+	public File presentToPDF(final Invoice invoice) throws IOException, com.lowagie.text.DocumentException;
 
 
 }

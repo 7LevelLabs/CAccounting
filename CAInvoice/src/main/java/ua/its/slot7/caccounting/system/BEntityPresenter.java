@@ -4,9 +4,14 @@ import org.apache.velocity.app.VelocityEngine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.velocity.VelocityEngineUtils;
+import org.xhtmlrenderer.pdf.ITextRenderer;
 import ua.its.slot7.caccounting.helper.InvoiceHelper;
 import ua.its.slot7.caccounting.model.invoice.Invoice;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,13 +30,13 @@ import java.util.Map;
 public class BEntityPresenter implements BEntityPresenterAvatar {
 
 	@Autowired
-	private BSystemSettingsAvatar bSystemSettings;
-
-	@Autowired
 	private InvoiceHelper invoiceHelper;
 
 	@Value("${template.encoding}")
 	private String templateEncoding;
+
+	@Value("${xhtml.header}")
+	private String templateXhtmlHeader;
 
 	@Value("${model.invoice}")
 	private String templateInvoice;
@@ -49,6 +54,77 @@ public class BEntityPresenter implements BEntityPresenterAvatar {
 		result = VelocityEngineUtils.mergeTemplateIntoString(
 			velocityEngine, templateInvoice, templateEncoding, model);
 		return result;
+	}
+
+	/**
+	 * Presents {@link ua.its.slot7.caccounting.model.invoice.Invoice} as XHTML
+	 *
+	 * @param invoice
+	 */
+	@Override
+	public String presentToXHTML(final Invoice invoice) {
+
+		String xhtmlHeader;
+		Map model = new HashMap();
+
+		model.put("title", invoice.getNumber());
+
+		xhtmlHeader = VelocityEngineUtils.mergeTemplateIntoString(
+			velocityEngine, templateXhtmlHeader, templateEncoding, model);
+
+		StringBuilder sb = new StringBuilder();
+
+		sb
+			.append(xhtmlHeader)
+			.append("\n")
+
+			.append(presentToHTML(invoice))
+
+			.append("\n")
+			.append("</body>\n" +
+				"\n" +
+				"</html>")
+		;
+
+		return sb.toString();
+	}
+
+	/**
+	 * Presents {@link ua.its.slot7.caccounting.model.invoice.Invoice} as PDF
+	 *
+	 * @param invoice
+	 */
+	@Override
+	public File presentToPDF(final Invoice invoice) throws IOException, com.lowagie.text.DocumentException {
+
+		File outputFilePDF = File.createTempFile("invoice-" + invoice.getNumber() + "-", ".pdf");
+
+		File outputFileXHTML = File.createTempFile("tmpInvoice-" + invoice.getNumber() + "-", ".html");
+
+		String xhtmlContent = presentToXHTML(invoice);
+
+		ITextRenderer renderer = new ITextRenderer();
+
+		OutputStream os = new FileOutputStream(outputFilePDF);
+
+		writeFileHTML(xhtmlContent, outputFileXHTML);
+
+		renderer.setDocument(outputFileXHTML.getCanonicalPath());
+
+		renderer.layout();
+		renderer.createPDF(os);
+		os.close();
+
+		outputFileXHTML.delete();
+
+		return outputFilePDF;
+	}
+
+	private void writeFileHTML(final String content, final File outputFileHTML) throws IOException {
+		FileOutputStream fop = new FileOutputStream(outputFileHTML);
+		fop.write(content.getBytes());
+		fop.flush();
+		fop.close();
 	}
 
 	public void setVelocityEngine(VelocityEngine velocityEngine) {
