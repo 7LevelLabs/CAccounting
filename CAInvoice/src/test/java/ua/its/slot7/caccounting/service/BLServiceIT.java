@@ -122,7 +122,7 @@ public class BLServiceIT extends Assert {
 			.assertThat(invoicesOverdue)
 			.hasSize(1)
 			.contains("003")
-			.doesNotContain("001");
+			.doesNotContain("001", "002");
 	}
 
 	@Test
