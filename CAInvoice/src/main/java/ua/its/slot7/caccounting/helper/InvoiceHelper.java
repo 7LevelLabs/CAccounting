@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Date;
 import java.util.LinkedList;
+import java.util.UUID;
 
 /**
  * @author Alex Velichko
@@ -46,11 +47,50 @@ public class InvoiceHelper {
 
 		Date date = new Date();
 		invoice.setDateIssue(date);
-		invoice.setDateIssue(this.getDuePaymentDate(date));
+		invoice.setDatePaymentDue(getDuePaymentDate(date));
 
 		//defaults
 		//discount
 		invoice.setDiscount(person.getDiscount());
+
+		return invoice;
+	}
+
+	public Invoice getDummyInvoice(final Person person) {
+
+		Invoice invoice = getNewInvoice(person);
+
+		UUID uuid = UUID.randomUUID();
+
+		//for dummy purposes
+		invoice.setNumber(uuid.toString());
+
+		InvoiceLine invoiceLine1, invoiceLine2;
+
+		invoiceLine1 = new InvoiceLine();
+		invoiceLine1.setInvoice(invoice);
+		invoiceLine1.setLineText("Line 1");
+		invoiceLine1.setLinePrice(new BigDecimal(10).setScale(2));
+		invoiceLine1.setLineQt(5);
+		invoiceLine1.setLineTax(new BigDecimal(7).setScale(2));
+		invoiceLine1.setLineTotal(new BigDecimal(43).setScale(2));
+
+		invoiceLine2 = new InvoiceLine();
+		invoiceLine2.setInvoice(invoice);
+		invoiceLine2.setLineText("Line 2");
+		invoiceLine2.setLinePrice(new BigDecimal(10).setScale(2));
+		invoiceLine2.setLineQt(7);
+		invoiceLine2.setLineTax(new BigDecimal(7).setScale(2));
+		invoiceLine2.setLineTotal(new BigDecimal(63).setScale(2));
+
+		invoice.getInvoicesLines().add(invoiceLine1);
+		invoice.getInvoicesLines().add(invoiceLine2);
+
+		//discount - before
+		invoice.setSubTotal(calcInvoiceSubTotal(invoice));
+
+		//discount - after
+		invoice.setSubTotal(calcInvoiceTotal(invoice));
 
 		return invoice;
 	}

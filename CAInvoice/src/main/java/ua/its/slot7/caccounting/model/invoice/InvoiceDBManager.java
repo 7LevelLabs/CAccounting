@@ -46,9 +46,9 @@ public class InvoiceDBManager implements InvoiceDBManagerAvatar {
 				"where invoice.id = :id";
 
 		Query query = session.createQuery(selectString);
-		query.setParameter("id",invoiceId);
+		query.setParameter("id", invoiceId);
 
-		invoice = (Invoice)query.uniqueResult();
+		invoice = (Invoice) query.uniqueResult();
 
 		return invoice;
 	}
@@ -65,9 +65,9 @@ public class InvoiceDBManager implements InvoiceDBManagerAvatar {
 				"where invoice.number like :in";
 
 		Query query = session.createQuery(selectString);
-		query.setParameter("in",invoiceNumber);
+		query.setParameter("in", invoiceNumber);
 
-		invoice = (Invoice)query.uniqueResult();
+		invoice = (Invoice) query.uniqueResult();
 
 		return invoice;
 	}
@@ -94,11 +94,11 @@ public class InvoiceDBManager implements InvoiceDBManagerAvatar {
 		String selectString =
 			"select invoice " +
 				"from Invoice as invoice " +
-				"where invoice.person.user = :u "+
+				"where invoice.person.user = :u " +
 				"order by invoice.dateCreation desc";
 
 		Query query = session.createQuery(selectString);
-		query.setParameter("u",user);
+		query.setParameter("u", user);
 
 		results = query.list();
 
@@ -121,8 +121,8 @@ public class InvoiceDBManager implements InvoiceDBManagerAvatar {
 				"invoice.dateCreation <= :tdp";
 
 		Query query = session.createQuery(selectString);
-		query.setParameter("fdp",fd);
-		query.setParameter("tdp",td);
+		query.setParameter("fdp", fd);
+		query.setParameter("tdp", td);
 
 		results = query.list();
 
@@ -143,7 +143,36 @@ public class InvoiceDBManager implements InvoiceDBManagerAvatar {
 			"order by invoice.dateCreation desc";
 
 		Query query = session.createQuery(selectString);
-		query.setParameter("u",user);
+		query.setParameter("u", user);
+
+		results = query.list();
+		Collections.sort(results);
+
+		return results;
+
+	}
+
+	/**
+	 * Get unpaid overdue invoices by the {@link ua.its.slot7.caccounting.model.user.User}
+	 *
+	 * @param user
+	 * @return Unpaid invoices
+	 */
+	@Override
+	public List<Invoice> getInvoicesUnpaidOverdueByTheUser(User user) {
+		List<Invoice> results = null;
+
+		Session session = sessionFactory.getCurrentSession();
+
+		String selectString = "select invoice " +
+			"from Invoice as invoice " +
+			"where invoice.person.user = :u and " +
+			"invoice.paymentState.paid = false and " +
+			"invoice.datePaymentDue < current_timestamp() " +
+			"order by invoice.dateCreation desc";
+
+		Query query = session.createQuery(selectString);
+		query.setParameter("u", user);
 
 		results = query.list();
 		Collections.sort(results);

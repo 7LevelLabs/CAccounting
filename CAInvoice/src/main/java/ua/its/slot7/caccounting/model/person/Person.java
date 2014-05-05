@@ -202,7 +202,7 @@ public class Person implements Serializable, Comparable<Person> {
 		sb.append(", name='").append(name).append('\'');
 		sb.append(", phone='").append(phone).append('\'');
 		sb.append(", email='").append(email).append('\'');
-		sb.append(", invoices=").append(invoices);
+		sb.append(", invoices=").append(invoices.size());
 		sb.append(", user=").append(user);
 		sb.append(", lastUpdate=").append(lastUpdate);
 		sb.append(", preparedFor='").append(preparedFor).append('\'');

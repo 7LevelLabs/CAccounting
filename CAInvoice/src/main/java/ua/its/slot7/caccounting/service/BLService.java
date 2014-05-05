@@ -12,9 +12,7 @@ import ua.its.slot7.caccounting.model.person.Person;
 import ua.its.slot7.caccounting.model.user.User;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * CAccounting
@@ -49,52 +47,58 @@ public class BLService implements BLServiceAvatar {
 
 	@Override
 	public List<Invoice> personGetInvoices(Person person) {
-		List<Invoice> sI = null;
-		sI = person.getInvoices();
+		List<Invoice> sI = person.getInvoices();
 		List<Invoice> pi = new ArrayList<Invoice>();
 		pi.addAll(sI);
 		return pi;
 	}
 
 	/**
-	 * Get Person's unpaid invoices (where {@link ua.its.slot7.caccounting.model.invoice.Invoice#getDatePaymentDue()} > current date)
+	 * Get Person's overdue invoices (where {@link ua.its.slot7.caccounting.model.invoice.Invoice#getDatePaymentDue()} > current date)
 	 *
-	 * @param person Person to get it's unpaid invoices
+	 * @param person Person to get it's overdue invoices
 	 */
-	//TODO !
 	@Override
 	public List<Invoice> personGetInvoicesOverdue(Person person) {
-		return null;
+		User user = person.getUser();
+		return invoiceService.getInvoicesUnpaidOverdueByTheUser(user);
 	}
 
 	/**
-	 * Get Person's unpaid invoices numbers list
+	 * Get Person's overdue invoices numbers list
 	 *
-	 * @param person Person to get it's unpaid invoices
+	 * @param person Person to get it's overdue invoices
 	 * @see #personGetInvoicesOverdue(ua.its.slot7.caccounting.model.person.Person)
 	 */
-	//TODO !
 	@Override
 	public List<String> personGetOverdueInvoicesNumbers(Person person) {
-		return null;
+
+		List<Invoice> invoicesOverdue = personGetInvoicesOverdue(person);
+		List<String> invoicesNumbers = new LinkedList<String>();
+
+		for (Invoice anInvoicesOverdue : invoicesOverdue) {
+			invoicesNumbers.add(anInvoicesOverdue.getNumber());
+		}
+
+		Collections.sort(invoicesNumbers);
+		return invoicesNumbers;
 	}
 
 	/**
-	 * Get number of Person's unpaid invoices
+	 * Get number of Person's overdue invoices
 	 *
-	 * @param person Person to get it's unpaid invoices
+	 * @param person Person to get it's overdue invoices
 	 * @see #personGetInvoicesOverdue(ua.its.slot7.caccounting.model.person.Person)
 	 */
-	//TODO !
 	@Override
 	public int personGetInvoicesOverdueNumber(Person person) {
-		return 0;
+		return personGetInvoicesOverdue(person).size();
 	}
 
 	/**
-	 * Get boolean (yes / no) - Person has unpaid invoices
+	 * Get boolean (yes / no) - Person has overdue invoices
 	 *
-	 * @param person Person to get it's unpaid invoices
+	 * @param person Person to get it's overdue invoices
 	 * @see #personGetInvoicesOverdueNumber(ua.its.slot7.caccounting.model.person.Person)
 	 */
 	@Override

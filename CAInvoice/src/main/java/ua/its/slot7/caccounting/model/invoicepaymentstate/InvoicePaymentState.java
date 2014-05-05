@@ -78,6 +78,17 @@ public class InvoicePaymentState implements Serializable {
 		this.setInvoice(invoice);
 	}
 
+	@Override
+	public String toString() {
+		final StringBuilder sb = new StringBuilder("InvoicePaymentState{");
+		sb.append("id=").append(id);
+		sb.append(", isPaid=").append(isPaid);
+		sb.append(", lastDate=").append(lastDate);
+		sb.append(", invoice=").append(invoice.getId());
+		sb.append('}');
+		return sb.toString();
+	}
+
 	public void setId(long id) {
 		this.id = id;
 	}

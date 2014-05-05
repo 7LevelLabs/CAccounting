@@ -20,79 +20,87 @@ import java.util.List;
 
 /**
  * Invoice DBManager Avatar (interface). DAO Layer.
- * */
+ */
 public interface InvoiceDBManagerAvatar {
 	//CRUD & etc.
+
 	/**
-	 *
 	 * Persist new Invoice
+	 *
 	 * @param invoice Invoice instance to persist
-	 * */
-	public void createInvoice (Invoice invoice);
+	 */
+	public void createInvoice(Invoice invoice);
 
 	/**
-	 *
 	 * Search invoice by its id
+	 *
 	 * @param invoiceId Invoice id to search
-	 * */
-	public Invoice getInvoiceById (long invoiceId);
+	 */
+	public Invoice getInvoiceById(long invoiceId);
 
 	/**
-	 *
 	 * Search invoice by its number
+	 *
 	 * @param invoiceNumber Invoice number to search
-	 * */
-	public Invoice getInvoiceByNumber (String invoiceNumber);
+	 */
+	public Invoice getInvoiceByNumber(String invoiceNumber);
 
 	/**
-	 *
 	 * Get all invoices
+	 *
 	 * @return Invoices List
-	 * */
+	 */
 	public List<Invoice> getInvoicesAll();
 
 	/**
-	 *
 	 * Get all invoices by {@link User}
+	 *
 	 * @return Invoices List
-	 * */
+	 */
 	public List<Invoice> getInvoicesByTheUser(User user);
 
 	/**
-	 *
 	 * Get {@link List} of {@link Invoice}s for given period
+	 *
 	 * @param fd Period begin, inclusively
 	 * @param td Period end, inclusively
 	 * @return {@link List} of {@link Invoice}s for given period
-	 * */
+	 */
 	public List<Invoice> getInvoicesByDatePeriod(Date fd, Date td);
 
 	/**
-	 *
 	 * Get unpaid invoices
+	 *
 	 * @return Unpaid invoices
-	 * */
+	 */
 	public List<Invoice> getInvoicesUnpaid();
 
 	/**
-	 *
 	 * Get unpaid invoices by the {@link User}
+	 *
 	 * @return Unpaid invoices
-	 * */
+	 */
 	public List<Invoice> getInvoicesUnpaidByTheUser(User user);
 
 	/**
+	 * Get unpaid overdue invoices by the {@link User}
 	 *
+	 * @return Unpaid invoices
+	 */
+	public List<Invoice> getInvoicesUnpaidOverdueByTheUser(User user);
+
+	/**
 	 * Update given Invoice
+	 *
 	 * @param invoice Invoice instance to update
-	 * */
+	 */
 	public void updateInvoice(Invoice invoice);
 
 	/**
-	 *
 	 * Delete given Invoice
+	 *
 	 * @param invoice Invoice instance to delete
-	 * */
+	 */
 	public void deleteInvoice(Invoice invoice);
 
 

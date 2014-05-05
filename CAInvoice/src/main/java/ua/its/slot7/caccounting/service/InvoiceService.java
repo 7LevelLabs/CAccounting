@@ -73,6 +73,17 @@ public class InvoiceService implements InvoiceServiceAvatar {
 		return invoiceDBManager.getInvoicesUnpaidByTheUser(user);
 	}
 
+	/**
+	 * Get unpaid overdue invoices by the {@link ua.its.slot7.caccounting.model.user.User}
+	 *
+	 * @param user
+	 * @return Unpaid overdue invoices
+	 */
+	@Override
+	public List<Invoice> getInvoicesUnpaidOverdueByTheUser(User user) {
+		return invoiceDBManager.getInvoicesUnpaidOverdueByTheUser(user);
+	}
+
 	@Override
 	public void updateInvoice(Invoice invoice) {
 		invoiceDBManager.updateInvoice(invoice);
