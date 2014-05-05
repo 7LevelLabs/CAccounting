@@ -48,12 +48,58 @@ public class BLService implements BLServiceAvatar {
 	private InvoiceHelper invoiceHelper;
 
 	@Override
-	public ArrayList<Invoice> personGetInvoices(Person person) {
+	public List<Invoice> personGetInvoices(Person person) {
 		List<Invoice> sI = null;
 		sI = person.getInvoices();
-		ArrayList<Invoice> pi = new ArrayList<Invoice>();
+		List<Invoice> pi = new ArrayList<Invoice>();
 		pi.addAll(sI);
 		return pi;
+	}
+
+	/**
+	 * Get Person's unpaid invoices (where {@link ua.its.slot7.caccounting.model.invoice.Invoice#getDatePaymentDue()} > current date)
+	 *
+	 * @param person Person to get it's unpaid invoices
+	 */
+	//TODO !
+	@Override
+	public List<Invoice> personGetInvoicesOverdue(Person person) {
+		return null;
+	}
+
+	/**
+	 * Get Person's unpaid invoices numbers list
+	 *
+	 * @param person Person to get it's unpaid invoices
+	 * @see #personGetInvoicesOverdue(ua.its.slot7.caccounting.model.person.Person)
+	 */
+	//TODO !
+	@Override
+	public List<String> personGetOverdueInvoicesNumbers(Person person) {
+		return null;
+	}
+
+	/**
+	 * Get number of Person's unpaid invoices
+	 *
+	 * @param person Person to get it's unpaid invoices
+	 * @see #personGetInvoicesOverdue(ua.its.slot7.caccounting.model.person.Person)
+	 */
+	//TODO !
+	@Override
+	public int personGetInvoicesOverdueNumber(Person person) {
+		return 0;
+	}
+
+	/**
+	 * Get boolean (yes / no) - Person has unpaid invoices
+	 *
+	 * @param person Person to get it's unpaid invoices
+	 * @see #personGetInvoicesOverdueNumber(ua.its.slot7.caccounting.model.person.Person)
+	 */
+	@Override
+	public boolean personHasOverdueInvoices(Person person) {
+		return personGetInvoicesOverdueNumber(person) > 0;
 	}
 
 	@Override

@@ -19,7 +19,6 @@ import ua.its.slot7.caccounting.model.person.Person;
 import ua.its.slot7.caccounting.model.user.User;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -30,7 +29,38 @@ public interface BLServiceAvatar {
 	 *
 	 * @param person Person to get it's invoices
 	 */
-	public ArrayList<Invoice> personGetInvoices(Person person);
+	public List<Invoice> personGetInvoices(Person person);
+
+	/**
+	 * Get Person's overdue invoices (where {@link ua.its.slot7.caccounting.model.invoice.Invoice#getDatePaymentDue()} > current date)
+	 *
+	 * @param person Person to get it's unpaid invoices
+	 */
+	public List<Invoice> personGetInvoicesOverdue(Person person);
+
+	/**
+	 * Get Person's overdue invoices numbers list
+	 *
+	 * @param person Person to get it's unpaid invoices
+	 * @see #personGetInvoicesOverdue(ua.its.slot7.caccounting.model.person.Person)
+	 */
+	public List<String> personGetOverdueInvoicesNumbers(Person person);
+
+	/**
+	 * Get number of Person's overdue invoices
+	 *
+	 * @param person Person to get it's unpaid invoices
+	 * @see #personGetInvoicesOverdue(Person)
+	 */
+	public int personGetInvoicesOverdueNumber(Person person);
+
+	/**
+	 * Get boolean (yes / no) - Person has overdue invoices
+	 *
+	 * @param person Person to get it's unpaid invoices
+	 * @see #personGetInvoicesOverdueNumber(Person)
+	 */
+	public boolean personHasOverdueInvoices(Person person);
 
 	/**
 	 * Get Person's last invoice

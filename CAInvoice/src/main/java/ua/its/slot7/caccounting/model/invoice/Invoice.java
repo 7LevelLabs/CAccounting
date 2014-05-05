@@ -313,6 +313,5 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 
 	private Date datePaymentDue;
 
-
 	private Long version;
 }
