@@ -15,6 +15,7 @@
             /WEB-INF/applicationContext.xml
             /WEB-INF/spring-config.xml
             /WEB-INF/spring-jms-config.xml
+            /WEB-INF/spring-config-quartz.xml
         </param-value>
     </context-param>
 

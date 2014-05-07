@@ -75,6 +75,7 @@
     <!-- Aspects -->
     <bean id="anAspect" class="ua.ll7.slot7.checks.notnull.aspect.NotNullAspect"/>
 
+    <!--Velocity & etc.-->
     <bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean"
           p:resourceLoaderPath="classpath:/templates/emails/,/templates/model/,/templates/system/"
           p:preferFileSystemAccess="false"/>
@@ -88,5 +89,6 @@
     <bean id="entityPresenter" class="ua.its.slot7.caccounting.system.BEntityPresenter">
         <property name="velocityEngine" ref="velocityEngine"/>
     </bean>
+
 
 </beans>
