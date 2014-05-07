@@ -15,7 +15,7 @@
 
 <h:body>
 
-    <h:outputStylesheet name="css/ca.css" />
+    <h:outputStylesheet name="css/ca.css"/>
 
     <f:view locale="#{facesContext.externalContext.requestLocale}">
         <p:layout fullPage="true">
@@ -31,7 +31,7 @@
                             <p:commandButton value="System Dashboard"
                                              action="#{MBNavigation.navigateTo()}"
                                              ajax="false">
-                                <f:param name="direction" value="/pages/index" />
+                                <f:param name="direction" value="/pages/index"/>
                             </p:commandButton>
 
                             <p:separator/>
@@ -39,7 +39,7 @@
                             <p:commandButton value="Admin Dashboard"
                                              action="#{MBNavigation.navigateTo()}"
                                              ajax="false">
-                                <f:param name="direction" value="/admin/index" />
+                                <f:param name="direction" value="/admin/index"/>
                             </p:commandButton>
 
                         </p:toolbarGroup>
@@ -48,7 +48,7 @@
                             <p:commandButton value="Logout"
                                              action="#{MBNavigation.navigateTo()}"
                                              ajax="false">
-                                <f:param name="direction" value="/pages/logout" />
+                                <f:param name="direction" value="/pages/logout"/>
                             </p:commandButton>
                         </p:toolbarGroup>
 
@@ -56,7 +56,7 @@
 
                 </h:form>
 
-                <ui:insert name="center" />
+                <ui:insert name="center"/>
 
             </p:layoutUnit>
 

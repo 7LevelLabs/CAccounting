@@ -15,7 +15,7 @@
 
 <h:body>
 
-    <h:outputStylesheet name="css/ca.css" />
+    <h:outputStylesheet name="css/ca.css"/>
 
     <f:view locale="#{facesContext.externalContext.requestLocale}">
         <p:layout fullPage="true">
@@ -24,7 +24,7 @@
 
 
             <p:layoutUnit position="south" size="100" header="Log" resizable="true" closable="false" collapsible="true">
-                <ui:include src="../../pages/includes/log.xhtml" />
+                <ui:include src="../../pages/includes/log.xhtml"/>
             </p:layoutUnit>
 
             <p:layoutUnit position="center">
@@ -36,25 +36,25 @@
                             <p:commandButton value="Dashboard"
                                              action="#{MBNavigation.navigateTo()}"
                                              ajax="false">
-                                <f:param name="direction" value="index" />
+                                <f:param name="direction" value="index"/>
                             </p:commandButton>
 
-                            <p:separator />
+                            <p:separator/>
                             <p:commandButton value="Invoices"
                                              action="#{MBNavigation.navigateTo()}"
                                              ajax="false">
-                                <f:param name="direction" value="invoices" />
+                                <f:param name="direction" value="invoices"/>
                             </p:commandButton>
-                            <p:separator />
+                            <p:separator/>
                             <p:commandButton value="Persons"
                                              action="#{MBNavigation.navigateTo()}"
                                              ajax="false">
-                                <f:param name="direction" value="persons" />
+                                <f:param name="direction" value="persons"/>
                             </p:commandButton>
                             <p:commandButton value="New Person"
                                              action="#{MBNavigation.navigateTo()}"
                                              ajax="false">
-                                <f:param name="direction" value="person-new" />
+                                <f:param name="direction" value="person-new"/>
                             </p:commandButton>
                         </p:toolbarGroup>
 
@@ -62,18 +62,18 @@
                             <p:commandButton value="Help"
                                              action="#{MBNavigation.navigateTo()}"
                                              ajax="false">
-                                <f:param name="direction" value="help" />
+                                <f:param name="direction" value="help"/>
                             </p:commandButton>
-                            <p:separator />
+                            <p:separator/>
                             <p:commandButton value="My profile"
                                              action="#{MBNavigation.navigateTo()}"
                                              ajax="false">
-                                <f:param name="direction" value="user" />
+                                <f:param name="direction" value="user"/>
                             </p:commandButton>
                             <p:commandButton value="Logout"
                                              action="#{MBNavigation.navigateTo()}"
                                              ajax="false">
-                                <f:param name="direction" value="logout" />
+                                <f:param name="direction" value="logout"/>
                             </p:commandButton>
                         </p:toolbarGroup>
 
@@ -81,7 +81,7 @@
 
                 </h:form>
 
-                <ui:insert name="center" />
+                <ui:insert name="center"/>
             </p:layoutUnit>
 
         </p:layout>

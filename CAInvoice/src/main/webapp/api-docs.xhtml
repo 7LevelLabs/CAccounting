@@ -5,9 +5,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+        >
 
 <h:head>
     <title>API Docs : #{label.caccounting}</title>
@@ -15,30 +14,34 @@
 
 <h:body>
 
-    <ui:composition template="WEB-INF/tpl/anonymous.xhtml">
+    <ui:composition template="WEB-INF/templates/pages/anonymous.xhtml">
 
         <ui:define name="center">
             <h2>API Docs</h2>
+
             <p>V 0.1</p>
 
-            <p><a href="#1">API Overview</a><br />
-                <a href="#2">Help with the API</a><br />
-                <a href="#3">API key</a><br />
-                <a href="#4">persons/get</a><br />
-                <a href="#5">persons/get/id</a><br />
+            <p><a href="#1">API Overview</a><br/>
+                <a href="#2">Help with the API</a><br/>
+                <a href="#3">API key</a><br/>
+                <a href="#4">persons/get</a><br/>
+                <a href="#5">persons/get/id</a><br/>
                 <a href="#6">persons/get/isok/id</a></p>
 
             <h3><a id="1" name="1"></a>API Overview</h3>
 
             <p>This API is being developed for integration Cloud Accounting with other information systems.</p>
 
-            <p>For example, you need to get a simple way to understand - when you need to stop providing some services to your client. Sign in Cloud Accounting, create the required artifacts, and use the <a href="#6">persons/get/isok/id</a> call. &nbsp;If response is no &quot;ok&quot;, you can calmly plug-they-off. :)</p>
+            <p>For example, you need to get a simple way to understand - when you need to stop providing some services to your client. Sign in Cloud Accounting, create the required artifacts, and use the
+                <a href="#6">persons/get/isok/id</a> call. &nbsp;If response is no &quot;ok&quot;, you can calmly plug-they-off. :)
+            </p>
 
             <p>And you probably already noticed that calls to are simple, and integration with any information systems will be simple too.</p>
 
             <h3><a id="2" name="2"></a>Help with the API</h3>
 
-            <p>Any questions on the use of the API we are pleased to accept on <strong><a href="mailto:ca@7levellabs.com">ca@7levellabs.com</a></strong> .</p>
+            <p>Any questions on the use of the API we are pleased to accept on <strong><a
+                    href="mailto:ca@7levellabs.com">ca@7levellabs.com</a></strong> .</p>
 
             <h3><a id="3" name="3"></a>API key</h3>
 
@@ -62,7 +65,7 @@
                 <dt>Required Parameters</dt>
                 <dd>
 
-                    <p><strong>apikey</strong><br />
+                    <p><strong>apikey</strong><br/>
                         Sign in to view your API key.</p>
 
                 </dd>
@@ -70,9 +73,11 @@
                 <dt>Example Request / Response</dt>
                 <dd>
                     <p>Request</p>
+
                     <p></p>
 
                     <p>Response</p>
+
                     <p></p>
                 </dd>
 
@@ -96,9 +101,9 @@
                 <dt>Required Parameters</dt>
                 <dd>
 
-                    <p><strong>apikey</strong><br />
-                        Sign in to view your API key.<br />
-                        <strong>id</strong><br />
+                    <p><strong>apikey</strong><br/>
+                        Sign in to view your API key.<br/>
+                        <strong>id</strong><br/>
                         Persons's id, one from the <a href="#4">persons/get</a>'s result.
                     </p>
 
@@ -107,9 +112,11 @@
                 <dt>Example Request / Response</dt>
                 <dd>
                     <p>Request</p>
+
                     <p></p>
 
                     <p>Response</p>
+
                     <p></p>
                 </dd>
             </dl>
@@ -132,9 +139,9 @@
                 <dt>Required Parameters</dt>
                 <dd>
 
-                    <p><strong>apikey</strong><br />
-                        Sign in to view your API key.<br />
-                        <strong>id</strong><br />
+                    <p><strong>apikey</strong><br/>
+                        Sign in to view your API key.<br/>
+                        <strong>id</strong><br/>
                         Persons's id, one from the <a href="#4">persons/get</a>'s result.
                     </p>
 
@@ -143,9 +150,11 @@
                 <dt>Example Request / Response</dt>
                 <dd>
                     <p>Request</p>
+
                     <p></p>
 
                     <p>Response</p>
+
                     <p></p>
                 </dd>
             </dl>

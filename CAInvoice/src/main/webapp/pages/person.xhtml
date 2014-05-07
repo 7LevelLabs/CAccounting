@@ -11,8 +11,8 @@
       xmlns:p="http://primefaces.org/ui">
 
 <f:metadata>
-    <f:viewParam name="personId" value="#{MBPerson.personId}" />
-    <f:event type="preRenderView" listener="#{MBPerson.loadAction}" />
+    <f:viewParam name="personId" value="#{MBPerson.personId}"/>
+    <f:event type="preRenderView" listener="#{MBPerson.loadAction}"/>
 </f:metadata>
 
 <h:head>
@@ -21,7 +21,7 @@
 
 <h:body>
 
-    <ui:composition template="../WEB-INF/tpl/regular.xhtml">
+    <ui:composition template="../WEB-INF/templates/pages/regular.xhtml">
         <ui:define name="center">
 
             <h:form id="formPersonDetails">
@@ -30,33 +30,33 @@
 
                         <h:outputText value="Nick"/>
                         <p:inputText value="#{MBPerson.nick}" id="nick" label="nick">
-                            <f:validateLength minimum="3" maximum="150" />
-                            <f:validateRequired />
+                            <f:validateLength minimum="3" maximum="150"/>
+                            <f:validateRequired/>
                         </p:inputText>
-                        <p:watermark for="nick" value="For instance: Mark , a-la Filshtain" />
+                        <p:watermark for="nick" value="For instance: Mark , a-la Filshtain"/>
 
                         <h:outputText value="Name"/>
                         <p:inputText value="#{MBPerson.name}" id="name" label="name">
-                            <f:validateLength minimum="3" maximum="150" />
-                            <f:validateRequired />
+                            <f:validateLength minimum="3" maximum="150"/>
+                            <f:validateRequired/>
                         </p:inputText>
-                        <p:watermark for="name" value="For instance: Mark Filshtain" />
+                        <p:watermark for="name" value="For instance: Mark Filshtain"/>
 
                         <h:outputText value="Phone"/>
                         <p:inputText value="#{MBPerson.phone}" id="phone" label="phone">
                             <f:validateRegex
                                     pattern="[(]?\d{3}[)]?\s?-?\s?\d{3}\s?-?\s?\d{4}">
                             </f:validateRegex>
-                            <f:validateRequired />
+                            <f:validateRequired/>
                         </p:inputText>
-                        <p:watermark for="phone" value="For instance: (777) 777-7777" />
+                        <p:watermark for="phone" value="For instance: (777) 777-7777"/>
 
                         <h:outputText value="EMail"/>
                         <p:inputText value="#{MBPerson.email}" id="email" label="email">
-                            <f:validator binding="#{validatorEMail}" />
-                            <f:validateRequired />
+                            <f:validator binding="#{validatorEMail}"/>
+                            <f:validateRequired/>
                         </p:inputText>
-                        <p:watermark for="email" value="Must be regular email" />
+                        <p:watermark for="email" value="Must be regular email"/>
 
                         <p:commandButton value="Update"
                                          title="Update Person data"
@@ -77,7 +77,7 @@
                         <p:column>
                             <f:facet name="header">#</f:facet>
                             <h:link value="#{invoice.number}" outcome="invoice">
-                                <f:param name="invoiceId" value="#{invoice.id}" />
+                                <f:param name="invoiceId" value="#{invoice.id}"/>
                             </h:link>
                         </p:column>
 
@@ -93,18 +93,18 @@
 
                         <p:column>
                             <f:facet name="header">Total</f:facet>
-                            <h:outputText value="#{invoice.sum}" />
+                            <h:outputText value="#{invoice.sum}"/>
                         </p:column>
 
                         <p:column>
                             <f:facet name="header">Is Paid</f:facet>
-                            <h:outputText value="#{invoice.paymentState.paid}" />
+                            <h:outputText value="#{invoice.paymentState.paid}"/>
                         </p:column>
 
                     </p:dataTable>
 
                     <h:link value="New Invoice" outcome="invoice-new">
-                        <f:param name="personIdForNewInvoice" value="#{MBPerson.personId}" />
+                        <f:param name="personIdForNewInvoice" value="#{MBPerson.personId}"/>
                     </h:link>
 
                 </p:panel>

@@ -25,7 +25,7 @@
 </h:outputStylesheet>
 
 <f:metadata>
-    <f:event type="preRenderView" listener="#{MBInvoices.refreshInvoicesList}" />
+    <f:event type="preRenderView" listener="#{MBInvoices.refreshInvoicesList}"/>
 </f:metadata>
 
 <h:head>
@@ -34,10 +34,10 @@
 
 <h:body>
 
-    <ui:composition template="../WEB-INF/tpl/regular.xhtml">
+    <ui:composition template="../WEB-INF/templates/pages/regular.xhtml">
         <ui:define name="center">
 
-            <ui:include src="includes/invoice-search.xhtml" />
+            <ui:include src="includes/invoice-search.xhtml"/>
 
             <h:form id="formInvoicesList">
 
@@ -56,7 +56,7 @@
 
                         <p:column headerText="#">
                             <h:link value="#{invoice.number}" outcome="invoice">
-                                <f:param name="invoiceId" value="#{invoice.id}" />
+                                <f:param name="invoiceId" value="#{invoice.id}"/>
                             </h:link>
                         </p:column>
 
@@ -65,16 +65,16 @@
                         </p:column>
 
                         <p:column headerText="Total">
-                            <h:outputText value="#{invoice.sum}" />
+                            <h:outputText value="#{invoice.sum}"/>
                         </p:column>
 
                         <p:column headerText="Is paid">
-                            <h:outputText value="#{invoice.paymentState.paid}" />
+                            <h:outputText value="#{invoice.paymentState.paid}"/>
                         </p:column>
 
                         <p:column>
                             <h:commandLink value="Generate PDF"
-                                           action="#{MBInvoices.invoiceGeneratePDF(invoice.id)}" />
+                                           action="#{MBInvoices.invoiceGeneratePDF(invoice.id)}"/>
                         </p:column>
 
                         <p:column>

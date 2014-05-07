@@ -17,7 +17,7 @@
        http://www.springframework.org/schema/jee/spring-jee.xsd"
         >
 
-    <context:property-placeholder location="classpath:application.runtime.properties,templates.properties"/>
+    <context:property-placeholder location="classpath:application.runtime.properties,classpath:templates.properties"/>
 
     <context:annotation-config/>
 

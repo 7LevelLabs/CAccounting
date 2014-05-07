@@ -12,7 +12,7 @@
        http://www.springframework.org/schema/context/spring-context.xsd"
         >
 
-    <context:property-placeholder location="classpath:test.runtime.properties,templates.properties"/>
+    <context:property-placeholder location="test.runtime.properties,templates.properties"/>
 
     <context:annotation-config/>
 

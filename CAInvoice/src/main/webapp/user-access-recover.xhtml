@@ -15,7 +15,7 @@
 
 <h:body>
 
-    <ui:composition template="WEB-INF/tpl/anonymous.xhtml">
+    <ui:composition template="WEB-INF/templates/pages/anonymous.xhtml">
 
         <ui:define name="center">
 
@@ -27,15 +27,17 @@
 
                     <div class="form-group">
                         <h:outputLabel for="userEMail" value="EMail: *" class="col-lg-2 control-label"/>
+
                         <div class="col-lg-10">
                             <p:inputText id="userEMail"
                                          value="#{MBUserRecoverAccess.localUserEmail}"
                                          required="true"
                                          validatorMessage="EMail is not valid"
                                          styleClass="form-control">
-                                <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
+                                <f:validateRegex
+                                        pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]"/>
                             </p:inputText>
-                            <p:watermark for="userEMail" value="Please, input email to recover access." />
+                            <p:watermark for="userEMail" value="Please, input email to recover access."/>
                         </div>
                     </div>
 

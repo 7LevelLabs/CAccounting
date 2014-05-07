@@ -51,7 +51,7 @@ public class PersonTest extends Assert {
 	@Test
 	public void testToString() throws Exception {
 		assertEquals(this.person.toString(),
-			"Person{id=0, nick='personNick', name='personName', phone='personPhone', email='personEMail', invoices=[], user=User{id=0, nick='Alex', email='test@test.com', pass='b799931b47707582e32947d', apiCode='67419b24-4cbb-4d2f-af43-48cf28951b5a', isActive=false, lastUpdate=null, preparedBy='Alex', discount=0}, lastUpdate=null, preparedFor='personName', discount=0}");
+			"Person{id=0, nick='personNick', name='personName', phone='personPhone', email='personEMail', invoices=0, user=User{id=0, nick='Alex', email='test@test.com', pass='b799931b47707582e32947d', apiCode='67419b24-4cbb-4d2f-af43-48cf28951b5a', isActive=false, lastUpdate=null, preparedBy='Alex', discount=0}, lastUpdate=null, preparedFor='personName', discount=0}");
 	}
 
 	@Test

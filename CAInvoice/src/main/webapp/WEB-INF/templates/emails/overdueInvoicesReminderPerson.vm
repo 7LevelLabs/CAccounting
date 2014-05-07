@@ -1,0 +1,15 @@
+<div>
+    <p style='font-weight: normal;'>Hi, $person.getName() ( $person.getEmail() )! We are pleased to welcome you in <a
+            href='http://7levellabs.com:7001/CAccounting' target='_blank'>Cloud Accounting</a>.</p>
+
+    <p style='font-weight: normal;'>Here we present you your ovedured invoice numbers from your vendor
+        <b>$user.getPreparedBy()</b> ( <b>$user.getEmail()</b> )).</p>
+</div>
+<div>
+   #foreach( $invoice in $invoiceList )
+       <p>$invoice.getNumber()</p>
+   #end
+</div>
+<div>
+   #include("include/footer.vm")
+</div>

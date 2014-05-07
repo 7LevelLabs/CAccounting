@@ -7,11 +7,11 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+        >
 
 <f:metadata>
-    <f:event type="preRenderView" listener="#{MBInvoices.refreshInvoicesUnpaidList}" />
-    <f:event type="preRenderView" listener="#{MBPersons.refreshPersonsList}" />
+    <f:event type="preRenderView" listener="#{MBInvoices.refreshInvoicesUnpaidList}"/>
+    <f:event type="preRenderView" listener="#{MBPersons.refreshPersonsList}"/>
 </f:metadata>
 
 <h:head>
@@ -20,15 +20,15 @@
 
 <h:body>
 
-    <ui:composition template="../WEB-INF/tpl/regular.xhtml">
+    <ui:composition template="../WEB-INF/templates/pages/regular.xhtml">
 
         <ui:define name="center">
 
-            <ui:include src="includes/invoice-search.xhtml" />
+            <ui:include src="includes/invoice-search.xhtml"/>
 
-            <ui:include src="includes/invoice-list-unpaid.xhtml" />
+            <ui:include src="includes/invoice-list-unpaid.xhtml"/>
 
-            <ui:include src="includes/person-list.xhtml" />
+            <ui:include src="includes/person-list.xhtml"/>
 
         </ui:define>
 

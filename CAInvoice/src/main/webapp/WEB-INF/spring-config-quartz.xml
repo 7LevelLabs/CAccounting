@@ -7,7 +7,7 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="classpath:test.runtime.properties"/>
+    <context:property-placeholder location="classpath:application.runtime.properties"/>
 
     <!--Tasks-->
     <!--OverdueInvoicesReminder - Person-->
@@ -20,17 +20,58 @@
     </bean>
 
     <!-- Cron Triggers -->
-    <bean id="cronTriggerOverdueInvoicesReminder"
+    <bean id="cronTriggerOverdueInvoicesReminderPerson"
           class="org.springframework.scheduling.quartz.CronTriggerBean">
         <property name="jobDetail" ref="JobOverdueInvoicesReminder"/>
         <property name="cronExpression" value="${person.overdue.invoices.reminder}"/>
     </bean>
 
-    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+    <!-- Quartz Datasource settings-->
+    <bean id="quartzScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean"
+          depends-on="quartzDbInitializer">
+
         <property name="triggers">
             <list>
-                <ref bean="cronTriggerOverdueInvoicesReminder"/>
+                <ref bean="cronTriggerOverdueInvoicesReminderPerson"/>
             </list>
+        </property>
+
+        <property name="dataSource" ref="dataSource"/>
+
+        <property name="transactionManager" ref="transactionManager"/>
+
+        <property name="quartzProperties">
+            <props>
+                <prop key="org.quartz.scheduler.instanceName">Quartz</prop>
+                <prop key="org.quartz.scheduler.instanceId">AUTO</prop>
+                <prop key="org.quartz.jobStore.class">org.quartz.impl.jdbcjobstore.JobStoreTX</prop>
+                <prop key="org.quartz.jobStore.driverDelegateClass">org.quartz.impl.jdbcjobstore.StdJDBCDelegate</prop>
+                <prop key="org.quartz.jobStore.tablePrefix">PA_QTZ_</prop>
+                <prop key="org.quartz.jobStore.selectWithLockSQL">SELECT * FROM {0}LOCKS UPDLOCK WHERE LOCK_NAME = ?
+                </prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="quartzDbInitializer" class="org.springframework.jdbc.datasource.init.DataSourceInitializer">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="enabled" value="true"/>
+        <property name="databasePopulator">
+            <bean class="org.springframework.jdbc.datasource.init.ResourceDatabasePopulator">
+                <property name="continueOnError" value="true"/>
+                <property name="ignoreFailedDrops" value="true"/>
+                <property name="sqlScriptEncoding" value="UTF-8"/>
+                <property name="scripts">
+                    <list>
+                        <value type="org.springframework.core.io.Resource">
+                            /WEB-INF/quartz/mysql/create-quartz-tables.sql
+                        </value>
+                        <value type="org.springframework.core.io.Resource">
+                            /WEB-INF/quartz/mysql/drop-quartz-tables.sql
+                        </value>
+                    </list>
+                </property>
+            </bean>
         </property>
     </bean>
 

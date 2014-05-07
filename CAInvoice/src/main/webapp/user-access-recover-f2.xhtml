@@ -15,7 +15,7 @@
 
 <h:body>
 
-    <ui:composition template="WEB-INF/tpl/anonymous.xhtml">
+    <ui:composition template="WEB-INF/templates/pages/anonymous.xhtml">
 
         <ui:define name="center">
 
@@ -27,20 +27,23 @@
 
                     <div class="form-group">
                         <h:outputLabel for="userEMail" value="EMail: *" class="col-lg-2 control-label"/>
+
                         <div class="col-lg-10">
                             <p:inputText id="userEMail"
                                          value="#{MBUserRecoverAccess.localUserEmail}"
                                          required="true"
                                          validatorMessage="EMail is not valid"
                                          styleClass="form-control">
-                                <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
+                                <f:validateRegex
+                                        pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]"/>
                             </p:inputText>
-                            <p:watermark for="userEMail" value="Please, input email to recover access." />
+                            <p:watermark for="userEMail" value="Please, input email to recover access."/>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <h:outputLabel for="userARCode" value="Code: *" class="col-lg-2 control-label"/>
+
                         <div class="col-lg-10">
                             <p:inputText id="userARCode"
                                          value="#{MBUserRecoverAccess.localUserARCode}"
@@ -49,35 +52,38 @@
                                          styleClass="form-control">
                                 <f:validateLength minimum="36" maximum="36"/>
                             </p:inputText>
-                            <p:watermark for="userARCode" value="Please, input code." />
+                            <p:watermark for="userARCode" value="Please, input code."/>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <h:outputLabel for="userPassword" value="New password: *" class="col-lg-2 control-label"/>
+
                         <div class="col-lg-10">
                             <p:password id="userPassword"
                                         value="#{MBUserRecoverAccess.localUserPassword}"
                                         required="true"
                                         validatorMessage="Password is required, 15 symbols min."
                                         styleClass="form-control">
-                                <f:validateLength minimum="15" />
+                                <f:validateLength minimum="15"/>
                             </p:password>
-                            <p:watermark for="userPassword" value="***************" />
+                            <p:watermark for="userPassword" value="***************"/>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <h:outputLabel for="userPasswordConfirm" value="Check new password: *" class="col-lg-2 control-label"/>
+                        <h:outputLabel for="userPasswordConfirm" value="Check new password: *"
+                                       class="col-lg-2 control-label"/>
+
                         <div class="col-lg-10">
                             <p:password id="userPasswordConfirm"
                                         value="#{MBUserRecoverAccess.localUserPasswordConfirm}"
                                         required="true"
                                         validatorMessage="Password is required, 15 symbols min."
                                         styleClass="form-control">
-                                <f:validateLength minimum="15" />
+                                <f:validateLength minimum="15"/>
                             </p:password>
-                            <p:watermark for="userPasswordConfirm" value="***************" />
+                            <p:watermark for="userPasswordConfirm" value="***************"/>
                         </div>
                     </div>
 

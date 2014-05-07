@@ -10,7 +10,7 @@
       xmlns:p="http://primefaces.org/ui">
 
 <f:metadata>
-    <f:event type="preRenderView" listener="#{MBSSettings.refreshSettingsListSystem}" />
+    <f:event type="preRenderView" listener="#{MBSSettings.refreshSettingsListSystem}"/>
 </f:metadata>
 
 <h:head>
@@ -19,7 +19,7 @@
 
 <h:body>
 
-    <ui:composition template="../WEB-INF/tpl/admin.xhtml">
+    <ui:composition template="../WEB-INF/templates/pages/admin.xhtml">
 
         <ui:define name="center">
 
@@ -29,62 +29,62 @@
 
                     <p:tab id="SYSTEM_MAIL_SETTINGS_TAB" title="System email messages">
                         <h:panelGrid columns="3">
-                            <p:outputLabel for="fromEmail" value="System email, field From, email: " />
+                            <p:outputLabel for="fromEmail" value="System email, field From, email: "/>
                             <p:inputText id="fromEmail"
                                          value="#{MBSSettings.s_system_email_from_email}"
                                          required="true"
                                          requiredMessage="EMail is required"
                                          style="width:100%">
-                                <f:validator binding="#{validatorEMail}" />
-                                <f:validateRequired />
+                                <f:validator binding="#{validatorEMail}"/>
+                                <f:validateRequired/>
                             </p:inputText>
-                            <p:watermark for="fromEmail" value="Must be regular email" />
+                            <p:watermark for="fromEmail" value="Must be regular email"/>
 
-                            <p:outputLabel for="fromName" value="System email, field From, name: " />
+                            <p:outputLabel for="fromName" value="System email, field From, name: "/>
                             <p:inputText id="fromName"
                                          value="#{MBSSettings.s_system_email_from_name}"
                                          required="true"
                                          requiredMessage="Name is required"
                                          style="width:100%">
-                                <f:validateLength minimum="2" />
-                                <f:validateRequired />
+                                <f:validateLength minimum="2"/>
+                                <f:validateRequired/>
                             </p:inputText>
-                            <p:watermark for="fromName" value="" />
+                            <p:watermark for="fromName" value=""/>
 
-                            <p:outputLabel for="BASE_URL" value="Application Base URL, whitout trailing slash : " />
+                            <p:outputLabel for="BASE_URL" value="Application Base URL, whitout trailing slash : "/>
                             <p:inputText id="BASE_URL"
                                          value="#{MBSSettings.settings_system_base_url}"
                                          required="true"
                                          requiredMessage="Base URL is required"
                                          style="width:100%">
-                                <f:validateLength minimum="2" />
-                                <f:validateRequired />
+                                <f:validateLength minimum="2"/>
+                                <f:validateRequired/>
                             </p:inputText>
-                            <p:watermark for="BASE_URL" value="Regular URL. Whitout trailing slash!" />
+                            <p:watermark for="BASE_URL" value="Regular URL. Whitout trailing slash!"/>
 
                         </h:panelGrid>
                     </p:tab>
 
                     <p:tab id="UR_TAB" title="User registration process">
                         <h:panelGrid columns="3">
-                            <p:outputLabel for="UR_WELCOME_SUBJ" value="The Subject field: " />
+                            <p:outputLabel for="UR_WELCOME_SUBJ" value="The Subject field: "/>
                             <p:inputText id="UR_WELCOME_SUBJ"
                                          value="#{MBSSettings.settings_system_ur_welcome_subj}"
                                          required="true"
                                          requiredMessage="Subject is required"
                                          style="width:100%">
-                                <f:validateLength minimum="5" />
-                                <f:validateRequired />
+                                <f:validateLength minimum="5"/>
+                                <f:validateRequired/>
                             </p:inputText>
-                            <p:watermark for="UR_WELCOME_SUBJ" value="Registering email, the Subject field" />
+                            <p:watermark for="UR_WELCOME_SUBJ" value="Registering email, the Subject field"/>
 
-                            <p:outputLabel for="UR_WELCOME_TEXT" value="The Message Text field, HTML: " />
+                            <p:outputLabel for="UR_WELCOME_TEXT" value="The Message Text field, HTML: "/>
                             <p:inputTextarea id="UR_WELCOME_TEXT"
                                              value="#{MBSSettings.settings_system_ur_welcome_text}"
                                              required="true"
                                              requiredMessage="Text message is required"
                                              rows="21" cols="71"/>
-                            <p:watermark for="UR_WELCOME_TEXT" value="Registering email, the Message Text field" />
+                            <p:watermark for="UR_WELCOME_TEXT" value="Registering email, the Message Text field"/>
                         </h:panelGrid>
                     </p:tab>
 
@@ -94,24 +94,26 @@
 
                             <h:panelGrid columns="3">
 
-                                <p:outputLabel for="AR_CODE_SUBJ" value="The Subject field: " />
+                                <p:outputLabel for="AR_CODE_SUBJ" value="The Subject field: "/>
                                 <p:inputText id="AR_CODE_SUBJ"
                                              value="#{MBSSettings.settings_system_ar_code_subj}"
                                              required="true"
                                              requiredMessage="Subjectis required"
                                              style="width:100%">
-                                    <f:validateLength minimum="5" />
-                                    <f:validateRequired />
+                                    <f:validateLength minimum="5"/>
+                                    <f:validateRequired/>
                                 </p:inputText>
-                                <p:watermark for="AR_CODE_SUBJ" value="Access-recovering email with code, the Subject field" />
+                                <p:watermark for="AR_CODE_SUBJ"
+                                             value="Access-recovering email with code, the Subject field"/>
 
-                                <p:outputLabel for="AR_CODE_TEXT" value="The Message Text field, HTML: " />
+                                <p:outputLabel for="AR_CODE_TEXT" value="The Message Text field, HTML: "/>
                                 <p:inputTextarea id="AR_CODE_TEXT"
                                                  value="#{MBSSettings.settings_system_ar_code_text}"
                                                  required="true"
                                                  requiredMessage="Text message is required"
                                                  rows="21" cols="71"/>
-                                <p:watermark for="AR_CODE_TEXT" value="Access-recovering email with code, the Message Text field" />
+                                <p:watermark for="AR_CODE_TEXT"
+                                             value="Access-recovering email with code, the Message Text field"/>
 
 
                             </h:panelGrid>
@@ -121,24 +123,26 @@
 
                             <h:panelGrid columns="3">
 
-                                <p:outputLabel for="AR_CODE_DONE_SUBJ" value="The Subject field: " />
+                                <p:outputLabel for="AR_CODE_DONE_SUBJ" value="The Subject field: "/>
                                 <p:inputText id="AR_CODE_DONE_SUBJ"
                                              value="#{MBSSettings.settings_system_ar_code_done_subj}"
                                              required="true"
                                              requiredMessage="Subject is required"
                                              style="width:100%">
-                                    <f:validateLength minimum="5" />
-                                    <f:validateRequired />
+                                    <f:validateLength minimum="5"/>
+                                    <f:validateRequired/>
                                 </p:inputText>
-                                <p:watermark for="AR_CODE_DONE_SUBJ" value="Access-recovering email, the Subject field" />
+                                <p:watermark for="AR_CODE_DONE_SUBJ"
+                                             value="Access-recovering email, the Subject field"/>
 
-                                <p:outputLabel for="AR_CODE_DONE_TEXT" value="The Message Text field, HTML: " />
+                                <p:outputLabel for="AR_CODE_DONE_TEXT" value="The Message Text field, HTML: "/>
                                 <p:inputTextarea id="AR_CODE_DONE_TEXT"
                                                  value="#{MBSSettings.settings_system_ar_code_done_text}"
                                                  required="true"
                                                  requiredMessage="Text message is required"
                                                  rows="21" cols="71"/>
-                                <p:watermark for="AR_CODE_DONE_TEXT" value="Access-recovering email, the Message Text field" />
+                                <p:watermark for="AR_CODE_DONE_TEXT"
+                                             value="Access-recovering email, the Message Text field"/>
 
                             </h:panelGrid>
 
@@ -150,13 +154,13 @@
                         <p:panel header="Invoice template" toggleable="true">
                             <h:panelGrid columns="3">
 
-                                <p:outputLabel for="EBT_INVOICE" value="Template for any invoice, HTML: " />
+                                <p:outputLabel for="EBT_INVOICE" value="Template for any invoice, HTML: "/>
                                 <p:inputTextarea id="EBT_INVOICE"
                                                  value="#{MBSSettings.settings_system_ebt_invoice}"
                                                  required="true"
                                                  requiredMessage="This template is required"
                                                  rows="21" cols="71"/>
-                                <p:watermark for="EBT_INVOICE" value="HTML template for any invoice" />
+                                <p:watermark for="EBT_INVOICE" value="HTML template for any invoice"/>
 
                             </h:panelGrid>
                         </p:panel>
