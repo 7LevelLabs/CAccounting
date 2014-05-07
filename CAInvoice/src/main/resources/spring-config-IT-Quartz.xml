@@ -1,15 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:property-placeholder location="classpath:test.runtime.properties"/>
 
-    <!--Tasks-->
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="${db.access.url}"/>
+        <property name="username" value="${db.access.username}"/>
+        <property name="password" value="${db.access.password}"/>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.use_sql_comments">false</prop>
+                <prop key="hibernate.format_sql">false</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- Quartz Tasks-->
     <bean id="job1" class="ua.its.slot7.caccounting.schedule.tasks.DummyTask"/>
 
     <!-- Quartz Jobs -->
@@ -17,17 +49,64 @@
         <property name="jobClass" value="ua.its.slot7.caccounting.schedule.tasks.DummyTask"/>
     </bean>
 
-    <!-- Cron Triggers -->
-    <bean id="cronTriggerOverdueInvoicesReminder"
+    <!-- Quartz Cron Triggers -->
+    <bean id="cronTriggerOverdueInvoicesReminderPerson"
           class="org.springframework.scheduling.quartz.CronTriggerBean">
         <property name="jobDetail" ref="JobOverdueInvoicesReminder"/>
         <property name="cronExpression" value="${person.overdue.invoices.reminder}"/>
     </bean>
 
-    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+    <!-- Quartz Datasource settings-->
+    <bean id="quartzDbInitializer" class="org.springframework.jdbc.datasource.init.DataSourceInitializer">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="enabled" value="true"/>
+        <property name="databasePopulator">
+            <bean class="org.springframework.jdbc.datasource.init.ResourceDatabasePopulator">
+                <property name="continueOnError" value="true"/>
+                <property name="ignoreFailedDrops" value="true"/>
+                <property name="sqlScriptEncoding" value="UTF-8"/>
+                <property name="scripts">
+                    <list>
+                        <value type="org.springframework.core.io.Resource">
+                            classpath:quartz/mysql/drop-quartz-tables.sql
+                        </value>
+                        <value type="org.springframework.core.io.Resource">
+                            classpath:quartz/mysql/create-quartz-tables.sql
+                            <!--don't forget to reconcile this with org.quartz.jobStore.tablePrefix prop-->
+                        </value>
+                    </list>
+                </property>
+            </bean>
+        </property>
+    </bean>
+
+
+    <bean id="quartzScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean"
+          depends-on="quartzDbInitializer">
+
+        <property name="dataSource">
+            <ref bean="dataSource"/>
+        </property>
+
+        <property name="transactionManager">
+            <ref bean="transactionManager"/>
+        </property>
+
+        <property name="quartzProperties">
+            <props>
+                <prop key="org.quartz.scheduler.instanceName">Quartz</prop>
+                <prop key="org.quartz.scheduler.instanceId">AUTO</prop>
+                <prop key="org.quartz.jobStore.class">org.quartz.impl.jdbcjobstore.JobStoreTX</prop>
+                <prop key="org.quartz.jobStore.driverDelegateClass">org.quartz.impl.jdbcjobstore.StdJDBCDelegate</prop>
+                <prop key="org.quartz.jobStore.tablePrefix">PA_QTZ_</prop>
+                <prop key="org.quartz.jobStore.selectWithLockSQL">SELECT * FROM {0}LOCKS UPDLOCK WHERE LOCK_NAME = ?
+                </prop>
+            </props>
+        </property>
+
         <property name="triggers">
             <list>
-                <ref bean="cronTriggerOverdueInvoicesReminder"/>
+                <ref bean="cronTriggerOverdueInvoicesReminderPerson"/>
             </list>
         </property>
     </bean>
