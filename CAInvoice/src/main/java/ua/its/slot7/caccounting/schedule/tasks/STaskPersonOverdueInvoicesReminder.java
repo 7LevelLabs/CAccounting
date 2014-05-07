@@ -44,7 +44,7 @@ public class STaskPersonOverdueInvoicesReminder extends QuartzJobBean {
 
 				if (invoiceList != null) {
 					try {
-						mailerProcessor.sendPersonOverdueInvoicesReminder(user, person, invoiceList);
+						mailerProcessor.sendOverdueInvoicesReminderPerson(user, person, invoiceList);
 					} catch (JMSException e) {
 						//TODO process
 						e.printStackTrace();

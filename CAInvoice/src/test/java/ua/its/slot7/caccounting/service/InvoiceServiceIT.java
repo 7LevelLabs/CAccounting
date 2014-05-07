@@ -46,6 +46,12 @@ public class InvoiceServiceIT extends Assert {
 		user.setDiscount(10);
 		user.setPreparedBy("User 1");
 
+		User user2 = new User();
+		user2.setNick("User2");
+		user2.setEmail("user2@test.com");
+		user2.setDiscount(10);
+		user2.setPreparedBy("User 2");
+
 		Person person = personHelper.getNewPerson("nick",
 			"name",
 			"email",
@@ -59,6 +65,7 @@ public class InvoiceServiceIT extends Assert {
 		invoice2.getPaymentState().setPaid(true);
 
 		userService.createUser(user);
+		userService.createUser(user2);
 
 		personService.createPerson(person);
 

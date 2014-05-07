@@ -31,7 +31,7 @@ public interface IMailerProcessor {
 	/**
 	 * Send Invoice Overdue reminder Person
 	 */
-	public void sendPersonOverdueInvoicesReminder(final User user, final Person person, final List<Invoice> invoiceList) throws JMSException;
+	public void sendOverdueInvoicesReminderPerson(final User user, final Person person, final List<Invoice> invoiceList) throws JMSException;
 
 
 }

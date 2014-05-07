@@ -138,7 +138,7 @@ public class MailerProcessor implements IMailerProcessor {
 	 * @param invoiceList
 	 */
 	@Override
-	public void sendPersonOverdueInvoicesReminder(final User user, final Person person, final List<Invoice> invoiceList) throws JMSException {
+	public void sendOverdueInvoicesReminderPerson(final User user, final Person person, final List<Invoice> invoiceList) throws JMSException {
 		String mf, mfn, ms, mb;
 
 		mf = bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_EMAIL_FROM_EMAIL");
