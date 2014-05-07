@@ -68,18 +68,17 @@
                 <property name="scripts">
                     <list>
                         <value type="org.springframework.core.io.Resource">
-                            classpath:quartz/mysql/drop-quartz-tables.sql
-                        </value>
-                        <value type="org.springframework.core.io.Resource">
                             classpath:quartz/mysql/create-quartz-tables.sql
                             <!--don't forget to reconcile this with org.quartz.jobStore.tablePrefix prop-->
+                        </value>
+                        <value type="org.springframework.core.io.Resource">
+                            classpath:quartz/mysql/drop-quartz-tables.sql
                         </value>
                     </list>
                 </property>
             </bean>
         </property>
     </bean>
-
 
     <bean id="quartzScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean"
           depends-on="quartzDbInitializer">
