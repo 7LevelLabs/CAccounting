@@ -2,10 +2,14 @@ package ua.its.slot7.caccounting.communications;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import ua.its.slot7.caccounting.model.invoice.Invoice;
+import ua.its.slot7.caccounting.model.person.Person;
+import ua.its.slot7.caccounting.model.user.User;
 import ua.its.slot7.caccounting.system.BSystemSettingsAvatar;
 import ua.its.slot7.camailtask.model.MailTask;
 
 import javax.jms.JMSException;
+import java.util.List;
 
 /**
  * @author Alex Velichko
@@ -18,6 +22,9 @@ public class MailerProcessor implements IMailerProcessor {
 
 	@Value("${system.url.arph1}")
 	private String urlARPh1;
+
+	@Value("${system.email.subj.overdue.invoices.reminder.person}")
+	private String emailSubjPersonOverdueInvoicesReminder;
 
 	@Autowired
 	private BSystemSettingsAvatar bSystemSettings;
@@ -122,6 +129,33 @@ public class MailerProcessor implements IMailerProcessor {
 			true);
 		this.processMailTask(mailTask);
 
+	}
+
+	/**
+	 * Send Invoice Overdue reminder Person
+	 *
+	 * @param person
+	 * @param invoiceList
+	 */
+	@Override
+	public void sendPersonOverdueInvoicesReminder(final User user, final Person person, final List<Invoice> invoiceList) throws JMSException {
+		String mf, mfn, ms, mb;
+
+		mf = bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_EMAIL_FROM_EMAIL");
+		mfn = bSystemSettings.getSettingStringByKey("SETTINGS_SYSTEM_EMAIL_FROM_NAME");
+
+		ms = emailSubjPersonOverdueInvoicesReminder;
+
+		mb = mailBodyProcessor.personOverdueInvoicesReminder(user, person, invoiceList);
+
+		MailTask mailTask = new MailTask(mf,
+			mfn,
+			person.getEmail(),
+			person.getName(),
+			ms,
+			mb,
+			true);
+		this.processMailTask(mailTask);
 	}
 
 	private void processMailTask(MailTask mailTask) throws JMSException {

@@ -3,8 +3,12 @@ package ua.its.slot7.caccounting.communications;
 import org.apache.velocity.app.VelocityEngine;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.velocity.VelocityEngineUtils;
+import ua.its.slot7.caccounting.model.invoice.Invoice;
+import ua.its.slot7.caccounting.model.person.Person;
+import ua.its.slot7.caccounting.model.user.User;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -21,6 +25,9 @@ public class MailBodyProcessor implements IMailBodyProcessor {
 
 	@Value("${access.recover.2}")
 	private String templateAccessRecoverPh2;
+
+	@Value("${overdue.invoices.reminder.person}")
+	private String templateOverdueInvoicesReminderPerson;
 
 	@Value("${template.encoding}")
 	private String emailEncoding;
@@ -90,7 +97,9 @@ public class MailBodyProcessor implements IMailBodyProcessor {
 	 * @param urlApplication
 	 */
 	@Override
-	public String userAccessRecoverPh2(String nick, String email, String urlApplication) {
+	public String userAccessRecoverPh2(final String nick,
+						final String email,
+						final String urlApplication) {
 		String mailBody;
 
 		Map model = new HashMap();
@@ -105,6 +114,29 @@ public class MailBodyProcessor implements IMailBodyProcessor {
 		return mailBody;
 	}
 
+	/**
+	 * Invoice Overdue reminder Person
+	 *
+	 * @param person
+	 * @param invoiceList
+	 */
+	@Override
+	public String personOverdueInvoicesReminder(final User user,
+							  final Person person,
+							  final List<Invoice> invoiceList) {
+		String mailBody;
+
+		Map model = new HashMap();
+
+		model.put("person", person);
+		model.put("invoiceList", invoiceList);
+		model.put("user", user);
+
+		mailBody = VelocityEngineUtils.mergeTemplateIntoString(
+			velocityEngine, templateOverdueInvoicesReminderPerson, emailEncoding, model);
+
+		return mailBody;
+	}
 
 	public void setVelocityEngine(VelocityEngine velocityEngine) {
 		this.velocityEngine = velocityEngine;

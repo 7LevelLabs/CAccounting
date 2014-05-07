@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:test.runtime.properties"/>
+
+    <!--Tasks-->
+    <bean id="job1" class="ua.its.slot7.caccounting.schedule.tasks.DummyTask"/>
+
+    <!-- Quartz Jobs -->
+    <bean name="JobOverdueInvoicesReminder" class="org.springframework.scheduling.quartz.JobDetailBean">
+        <property name="jobClass" value="ua.its.slot7.caccounting.schedule.tasks.DummyTask"/>
+    </bean>
+
+    <!-- Cron Triggers -->
+    <bean id="cronTriggerOverdueInvoicesReminder"
+          class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="JobOverdueInvoicesReminder"/>
+        <property name="cronExpression" value="${person.overdue.invoices.reminder}"/>
+    </bean>
+
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="cronTriggerOverdueInvoicesReminder"/>
+            </list>
+        </property>
+    </bean>
+
+
+</beans>
