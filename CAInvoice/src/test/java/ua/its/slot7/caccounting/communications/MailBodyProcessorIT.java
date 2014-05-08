@@ -95,11 +95,6 @@ public class MailBodyProcessorIT extends Assert {
 
 		assertTrue(result.contains("Hi, name ( email )!"));
 		assertTrue(result.contains("<b>User 1</b> ( <b>user1@test.com</b>"));
-		assertTrue(result.contains("<div>\n" +
-			"   <p>001</p>\n" +
-			"   <p>002</p>\n" +
-			"   <p>003</p>\n" +
-			"</div>"));
 	}
 
 	@Test
