@@ -251,7 +251,6 @@ public class InvoiceLine implements Serializable, Comparable<InvoiceLine> {
 
 	private BigDecimal lineTax;
 
-
 	private Long version;
 
 

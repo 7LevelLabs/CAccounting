@@ -183,6 +183,7 @@ public class BLServiceIT extends Assert {
 
 		Invoice invoice1 = invoiceHelper.getDummyInvoice(person);
 		invoice1.setNumber("001");
+
 		Invoice invoice2 = invoiceHelper.getDummyInvoice(person);
 		invoice2.setNumber("002");
 		invoice2.getPaymentState().setPaid(true);

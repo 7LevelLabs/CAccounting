@@ -66,8 +66,8 @@ public class BEntityPresenterIT extends Assert {
 
 		String result = entityPresenter.presentToHTML(invoice);
 
-		assertTrue(result.contains("<p>Prepared for : Person</p>"));
-		assertTrue(result.contains("<p>Subtotal : 106.00</p>"));
+		assertTrue(result.contains("Prepared for :</span> Person"));
+		assertTrue(result.contains("Subtotal :</span> 106.00</p>"));
 	}
 
 	@Test
